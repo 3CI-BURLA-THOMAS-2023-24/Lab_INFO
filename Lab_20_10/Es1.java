@@ -3,8 +3,6 @@
  * @author Burla Thomas 
  * @version 1.0
  */
-import java.io.*;
-import java.util.*;
 import javax.swing.*;
 public class Es1{
     public static void main(String args[]){
