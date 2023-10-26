@@ -4,7 +4,7 @@
  * @version 1.0
  */
 import javax.swing.*;
-public class Es5{
+public class Es2{
     public static void main(String args[]){
         //dichiarazione delle variabili
         int lato;
