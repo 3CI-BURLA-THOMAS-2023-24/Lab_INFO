@@ -13,11 +13,11 @@ public class Es03{
         //inizializzazione delle variabili
         a = Double.parseDouble(JOptionPane.showInputDialog("Inserire un qualsiasi numero"));
         b = Double.parseDouble(JOptionPane.showInputDialog("Inserire il secondo numero"));
-        if(a==b){
+        if(a == b){
             //output
             System.out.println("I due numeri sono uguali.");
         }
-        else if(a>b){
+        else if(a > b){
                 //output
                 System.out.println("Il primo numero è maggiore del secondo.");
             }

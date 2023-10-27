@@ -10,7 +10,7 @@ public class Es05{
         int num;
         //inizializzazione
         num = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero per capire se è multiplo di 7"));
-        if(num%7==0){
+        if((num % 7) == 0){
             System.out.println("Il numero è multiplo di 7.");
         }
         else{

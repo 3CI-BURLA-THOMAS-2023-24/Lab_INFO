@@ -15,10 +15,10 @@ public class Es06{
         l2 = Double.parseDouble(JOptionPane.showInputDialog("Inserire il secondo lato del triangolo"));
         l3 = Double.parseDouble(JOptionPane.showInputDialog("Inserire il tero lato del triangolo"));
         //elaborazione
-        if(l1<0&&l2<0&&l3<0){
+        if((l1 < 0) && (l2 < 0) && (l3 < 0)){
             System.out.println("I valori dati NON possono corrispondere ai lati di un triangolo");
             }
-            else if(((l1+l2)>l3)&&((l2+l3)>l1)&&((l1+l3)>l2)){
+            else if(((l1 + l2) > l3) && ((l2 + l3) > l1) && ((l1 + l3) > l2)){
                 System.out.println("I valori dati possono corrispondere ai lati di un triangolo");
             }
             else{
