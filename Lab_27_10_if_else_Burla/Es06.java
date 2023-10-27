@@ -16,13 +16,16 @@ public class Es06{
         l3 = Double.parseDouble(JOptionPane.showInputDialog("Inserire il tero lato del triangolo"));
         //elaborazione
         if((l1 < 0) && (l2 < 0) && (l3 < 0)){
+            //output
             System.out.println("I valori dati NON possono corrispondere ai lati di un triangolo");
             }
             else if(((l1 + l2) > l3) && ((l2 + l3) > l1) && ((l1 + l3) > l2)){
+                //output
                 System.out.println("I valori dati possono corrispondere ai lati di un triangolo");
-            }
-            else{
-            System.out.println("I valori dati NON possono corrispondere ai lati di un triangolo");
-        }
+                }
+                else{
+                //output
+                System.out.println("I valori dati NON possono corrispondere ai lati di un triangolo");
+                }
     }
 }
