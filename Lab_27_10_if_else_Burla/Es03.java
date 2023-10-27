@@ -15,10 +15,9 @@ public class Es03{
         b = Double.parseDouble(JOptionPane.showInputDialog("Inserire il secondo numero"));
         if(a==b){
             //output
-            System.out.println("I due numeri sono uguali");
+            System.out.println("I due numeri sono uguali.");
         }
-        else{
-            if(a>b){
+        else if(a>b){
                 //output
                 System.out.println("Il primo numero è maggiore del secondo.");
             }
@@ -28,4 +27,3 @@ public class Es03{
             }
         }
     }
-}
