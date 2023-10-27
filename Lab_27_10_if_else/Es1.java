@@ -11,6 +11,21 @@ public class Es1{
         double r;
         double circ;
         double π;
-        
+        double area;
+        //inizializzazione delle variabili
+        π = 3.1415926535897932384626433832795;
+        r = Double.parseDouble(JOptionPane.showInputDialog("Inserire il raggio del cerchio"));
+        if(r>0){
+            //elaborazione
+            circ = 2 * π * r;
+            area = π * r * r;
+            //output
+            System.out.println("La circonferenza misura "+circ);
+            System.out.println("L'area del cerchio misura "+area);
+        }
+        else{
+            //output
+            System.out.println("Errore!");
+        }
     }
 }
