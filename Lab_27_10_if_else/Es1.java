@@ -13,7 +13,7 @@ public class Es1{
         double π;
         double area;
         //inizializzazione delle variabili
-        π = 3.1415926535897932384626433832795;
+        π = 3.14;
         r = Double.parseDouble(JOptionPane.showInputDialog("Inserire il raggio del cerchio"));
         if(r>0){
             //elaborazione
