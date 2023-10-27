@@ -11,7 +11,7 @@ public class Es2{
         int perimetro;
         //inizializzazione delle variabili ed elaborazione
         lato = Integer.parseInt(JOptionPane.showInputDialog("Dammi il lato del triangolo equilatero. Accettati solo numeri interi positivi"));
-        perimetro = lato*3;
+        perimetro = lato * 3;
         //output
         System.out.println("Il perimetro del triangolo è: "+perimetro);
     }

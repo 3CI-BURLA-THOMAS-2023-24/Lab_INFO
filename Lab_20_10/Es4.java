@@ -14,7 +14,7 @@ public class Es4{
         min = Integer.parseInt(JOptionPane.showInputDialog("Inserire il numero di minuti"));
         sec = Integer.parseInt(JOptionPane.showInputDialog("Inserire il numero di secondi"));
         //elaborazione
-        conv = h*3600 + min*60 + sec;
+        conv = h * 3600 + min * 60 + sec;
         //ouput
         System.out.println("Il tempo da te indicato corrisponde a: "+conv+" secondi.");
     }
