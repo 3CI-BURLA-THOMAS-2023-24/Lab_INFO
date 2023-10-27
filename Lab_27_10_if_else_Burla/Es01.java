@@ -5,7 +5,7 @@
  * @version 1.0
  */
 import javax.swing.*;
-public class Es1{
+public class Es01{
     public static void main(String args[]){
         //dichiarazione delle variabili
         double r;
