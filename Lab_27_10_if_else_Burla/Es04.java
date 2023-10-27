@@ -11,9 +11,11 @@ public class Es04{
         //inizializzazione
         num = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero per capire se è pari o dispari"));
         if((num % 2) == 0){
+            //output
             System.out.println("Il numero è pari");
         }
         else{
+            //ouput
             System.out.println("Il numero è dispari");
         }
     }
