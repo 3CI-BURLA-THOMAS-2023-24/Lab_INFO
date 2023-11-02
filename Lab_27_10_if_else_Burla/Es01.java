@@ -1,4 +1,3 @@
-
 /**
  * Calcolo della circonferenza e area del cerchio, con il tipo di dato opportuno per il raggio e il controllo sul valore espresso in input;
  * @author Thomas Burla 
