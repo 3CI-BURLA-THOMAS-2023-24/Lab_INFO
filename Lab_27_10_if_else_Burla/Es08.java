@@ -10,5 +10,13 @@ public class Es08{
         int num;
         //inizializzazione delle variabili
         num = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero per stabilire se esso è positivo, negativo o nullo."));
+        //elaborazione e output
+        if(num < 0){
+            System.out.println("Il numero inserito è negativo.");
+        }else if(num > 0){
+            System.out.println("Il numero inserito è positivo");
+        }else{
+            System.out.println("Il numero inserito è nullo.");
+        }   
     }
 }
