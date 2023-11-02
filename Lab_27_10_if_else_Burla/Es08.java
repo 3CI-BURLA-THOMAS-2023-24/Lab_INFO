@@ -1,33 +1,14 @@
-
 /**
- * Aggiungi qui una descrizione della classe Es08
- * 
- * @author (il tuo nome) 
- * @version (un numero di versione o una data)
- */
-public class Es08
-{
-    // variabili d'istanza - sostituisci l'esempio che segue con il tuo
-    private int x;
-
-    /**
-     * Costruttore degli oggetti di classe  Es08
-     */
-    public Es08()
-    {
-        // inizializza le variabili d'istanza
-        x = 0;
-    }
-
-    /**
-     * Un esempio di metodo - aggiungi i tuoi commenti
-     * 
-     * @param  y   un parametro d'esempio per un metodo
-     * @return     la somma di x e y
-     */
-    public int sampleMethod(int y)
-    {
-        // metti qui il tuo codice
-        return x + y;
+ * Letto un intero, dire se esso è positivo, negativo o nullo. 
+ * @author Thomas Burla
+ * @version 1.0
+*/
+import javax.swing.*;
+public class Es08{
+    public static void main(String args[]){
+        //dichiarazione delle variabili
+        int num;
+        //inizializzazione delle variabili
+        num = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero per stabilire se esso è positivo, negativo o nullo."));
     }
 }
