@@ -16,5 +16,17 @@ public class Voti{
         do{
             n = Integer.parseInt(JOptionPane.showInputDialog("Inserire la quantità di voti che si vuole archiviare."));
         }while((n < 3) || (n > 20));
+        //elaborazione
+        for(i = 0; i < n; i++){
+            voto = Double.parseDouble(JOptionPane.showInputDialog("Inserire il voto."));
+            media = media + voto;
+        }
+        media = media / n;
+        //ouput
+        if(media < 6){
+            JOptionPane.showMessageDialog(null,"L'alunno è bocciato con media: "+media);
+        }else{
+            JOptionPane.showMessageDialog(null,"L'alunno è promosso con media: "+media);
+        }
     }
 }
