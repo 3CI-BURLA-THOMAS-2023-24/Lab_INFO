@@ -1,4 +1,3 @@
-
 /**
  * Letti due numeri, stampare il maggiore.
  * @author Thomas Burla

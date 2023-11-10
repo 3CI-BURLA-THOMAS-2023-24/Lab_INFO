@@ -1,33 +1,22 @@
-
 /**
- * Aggiungi qui una descrizione della classe Es09
- * 
- * @author (il tuo nome) 
- * @version (un numero di versione o una data)
- */
-public class Es09
-{
-    // variabili d'istanza - sostituisci l'esempio che segue con il tuo
-    private int x;
-
-    /**
-     * Costruttore degli oggetti di classe  Es09
-     */
-    public Es09()
-    {
-        // inizializza le variabili d'istanza
-        x = 0;
-    }
-
-    /**
-     * Un esempio di metodo - aggiungi i tuoi commenti
-     * 
-     * @param  y   un parametro d'esempio per un metodo
-     * @return     la somma di x e y
-     */
-    public int sampleMethod(int y)
-    {
-        // metti qui il tuo codice
-        return x + y;
+ * Letto il voto di una verifica, dire se esso è sufficiente, insufficiente, più che sufficiente.
+ * @author Thomas Burla
+ * @version 1.0
+*/
+import javax.swing.*;
+public class Es09{
+    public static void main(String args[]){
+        //dichiarazione delle variabili
+        double voto;
+        //inizializzazione delle variabili
+        voto = Double.parseDouble(JOptionPane.showInputDialog("Inserire il voto per stabilire se è insuffieciente, sufficiente o più che sufficiente."));
+        //elaborazione
+        if(voto < 6){
+            System.out.println("Il voto non è sufficiente.");
+        }else if(voto < 8){
+            System.out.println("Il voto è sufficiente.");
+        }else{
+            System.out.println("Il voto inserito è più che sufficiente.");
+        }
     }
 }
