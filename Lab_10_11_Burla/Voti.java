@@ -1,4 +1,3 @@
-
 /**
  * Leggere n voti e calcolare la media, nota bene: n>3 e n<20; voto è compreso tra 3 e 10. Visualizzare la media e se l'alunno è promosso o bocciato.
  * @author Thomas Burla 
@@ -18,7 +17,9 @@ public class Voti{
         }while((n < 3) || (n > 20));
         //elaborazione
         for(i = 0; i < n; i++){
-            voto = Double.parseDouble(JOptionPane.showInputDialog("Inserire il voto."));
+            do{
+                voto = Double.parseDouble(JOptionPane.showInputDialog("Inserire il voto."));
+            }while((voto < 3) || (voto >10));
             media = media + voto;
         }
         media = media / n;
