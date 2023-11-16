@@ -12,8 +12,8 @@ public class Es2{
         p = 1;
         //controllo dell'input per il numero di valori da moltiplicare
         do{
-            n = Integer.parseInt(JOptionPane.showInputDialog("Quanti sono i valori da moltiplicare?"));
-        }while(n < 0);
+            n = Integer.parseInt(JOptionPane.showInputDialog("Quanti sono i valori da moltiplicare? Inserire almeno 2 valori"));
+        }while(n < 2);
         //elaborazione
         for(i = 0; i < n; i++){
             x = Integer.parseInt(JOptionPane.showInputDialog("Inserire un valore da moltiplicare"));
@@ -22,7 +22,7 @@ public class Es2{
                 p = 0;
                 i = n;
             }else{
-            p = p * n;
+            p = p * x;
             }
         }
         //output

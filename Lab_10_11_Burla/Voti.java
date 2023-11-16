@@ -13,16 +13,16 @@ public class Voti{
         media = 0;
         //controllo dell'input
         do{
-            n = Integer.parseInt(JOptionPane.showInputDialog("Inserire la quantità di voti che si vuole archiviare, almeno 3 e massimo 20."));
-        }while((n < 3) || (n > 20));
+            n = Integer.parseInt(JOptionPane.showInputDialog("Inserire la quantità di voti che si vuole archiviare, almeno 4 e massimo 19."));
+        }while((n <= 3) || (n >= 20));
         //elaborazione
         for(i = 0; i < n; i++){
             do{
                 voto = Double.parseDouble(JOptionPane.showInputDialog("Inserire il voto."));
-                if((voto < 3) || (voto >10)){
+                if((voto < 3) || (voto > 10)){
                     JOptionPane.showMessageDialog(null, "Voto non valido, non è stato inserito!");
                 }
-            }while((voto < 3) || (voto >10));
+            }while((voto < 3) || (voto > 10));
             media = media + voto;
         }
         media = media / n;
