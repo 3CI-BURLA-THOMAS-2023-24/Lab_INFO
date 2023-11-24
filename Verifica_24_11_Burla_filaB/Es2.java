@@ -10,7 +10,7 @@ public class Es2{
         //inizializzazione delle variabili
         num = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero per visualizzare l'ultima cifra, se è dispari."));
         //elaborazione
-        cifra = n % 10;
+        cifra = num % 10;
         if((num % 2) != 0){
             JOptionPane.showMessageDialog(null, "L'ultima cifra del numero è: "+cifra);
         }
