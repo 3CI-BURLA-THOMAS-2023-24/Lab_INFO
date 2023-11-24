@@ -13,7 +13,7 @@ public class Es05{
         y = 284;
         s = 0;
         //elaborazione
-        for(i = 1; i <= y; i++){
+        for(i = 1; i < y; i++){
             if((y % i) == 0){
                 s = s + i;
             }
