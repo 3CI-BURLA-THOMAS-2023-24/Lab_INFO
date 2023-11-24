@@ -26,7 +26,7 @@ public class Voti{
             media = media + voto;
         }
         media = media / n;
-        //ouput
+        //output
         if(media < 6){
             JOptionPane.showMessageDialog(null,"L'alunno è bocciato con media: "+media);
         }else{
