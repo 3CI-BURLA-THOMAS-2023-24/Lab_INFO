@@ -1,5 +1,5 @@
 /**
- * Calcolo della circonferenza e area del cerchio, con il tipo di dato opportuno per il raggio e il controllo sul valore espresso in input;
+ * Due numeri sono amici quando ciascuno di essi è uguale alla somma dei divisori propri dell'altro. Leggere due numeri e dire se sono amici. Verificare che 220 e 284 sono amici.
  * @author Thomas Burla 
  * @version 1.0
  */
@@ -9,10 +9,12 @@ public class Es05{
         //dichiarazione delle variabili
         int x, y, s, i;
         //inizializzazione delle variabili
-        x = 220;
-        y = 284;
         s = 0;
-        //elaborazione
+        do{
+            x = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero e positivo"));
+            y = Integer.parseInt(JOptionPane.showInputDialog("Inserire un numero intero e positivo per verificare se è amico dell'altro"));
+        }while((x <= 0) || (y <= 0));
+       //elaborazione
         for(i = 1; i < y; i++){
             if((y % i) == 0){
                 s = s + i;
