@@ -1,6 +1,5 @@
 /**
  * Letto il prezzo di una sciarpa, dire se è un prodotto economico (fino a 10 euro), regolare(superiore a 10 euro) o di lusso (superiore a 50 euro). 
- * 
  * @author Thomas Burla 
  * @version 1.0
  */
