@@ -1,0 +1,21 @@
+FILA A
+1. 	//leggere prezzo con do while(prezzo<=0)
+	if
+2.	do while (n<=3 || n>= 14)
+	for n volte
+3.	resto = numero % 10
+	cifra = resto
+5. 	for (i =1; i < n; i++){
+		if((n1 % i) == 0){
+			somma1 = somma1 + i;
+		}
+	}
+
+FILA B
+5.	int controllo = 0, i = 0;
+	while((i < 5) && (c == 0){
+		//leggo valore
+		if(valore == numerocercato){
+			c = 1;
+			i++,
+		}
