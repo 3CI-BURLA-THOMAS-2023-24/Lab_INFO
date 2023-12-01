@@ -11,8 +11,16 @@ public class Es03{
         //inizializzazione delle variabili
         val = Integer.parseInt(JOptionPane.showInputDialog("Inserire un valore intero per visualizzare la sua ultima cifra, se pari"));
         //elaborazione
-        resto = val % 10;
+        if(val < 0){
+            resto = -(val % 10);
+        }else{
+            resto = val % 10;
+        }
         //output
-        JOptionPane.showMessageDialog(null, "L'ultima cifra è: "+resto);
+        if((val % 2) == 0){ 
+            JOptionPane.showMessageDialog(null, "L'ultima cifra è: "+resto);
+        }else{
+            JOptionPane.showMessageDialog(null, "Il numero è dispari");
+        }
     }
 }
