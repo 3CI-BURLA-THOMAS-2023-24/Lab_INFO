@@ -6,16 +6,18 @@ import javax.swing.*;
 public class Es5{
     public static void main(String args[]){
         //dichiarazione delle variabili
-        int randomNumber, num, tent;
+        int randomNumber, num, tent, c;
+        c = 0;
+        tent = 0;
         //inizializzazione delle variabili
         randomNumber = (int)(Math.random()*100);
         //elaborazione
-        for(tent = 1; tent <= 5; tent++){
+        while((tent < 5) && (c == 0)){
             num = Integer.parseInt(JOptionPane.showInputDialog("Indovina il numero, compreso tra 1 e 100"));
             //output
             if(num == randomNumber){
                 JOptionPane.showMessageDialog(null, "Bravo,hai indovinato!");
-                tent = 6;
+                c = 1;
             }else if(num > randomNumber){
                 JOptionPane.showMessageDialog(null, "Il numero da indovinare è più basso");
             }else{
@@ -24,6 +26,7 @@ public class Es5{
             if(tent == 5){
                 JOptionPane.showMessageDialog(null, "Hai esaurito i tentativi!");
             }
+            tent++;
         }
     }
 }
