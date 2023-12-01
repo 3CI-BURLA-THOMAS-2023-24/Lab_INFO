@@ -5,7 +5,7 @@ FILA A
 	for n volte
 3.	resto = numero % 10
 	cifra = resto
-5. 	for (i =1; i < n; i++){
+5. 	for (i = 1; i < n; i++){
 		if((n1 % i) == 0){
 			somma1 = somma1 + i;
 		}
