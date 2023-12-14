@@ -15,12 +15,12 @@ public class Es02{
                 JOptionPane.showMessageDialog(null, "Errore! Inserire solo numeri maggiori di 3 e minori di 14");
             }
         }while((n <= 3) || (n >= 14));
-        val = Integer.parseInt(JOptionPane.showInputDialog("Inserire un valore per visualizzare la somma tra i numeri pari"));
         for(int i = 0; i < n; i++){
+            val = Integer.parseInt(JOptionPane.showInputDialog("Inserire un valore per visualizzare la somma tra i numeri pari"));
             if((val % 2) == 0){
                 somma = somma + val;
             }
         }
-        JOptionPane.showMessageDialog(null, "La somma dei numeri pari che hai inserito è: "+somma);
+        JOptionPane.showMessageDialog(null, "La somma dei numeri pari che hai inserito ï¿½: "+somma);
     }
 }
