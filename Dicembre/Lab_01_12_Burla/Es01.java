@@ -1,5 +1,5 @@
 /**
- * Letto il prezzo di una sciarpa, dire se è un prodotto economico (fino a 10 euro), regolare(superiore a 10 euro) o di lusso (superiore a 50 euro). 
+ * Letto il prezzo di una sciarpa, dire se Ã¨ un prodotto economico (fino a 10 euro), regolare(superiore a 10 euro) o di lusso (superiore a 50 euro). 
  * @author Thomas Burla 
  * @version 1.0
  */
@@ -12,15 +12,15 @@ public class Es01{
         do{
             p = Double.parseDouble(JOptionPane.showInputDialog("Inserire il prezzo della sciarpa"));
             if(p <= 0){
-                JOptionPane.showMessageDialog(null, "Errore, il prezzo di una sciarpa NON può essere negativo o nullo!");
+                JOptionPane.showMessageDialog(null, "Errore, il prezzo di una sciarpa NON puÃ² essere negativo o nullo!");
             }
         }while(p <= 0);
         if(p <= 10){
-            JOptionPane.showMessageDialog(null, "La sciarpa è economica");
+            JOptionPane.showMessageDialog(null, "La sciarpa Ã¨ economica");
         }else if((p > 10) && (p <= 50)){
-            JOptionPane.showMessageDialog(null, "Il prezzo della sciarpa è regolare");
+            JOptionPane.showMessageDialog(null, "Il prezzo della sciarpa Ã¨ regolare");
         }else{
-            JOptionPane.showMessageDialog(null, "La sciarpa è di lusso");
+            JOptionPane.showMessageDialog(null, "La sciarpa Ã¨ di lusso");
         }
     }
 }
