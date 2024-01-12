@@ -1,6 +1,6 @@
 Istruzione if 
 
-1) leggere in input gli anni di una persona e dire se è maggiorenne o minorenne (se anni <0 o >120 visualizzare ERORE)
+1) leggere in input gli anni di una persona e dire se è maggiorenne o minorenne (se anni <0 o >120 visualizzare ERRORE)
 
 2) Il programma legge due numeri e controlla se il il maggiore è multiplo del minore.
 
