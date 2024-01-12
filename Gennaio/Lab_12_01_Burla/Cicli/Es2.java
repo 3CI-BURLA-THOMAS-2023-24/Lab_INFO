@@ -9,8 +9,10 @@ public class Es2{
     public static void main(String args[]){
         //dichiarazione delle variabili
         double n;
+        //controllo dell'input
         do{
             n = Double.parseDouble(JOptionPane.showInputDialog("Inserire un numero maggiore di 5"));
+            //messaggio di errore
             if(n <= 5){
                 JOptionPane.showMessageDialog(null, "Errore, inserire un valore maggiore di 5!");
             }
