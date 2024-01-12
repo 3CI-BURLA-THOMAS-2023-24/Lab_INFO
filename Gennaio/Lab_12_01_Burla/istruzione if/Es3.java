@@ -20,6 +20,10 @@ public class Es3{
                 JOptionPane.showMessageDialog(null, "Errore, la temperatura non può essere inferiore a -27.15 °C");
             }
         }while(celsius < (-273.15));
-        
+        //conversione
+        kelvin = celsius + 273.15;
+        fahrenheit = (9.0 / 5.0 * celsius) + 32;
+        //output
+        System.out.println("La temperatura convertita in Kelvin è: "+kelvin+"\nLa temperatura convertita in Fahrenheit è: "+fahrenheit);
     }
 }
