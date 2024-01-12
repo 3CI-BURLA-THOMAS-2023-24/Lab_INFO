@@ -4,7 +4,7 @@
  * @version 1.0
  */
 import java.util.Scanner;
-public class Media{
+public class Es1{
     public static void main(String args[]){
         //doichiaro le variabili
         int n;
