@@ -16,20 +16,26 @@ public class Es2{
             if((val1 <= 0) || (val2 <= 0)){
                 JOptionPane.showMessageDialog(null, "Errore, inserire solo numeri interi positivi!");
             }
-            }while((val1 <= 0) || (val2 <= 0));
+        }while((val1 <= 0) || (val2 <= 0));
+        //controllo se i numeri sono uguali
+        if(val1 == val2){
+            JOptionPane.showMessageDialog(null, "I due numeri sono uguali");
+        }
         //nella variabile val1 facccio in modo che ci sia sempre il numero maggiore
-        if(val2 > val1){
+        else{
+            if(val2 > val1){
             scambio = val1;
             val1 = val2;
             val2 = scambio;
-        }
-        //controllo se val1 è multiplo di val2
-        if((val1 % val2) == 0){
-        //output
-           JOptionPane.showMessageDialog(null, "Il numero maggiore è multiplo del minore");
-        }else{
+            }
+            //controllo se val1 è multiplo di val2
+            if((val1 % val2) == 0){
             //output
-            JOptionPane.showMessageDialog(null, "Il numero maggiore NON è multiplo del minore");
+               JOptionPane.showMessageDialog(null, "Il numero maggiore è multiplo del minore");
+            }else{
+                //output
+                JOptionPane.showMessageDialog(null, "Il numero maggiore NON è multiplo del minore");
+            }
         }
     }
 }
