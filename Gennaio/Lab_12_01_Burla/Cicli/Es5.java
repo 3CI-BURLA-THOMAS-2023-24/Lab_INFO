@@ -1,4 +1,4 @@
-/*
+/**
  * Inserire due numeri interi da tastiera: n (n>2), val. 
    Il programma a questo punto deve chiedere all’utente di inserire n valori interi e verificare quanti di questi sono maggiori di val e quanti sono minori di val.
  *

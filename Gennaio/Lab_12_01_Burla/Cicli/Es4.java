@@ -1,4 +1,4 @@
-/*
+/**
  * Calcolare il prodotto tra due valori interi letti in input val1, val2 per somme successive
     Es 4 * 3 = 4+4+4
  *
