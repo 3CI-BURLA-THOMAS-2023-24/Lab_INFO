@@ -38,5 +38,6 @@ public class Es1{
         media = somma / n;
         //output
         System.out.println("La media dei voti è: "+media);
+        inp.close();
     }
 }
