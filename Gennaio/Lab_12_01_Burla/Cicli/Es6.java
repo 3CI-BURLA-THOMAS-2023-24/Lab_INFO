@@ -1,7 +1,7 @@
 /**
  * Scrivere un programma che stampi a video tutti i numeri pari compresi tra due estremi a e b letti da tastiera. Il programma deve dire anche quanti sono.
  * 
- * @author Thomas Burla
+ * @author Burla Thomas
  * @version 1.0
  */
 import java.util.Scanner;
