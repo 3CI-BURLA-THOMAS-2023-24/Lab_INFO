@@ -4,7 +4,7 @@
  * @author Burla Thomas
  * @version 1.0
  */
-import javax.swing.*;
+import javax.swing.JOptionPane;
 public class Es7{
     public static void main(String args[]){
         //dichiarazione delle variabili
