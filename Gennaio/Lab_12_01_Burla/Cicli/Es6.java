@@ -14,10 +14,16 @@ public class Es6 {
         counter = 0;
         //prendo in ingresso a e b
         Scanner input = new Scanner(System.in);
+        //controllo che b sia sempre il maggiore
+        do{
         System.out.println("Inserire l'estremo inferiore dell'intervallo");
         a = input.nextInt();
         System.out.println("Inserire l'estremo superiore dell'intervallo");
         b = input.nextInt();
+        if(b < a){
+            System.out.println("Errore! Il primo valore deve essere minore del secondo");
+        }
+        }while(b < a);
         //controllo se a è dispari o meno
         if((a % 2) == 0){
             //aggiungo 2 per far raggiungere ad a il successivo valore pari
