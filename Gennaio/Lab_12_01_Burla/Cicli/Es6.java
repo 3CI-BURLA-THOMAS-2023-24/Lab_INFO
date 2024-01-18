@@ -34,7 +34,7 @@ public class Es6 {
             pari = pari + 2;
             counter++;
         }
-        //uso il contatore del ciclo for per contare i numeri pari
+        //stampo quanti pari
         System.out.println("In tutto, i numeri pari sono: "+counter);
         input.close();
     }
