@@ -1,0 +1,51 @@
+Esercizi stringhe
+
+1. Estrarre da una stringa la sottostringa che va dalla posizione a alla posizione b comprese.
+
+2. Presa una stringa, separare ogni carattere con un trattino. (ciao ? c-i-a-o)
+
+3. Presa una stringa, modificarla in modo che il primo carattere sia ripetuto una volta, il
+
+secondo due, il terzo tre, e così via. (ciao ? ciiaaaoooo)
+
+4. Contare da quante parole è composta una stringa.
+
+5. Presi un nome ed un cognome, creare l’indirizzo email del marconi, formato dalla prima
+
+lettera del nome e dalle prime quattro del cognome, seguiti da
+
+@studenti.marconiverona.edu.it (mario rossi ? mross@ studenti.marconiverona.edu.it )
+
+6. Dato un indirizzo email, estrarre il dominio, cioè tutto ciò che segue il simbolo @
+
+( mross@ studenti.marconiverona.edu.it ? studenti.marconiverona.edu.it )
+
+7. Trasformare una stringa in modo che abbia l’iniziale maiuscola e tutte le altre lettere
+
+minuscole.
+
+9. Scrivere un programma per invertire una stringa.
+
+10. Scrivere un programma per eliminare la lettera ‘a’ da una stringa.
+
+11. Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
+
+
+
+13. Scrivere un programma che, letta una parola, sostituisca tutte le vocali con un asterisco.
+
+14. Scrivere un programma che, letta una parola, ne restituisca un'altra data da tutte le lettere
+
+in posizione pari seguite da tutte le lettere in posizione dispari della prima parola.
+
+15. Prese due parole, dire quale delle due ha più vocali.
+
+16. Letti una stringa e un carattere, dire se quella stringa contiene quel carattere.
+
+17. Letti una stringa e un carattere, dire qual è la prima posizione della stringa in cui compare
+
+quel carattere. Se esso non c’è, restituire -1.
+
+27. Prese due stringhe, stamparle in ordine alfabetico.
+
+30. Scrivere un programma che dica se una stringa è ordinata.
