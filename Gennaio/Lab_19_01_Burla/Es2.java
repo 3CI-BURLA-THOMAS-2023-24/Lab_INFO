@@ -8,7 +8,7 @@ import javax.swing.*;
 public class Es2{
     public static void main(String args[]){
         //dichiarazione delle variabili
-        String stringa, output, trattino, carattere;
+        String stringa, output, trattino;
         //inizializzazione variabili
         stringa = JOptionPane.showInputDialog("Inserire una stringa per visualizzare i suoi caratteri separati da un trattino");
         trattino = "-";
