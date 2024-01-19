@@ -1,33 +1,26 @@
-
 /**
- * Aggiungi qui una descrizione della classe Es1
+ * Estrarre da una stringa la sottostringa che va dalla posizione a alla posizione b comprese.
  * 
- * @author (il tuo nome) 
- * @version (un numero di versione o una data)
+ * @author Burla Thomas
+ * @version 1.0
  */
-public class Es1
-{
-    // variabili d'istanza - sostituisci l'esempio che segue con il tuo
-    private int x;
-
-    /**
-     * Costruttore degli oggetti di classe  Es1
-     */
-    public Es1()
-    {
-        // inizializza le variabili d'istanza
-        x = 0;
-    }
-
-    /**
-     * Un esempio di metodo - aggiungi i tuoi commenti
-     * 
-     * @param  y   un parametro d'esempio per un metodo
-     * @return     la somma di x e y
-     */
-    public int sampleMethod(int y)
-    {
-        // metti qui il tuo codice
-        return x + y;
+import javax.swing.JOptionPane;
+public class Es1{
+    public static void main(String args[]){
+        //dichiarazione delle variabili
+        int pos1, pos2, lunghezza;
+        String stringa, sottostringa;
+        sottostringa = "";
+        //inizilizzazione variabili
+        do{
+            pos1 = Integer.parseInt(JOptionPane.showInputDialog("Da qual posizione deve partire la sottostringa? DISCLAIMER: la posizione più a sinistra viene contata come posizione 0"));
+            pos2 = Integer.parseInt(JOptionPane.showInputDialog("In quale posizione deve finire la sottostringa? DISCLAIMER: la posizione più a sinistra viene contata come posizione 0"));
+            if((pos1 < 0) || (pos2 < pos1)){
+                JOptionPane.showMessageDialog(null, "ERRORE! Controlla di vaer inserito i numeri di posizione secondo le indicazioni");
+            }
+        }while((pos1 < 0) || (pos2 < pos1));
+        stringa = JOptionPane.showInputDialog("Inserire la stringa da cui si vuole estrarre la sottostringa");
+        sottostringa = stringa.substring(pos1, pos2 + 1);
+        JOptionPane.showMessageDialog(null, "La sottostringa è: "+sottostringa);
     }
 }
