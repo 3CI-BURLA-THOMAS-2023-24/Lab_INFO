@@ -10,15 +10,20 @@ public class Es13{
         //dichiarazione delle variabili
         String input, output;
         boolean errore;
-        //controllo che venga inserita solo una parola
+        //controllo che venga inserita solo una parola e che la stringa non sia vuota
         do{
             errore = false;
             input = JOptionPane.showInputDialog("Inserire una parola per sostituire le vocali con un asterisco");
-            //ripeto le operazioni finche non ho letto tutti i carattteri della stringa
-            for(int j = 0; j < input.length(); j++){
-                //se il carattere in posizione j è uno spazio, metto a true errore.
-                if((input.charAt(j)) == ' '){
-                    errore = true;
+            //controllo che la stringa non sia vuota
+            if(input.equals("")){
+                errore = true;
+            }else{
+                //ripeto le operazioni finche non ho letto tutti i carattteri della stringa
+                for(int j = 0; j < input.length(); j++){
+                    //se il carattere in posizione j è uno spazio o la stringa è vuota, metto a true errore.
+                    if(((input.charAt(j)) == ' ')){
+                        errore = true;
+                    }
                 }
             }
             //messaggio di avviso in caso di errore
