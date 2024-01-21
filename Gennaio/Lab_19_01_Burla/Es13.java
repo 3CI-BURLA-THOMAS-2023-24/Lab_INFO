@@ -9,7 +9,23 @@ public class Es13{
     public static void main(String args[]){
         //dichiarazione delle variabili
         String input, output;
-        input = JOptionPane.showInputDialog("Inserire una stringa per sostituire le r con le v");
+        boolean errore;
+        //controllo che venga inserita solo una parola
+        do{
+            errore = false;
+            input = JOptionPane.showInputDialog("Inserire una parola per sostituire le vocali con un asterisco");
+            //ripeto le operazioni finche non ho letto tutti i carattteri della stringa
+            for(int j = 0; j < input.length(); j++){
+                //se il carattere in posizione j è uno spazio, metto a true errore.
+                if((input.charAt(j)) == ' '){
+                    errore = true;
+                }
+            }
+            //messaggio di avviso in caso di errore
+            if(errore == true){
+                JOptionPane.showMessageDialog(null, "ERRORE! Inserire solo una parola");
+            }
+        }while(errore == true);
         output = "";
         //ripeto le operazioni finche non ho letto tutti i carattteri della stringa
         for(int i = 0; i < input.length(); i++){
