@@ -19,6 +19,7 @@ public class Es3{
                 output = output + input.charAt(i);
             }
         }
+        //output
         JOptionPane.showMessageDialog(null, output);
     }
 }
