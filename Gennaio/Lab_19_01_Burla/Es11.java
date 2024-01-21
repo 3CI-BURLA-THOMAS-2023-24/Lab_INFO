@@ -1,5 +1,5 @@
 /**
- * 11. Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
+ * Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
  * 
  * @author Burla Thomas
  * @version 1.0
