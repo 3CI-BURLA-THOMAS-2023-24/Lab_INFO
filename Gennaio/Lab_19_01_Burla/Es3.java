@@ -12,8 +12,13 @@ public class Es3{
         //inizializzazione variabili
         input = JOptionPane.showInputDialog("Inserire una stringa per visualizzare una nuova stringa con il primo carattere ripetuto una volta, il secondo due, il terzo tre, e così via");
         output = "";
-        for(int i = 0; i <= input.length(); i++){
-            
+        //ciclo per stampare tutti i caratteri della stringa
+        for(int i = 0; i < input.length(); i++){
+            //ciclo per stampare ciascun carattere della stringa in base alla sua posizione occupata
+            for(int j = i + 1; j > 0; j--){
+                output = output + input.charAt(i);
+            }
         }
+        JOptionPane.showMessageDialog(null, output);
     }
 }
