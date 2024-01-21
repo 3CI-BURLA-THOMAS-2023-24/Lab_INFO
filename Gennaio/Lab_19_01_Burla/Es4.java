@@ -10,8 +10,18 @@ public class Es4{
         //dichiarazione delle variabili
         String stringa;
         int counter;
+        char spazio = ' ';
         //inizializzazione delle variabili
         stringa = JOptionPane.showInputDialog("Inserire una stringa per contare da quante parole è composta");
-        counter = 0;
+        counter = 1;
+        //ripeto le operazioni finche non ho letto tutti i carattteri della stringa
+        for(int i = 0; i < stringa.length(); i++){
+            //se il carattere in posizione i è uno spazio incremento il contatore delle parole
+            if((stringa.charAt(i)) == spazio){
+                counter++;
+            }
+        }
+        //output
+        JOptionPane.showMessageDialog(null, counter);
     }
 }
