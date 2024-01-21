@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class Es1{
     public static void main(String args[]){
         //dichiarazione delle variabili
-        int pos1, pos2, lunghezza;
+        int pos1, pos2;
         String stringa, sottostringa;
         sottostringa = "";
         //inizilizzazione variabili
