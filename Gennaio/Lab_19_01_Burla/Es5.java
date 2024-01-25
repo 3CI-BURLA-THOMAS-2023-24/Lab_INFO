@@ -1,18 +1,20 @@
-import javax.swing.JOptionPane;
-
 /**
  * Presi un nome ed un cognome, creare l’indirizzo email del marconi, formato dalla prima lettera del nome e dalle prime quattro del cognome, seguiti da @studenti.marconiverona.edu.it (mario rossi:mross@ studenti.marconiverona.edu.it )
  * 
  * @author Thomas Burla
  * @version 1.0
  */
+import javax.swing.JOptionPane;
+import java.io.*;
 public class Es5{
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException{
         //dichiarazione delle variabili
         String nome, nomemail, cognome, cognomemail, mail;
         boolean errore;
         nomemail = "";
         cognomemail = "";
+        //preparo file di output
+        FileWriter fw = new FileWriter("Es5-6.txt");
         //controllo che la stringa del nome non sia vuota
         do{
             errore = false;
@@ -41,7 +43,8 @@ public class Es5{
         }
         //preparo la mail completa, assicurandomi di avere solo lettere minuscole
         mail = nomemail.toLowerCase() + "." + cognomemail.toLowerCase() + "@studenti.marconiverona.edu.it";
-        //output
-        JOptionPane.showMessageDialog(null, "MAIL-->"+mail);
+        //output su file
+        fw.write(mail);
+        fw.close();
     }
 }
