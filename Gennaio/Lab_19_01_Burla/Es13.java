@@ -20,7 +20,7 @@ public class Es13{
             }else{
                 //ripeto le operazioni finche non ho letto tutti i carattteri della stringa
                 for(int j = 0; j < input.length(); j++){
-                    //se il carattere in posizione j è uno spazio o la stringa è vuota, metto a true errore.
+                    //se il carattere in posizione j è uno spazio, metto a true errore.
                     if(((input.charAt(j)) == ' ')){
                         errore = true;
                     }
