@@ -1,7 +1,7 @@
 /**
  * Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.JOptionPane;

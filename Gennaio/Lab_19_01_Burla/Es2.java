@@ -1,7 +1,7 @@
 /**
  * Presa una stringa, separare ogni carattere con un trattino
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.*;

@@ -1,7 +1,7 @@
 /**
  * Contare da quante parole è composta una stringa.
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.JOptionPane;

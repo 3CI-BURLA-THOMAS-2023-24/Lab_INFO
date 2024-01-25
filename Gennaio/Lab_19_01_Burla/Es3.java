@@ -1,7 +1,7 @@
 /**
  * Presa una stringa, modificarla in modo che il primo carattere sia ripetuto una volta, il secondo due, il terzo tre, e così via.
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.JOptionPane;

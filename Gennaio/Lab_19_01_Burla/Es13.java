@@ -1,7 +1,7 @@
 /**
  * Scrivere un programma che, letta una parola, sostituisca tutte le vocali con un asterisco.
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.JOptionPane;

@@ -1,7 +1,7 @@
 /**
  * Estrarre da una stringa la sottostringa che va dalla posizione a alla posizione b comprese.
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.JOptionPane;

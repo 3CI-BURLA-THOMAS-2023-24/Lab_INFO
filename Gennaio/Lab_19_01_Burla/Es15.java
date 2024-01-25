@@ -1,7 +1,7 @@
 /**
  * Prese due parole, dire quale delle due ha più vocali.
  * 
- * @author Burla Thomas
+ * @author Thomas Burla
  * @version 1.0
  */
 import javax.swing.JOptionPane;
