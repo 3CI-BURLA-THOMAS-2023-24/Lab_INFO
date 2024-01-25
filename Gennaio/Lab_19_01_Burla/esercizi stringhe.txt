@@ -20,13 +20,13 @@ lettera del nome e dalle prime quattro del cognome, seguiti da
 
 ( mross@ studenti.marconiverona.edu.it ? studenti.marconiverona.edu.it )
 
-7. Trasformare una stringa in modo che abbia l’iniziale maiuscola e tutte le altre lettere
+*7. Trasformare una stringa in modo che abbia l’iniziale maiuscola e tutte le altre lettere
 
 minuscole.
 
 9. Scrivere un programma per invertire una stringa.
 
-10. Scrivere un programma per eliminare la lettera ‘a’ da una stringa.
+*10. Scrivere un programma per eliminare la lettera ‘a’ da una stringa.
 
 11. Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
 
@@ -34,18 +34,18 @@ minuscole.
 
 13. Scrivere un programma che, letta una parola, sostituisca tutte le vocali con un asterisco.
 
-14. Scrivere un programma che, letta una parola, ne restituisca un'altra data da tutte le lettere
+*14. Scrivere un programma che, letta una parola, ne restituisca un'altra data da tutte le lettere
 
 in posizione pari seguite da tutte le lettere in posizione dispari della prima parola.
 
 15. Prese due parole, dire quale delle due ha più vocali.
 
-16. Letti una stringa e un carattere, dire se quella stringa contiene quel carattere.
+*16. Letti una stringa e un carattere, dire se quella stringa contiene quel carattere.
 
-17. Letti una stringa e un carattere, dire qual è la prima posizione della stringa in cui compare
+*17. Letti una stringa e un carattere, dire qual è la prima posizione della stringa in cui compare
 
 quel carattere. Se esso non c’è, restituire -1.
 
-27. Prese due stringhe, stamparle in ordine alfabetico.
+*27. Prese due stringhe, stamparle in ordine alfabetico.
 
-30. Scrivere un programma che dica se una stringa è ordinata.
+*30. Scrivere un programma che dica se una stringa è ordinata.
