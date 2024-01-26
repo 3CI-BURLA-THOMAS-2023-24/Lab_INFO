@@ -15,13 +15,13 @@ public class Es1{
         int v[], l, somma, sommapp, sommad;
         //inizializzazione variabili
         somma = sommad = sommapp = 0;
-        //leggo l e controllo l'input
-        do{
-            l = Integer.parseInt(JOptionPane.showInputDialog("Quanti valori desideri utilizzare nel programma? Minimo 3 e massimo 10"));
-            if((l < 3) || (l > 10)){
-                JOptionPane.showMessageDialog(null, "ERRORE! Inserire un valore rispettando le indicazioni");
-            }
-        }while((l < 3) || (l > 10));
+            //leggo l e controllo l'input
+            do{
+                l = Integer.parseInt(JOptionPane.showInputDialog("Quanti valori desideri utilizzare nel programma? Minimo 3 e massimo 10"));
+                if((l < 3) || (l > 10)){
+                    JOptionPane.showMessageDialog(null, "ERRORE! Inserire un valore rispettando le indicazioni");
+                }
+            }while((l < 3) || (l > 10));
         //allocazione array
         v = new int[l];
         //leggo vettore con un cilo
