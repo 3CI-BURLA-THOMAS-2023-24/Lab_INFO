@@ -1,0 +1,18 @@
+Esercizio 1
+    • Leggere un valore l compreso tra 3 e 10
+    • Leggere un vettore di l elementi interi
+    • fare la somma di tutti i valori del vettore e visualizzare la somma
+    • fare la somma di tutti i valori dispari (sommad) e visualizzare il risultato
+    • fare la somma di tutti i valori in posizione pari (sommapp) e visualizzare il risultato
+
+Esercizio 2
+    • Leggere un valore l compreso tra 3 e 10
+    • leggere un vettore di l valori double corrispondenti ai voti di un alunno (voto compreso tra 3 e 10)
+    • calcolare e visualizzare la media dei voti
+    • dire se l'alunno è promosso o bocciato
+    • visualizzare il voto più basso e il voto più alto
+
+Esercizio 3 (ricerca)
+Leggere un vettore di l valori interi, vedi esercizio 1, leggere un valore intero k e dire se il valore è presente nel vettore
+
+La cartella che contiene il progetto si dovrà chiamare Lab_data_array_cognome, gli esercizi Es1, Es2,... nel primo commento dovrà comparire il testo dell'esercizio 
