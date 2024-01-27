@@ -40,9 +40,9 @@ in posizione pari seguite da tutte le lettere in posizione dispari della prima p
 
 15. Prese due parole, dire quale delle due ha più vocali.
 
-*16. Letti una stringa e un carattere, dire se quella stringa contiene quel carattere.
+16. Letti una stringa e un carattere, dire se quella stringa contiene quel carattere.
 
-*17. Letti una stringa e un carattere, dire qual è la prima posizione della stringa in cui compare
+17. Letti una stringa e un carattere, dire qual è la prima posizione della stringa in cui compare
 
 quel carattere. Se esso non c’è, restituire -1.
 
