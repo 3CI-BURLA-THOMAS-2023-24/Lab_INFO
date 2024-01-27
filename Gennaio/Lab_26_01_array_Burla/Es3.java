@@ -7,7 +7,7 @@
 import javax.swing.JOptionPane;
 public class Es3 {
     public static void main(String args[]){
-        //dichiarazione delle variabili
+        //dichiarazione delle variabili e inizializzazione
         int l, v[], k, counter = 0;
         boolean presente = false;
         boolean ripetuto;
