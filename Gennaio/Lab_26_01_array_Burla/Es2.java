@@ -31,14 +31,18 @@ public class Es2{
             //controllo input
             do{
                 voto[i] = Double.parseDouble(JOptionPane.showInputDialog("Inserire un voto compreso tra 3 e 10"));
+                if((voto[i] < 3) || (voto[i] > 10)){
+                    JOptionPane.showMessageDialog(null, "ERRORE! Inserire un valore rispettando i criteri.");
+                }
+                //calcolo la somma, usata poi per la me
             }while((voto[i] < 3) || (voto[i] > 10));
             //calcolo la somma, usata poi per la media
             somma = somma + voto[i];
-            //il primo array inserito viene di base considerato sia voto minimo che massimo
+            //il primo valore inserito viene di base considerato sia voto minimo che massimo
             if(i == 0){
                 min = voto[0];
                 max = voto[0];
-            //confronto gli array successivi
+            //confronto i valori successivi
             }else if((i != 0) && (i != (l))){
                 if(voto[i] > max){
                     max = voto[i];
