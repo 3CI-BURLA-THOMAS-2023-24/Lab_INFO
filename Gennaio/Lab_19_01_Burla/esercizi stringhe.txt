@@ -20,13 +20,13 @@ lettera del nome e dalle prime quattro del cognome, seguiti da
 
 ( mross@ studenti.marconiverona.edu.it ? studenti.marconiverona.edu.it )
 
-*7. Trasformare una stringa in modo che abbia l’iniziale maiuscola e tutte le altre lettere
+7. Trasformare una stringa in modo che abbia l’iniziale maiuscola e tutte le altre lettere
 
 minuscole.
 
 9. Scrivere un programma per invertire una stringa.
 
-*10. Scrivere un programma per eliminare la lettera ‘a’ da una stringa.
+10. Scrivere un programma per eliminare la lettera ‘a’ da una stringa.
 
 11. Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
 
