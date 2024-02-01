@@ -46,6 +46,6 @@ in posizione pari seguite da tutte le lettere in posizione dispari della prima p
 
 quel carattere. Se esso non c’è, restituire -1.
 
-*27. Prese due stringhe, stamparle in ordine alfabetico.
+27. Prese due stringhe, stamparle in ordine alfabetico.
 
-*30. Scrivere un programma che dica se una stringa è ordinata.
+30. Scrivere un programma che dica se una stringa è ordinata.
