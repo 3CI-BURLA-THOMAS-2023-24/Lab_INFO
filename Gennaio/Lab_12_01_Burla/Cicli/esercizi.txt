@@ -16,8 +16,8 @@ Es 4 * 3 = 4+4+4
 
 7) Scrivere un programma che legga un carattere finché l’utente digita ‘s’ oppure ‘n’. In questo caso stampa OK.
 
-*8) Scrivere un programma che legga da tastiera una sequenza di lunghezza ignota a priori di numeri interi positivi. Il programma, a partire dal primo numero introdotto, stampa ogni volta la media di tutti i numeri introdotti e quanti sono. Terminare quando il numero inserito è minore o uguale a zero.
+8) Scrivere un programma che legga da tastiera una sequenza di lunghezza ignota a priori di numeri interi positivi. Il programma, a partire dal primo numero introdotto, stampa ogni volta la media di tutti i numeri introdotti e quanti sono. Terminare quando il numero inserito è minore o uguale a zero.
 
-*9)Un palindromo è un numero che, da sinistra a destra e da destra verso sinistra, si legge nello stesso modo. Scrivere un programma che dato un intero determini se si tratta o no di un palindromo.
+9)Un palindromo è un numero che, da sinistra a destra e da destra verso sinistra, si legge nello stesso modo. Scrivere un programma che dato un intero determini se si tratta o no di un palindromo.
 
 *10) Si scriva un programma per convertire un numero binario in decimale e viceversa
