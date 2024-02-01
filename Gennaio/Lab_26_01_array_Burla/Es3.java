@@ -22,10 +22,10 @@ public class Es3 {
         v = new int[l];
         //lettura valori array
         for(int i = 0; i < l; i++){
+            //controllo che non venga inserito un valore già presente
             do{
                 ripetuto = false;
                 v[i] = Integer.parseInt(JOptionPane.showInputDialog("Inserire un valore intero"));
-                //controllo che non venga inserito un valore già presente
                 for(int j = 0; j < i; j++){
                     if(v[i] == v[j]){
                         ripetuto = true;
