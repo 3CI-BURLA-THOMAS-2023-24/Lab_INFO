@@ -62,5 +62,6 @@ public class Es27 {
                     System.out.println(input1);
                     break;
         }
+        input.close();
     }
 }
