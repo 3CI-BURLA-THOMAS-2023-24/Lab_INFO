@@ -15,8 +15,7 @@ public class Es2{
         int l;
         double voto[], media, max, min, somma;
         //inizializzazione variabili
-        media = somma = max = 0.0;
-        min = 0.0;
+        media = somma = max = min = 0.0;
         //leggo l e controllo l'input
         do{
             l = Integer.parseInt(JOptionPane.showInputDialog("Quanti voti desideri inserire? Minimo 3 e massimo 10"));
@@ -34,7 +33,6 @@ public class Es2{
                 if((voto[i] < 3) || (voto[i] > 10)){
                     JOptionPane.showMessageDialog(null, "ERRORE! Inserire un valore rispettando i criteri.");
                 }
-                //calcolo la somma, usata poi per la me
             }while((voto[i] < 3) || (voto[i] > 10));
             //calcolo la somma, usata poi per la media
             somma = somma + voto[i];
@@ -43,7 +41,7 @@ public class Es2{
                 min = voto[0];
                 max = voto[0];
             //confronto i valori successivi
-            }else if((i != 0) && (i != (l))){
+            }else if(i != 0){
                 if(voto[i] > max){
                     max = voto[i];
                 }else if(voto[i] < min){
