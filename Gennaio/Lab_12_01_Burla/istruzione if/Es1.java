@@ -1,5 +1,5 @@
 /**
- * leggere in input gli anni di una persona e dire se è maggiorenne o minorenne (se anni <0 o >120 visualizzare ERRORE)
+ * leggere in input gli anni di una persona e dire se ï¿½ maggiorenne o minorenne (se anni <0 o >120 visualizzare ERRORE)
  * 
  * @author Burla Thomas
  * @version 1.0
@@ -12,7 +12,7 @@ public class Es1{
         //controllo dell'input
         Scanner inp = new Scanner(System.in);
         do{
-            System.out.println("Inserire un'età per verificare se la persona è maggiorenne o minorenne");
+            System.out.println("Inserire un'etÃ  per verificare se la persona Ã¨ maggiorenne o minorenne");
             anni = inp.nextInt();
             //messaggi di eventuale errore
             if((anni < 0) || (anni > 120)){
@@ -25,5 +25,6 @@ public class Es1{
         }else{
             System.out.println("Minorenne");
         }
+        inp.close();
     }
 }
