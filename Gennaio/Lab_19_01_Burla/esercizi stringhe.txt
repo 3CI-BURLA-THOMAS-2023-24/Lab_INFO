@@ -34,7 +34,7 @@ minuscole.
 
 13. Scrivere un programma che, letta una parola, sostituisca tutte le vocali con un asterisco.
 
-*14. Scrivere un programma che, letta una parola, ne restituisca un'altra data da tutte le lettere
+14. Scrivere un programma che, letta una parola, ne restituisca un'altra data da tutte le lettere
 
 in posizione pari seguite da tutte le lettere in posizione dispari della prima parola.
 
