@@ -9,7 +9,7 @@ Si ricordi che:
 Fahrenheit = (9/5) · Celsius + 32
 Kelvin = Celsius + 273,15
 
-*4)Leggere 3 numeri e metterli in ordine crescente
+4)Leggere 3 numeri e metterli in ordine crescente
 
-*5) Il programma legge tre numeri e dice se possono essere le lunghezze dei lati di un triangolo (perché un triangolo possa essere tale la somma di ogni coppia lati deve essere maggiore dell’altro). Se è un triangolo dire se il triangolo è scaleno, isoscele o equilatero
+5) Il programma legge tre numeri e dice se possono essere le lunghezze dei lati di un triangolo (perché un triangolo possa essere tale la somma di ogni coppia lati deve essere maggiore dell’altro). Se è un triangolo dire se il triangolo è scaleno, isoscele o equilatero
 (Nota bene, dice solo la tipologia più particolare, ovvero se è equilatero, dice solo che è equilatero e non anche che è isoscele)
