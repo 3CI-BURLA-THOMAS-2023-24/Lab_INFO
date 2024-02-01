@@ -29,7 +29,7 @@ public class Es1{
             v[i] = Integer.parseInt(JOptionPane.showInputDialog("Inserire un valore intero"));
             //sommo il vettore letto
             somma = somma + v[i];
-            //se il vettore letto è diapsri, sommo
+            //se il vettore letto è dispari, sommo
             if((v[i] % 2) != 0){
                 sommad = sommad + v[i];
             }
