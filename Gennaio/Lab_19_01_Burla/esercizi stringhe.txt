@@ -6,29 +6,29 @@ Esercizi stringhe
 
 3. Presa una stringa, modificarla in modo che il primo carattere sia ripetuto una volta, il
 
-secondo due, il terzo tre, e così via. (ciao ? ciiaaaoooo)
+secondo due, il terzo tre, e cosï¿½ via. (ciao ? ciiaaaoooo)
 
-4. Contare da quante parole è composta una stringa.
+4. Contare da quante parole ï¿½ composta una stringa.
 
-5. Presi un nome ed un cognome, creare l’indirizzo email del marconi, formato dalla prima
+5. Presi un nome ed un cognome, creare lï¿½indirizzo email del marconi, formato dalla prima
 
 lettera del nome e dalle prime quattro del cognome, seguiti da
 
 @studenti.marconiverona.edu.it (mario rossi ? mross@ studenti.marconiverona.edu.it )
 
-6. Dato un indirizzo email, estrarre il dominio, cioè tutto ciò che segue il simbolo @
+6. Dato un indirizzo email, estrarre il dominio, cioï¿½ tutto ciï¿½ che segue il simbolo @
 
 ( mross@ studenti.marconiverona.edu.it ? studenti.marconiverona.edu.it )
 
-7. Trasformare una stringa in modo che abbia l’iniziale maiuscola e tutte le altre lettere
+7. Trasformare una stringa in modo che abbia lï¿½iniziale maiuscola e tutte le altre lettere
 
 minuscole.
 
 9. Scrivere un programma per invertire una stringa.
 
-10. Scrivere un programma per eliminare la lettera ‘a’ da una stringa.
+10. Scrivere un programma per eliminare la lettera ï¿½aï¿½ da una stringa.
 
-11. Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ‘r’ con ‘v’.
+11. Scrivere un programma che realizzi la r moscia: in una stringa, sostituire tutte le ï¿½rï¿½ con ï¿½vï¿½.
 
 
 
@@ -38,14 +38,14 @@ minuscole.
 
 in posizione pari seguite da tutte le lettere in posizione dispari della prima parola.
 
-15. Prese due parole, dire quale delle due ha più vocali.
+15. Prese due parole, dire quale delle due ha piï¿½ vocali.
 
 16. Letti una stringa e un carattere, dire se quella stringa contiene quel carattere.
 
-17. Letti una stringa e un carattere, dire qual è la prima posizione della stringa in cui compare
+17. Letti una stringa e un carattere, dire qual ï¿½ la prima posizione della stringa in cui compare
 
-quel carattere. Se esso non c’è, restituire -1.
+quel carattere. Se esso non cï¿½ï¿½, restituire -1.
 
 27. Prese due stringhe, stamparle in ordine alfabetico.
 
-30. Scrivere un programma che dica se una stringa è ordinata.
+30. Scrivere un programma che dica se una stringa ï¿½ ordinata.
