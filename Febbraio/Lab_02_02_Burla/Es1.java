@@ -37,6 +37,6 @@ public class Es1{
         //prelevo la prima parola dalla stringa input1
         do{
             parola1 = parola1 + input1.charAt(counter1);
-        }while((input1.charAt(counter1) != ' ') && (counter1 < input1.length));
+        }while((input1.charAt(counter1) != ' ') && (counter1 < input1.length()));
     }
 }
