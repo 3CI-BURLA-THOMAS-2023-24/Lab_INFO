@@ -1,0 +1,11 @@
+1.Implementare un programma che lette tre stringhe realizza una stringa prendendo una parola dalla prima, una dalla seconda e una dalla terza alternativamente
+
+Leggere due vettori di interi e creare il vettore somma 
+
+es-->
+
+v1 -> 2 3 4 5 6
+
+v2 -> 1 2 1 2 3
+
+vs -> 3 5 5 7 9
