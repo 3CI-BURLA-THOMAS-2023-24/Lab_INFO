@@ -4,7 +4,7 @@
         ◦ nome (es. Alessio)
         ◦ cognome (es. Rossi) 
         ◦ scuola (es. ITI Marconi)
-	Il programma dovrà visualizzare "Ciao Alessio Rossi! La tua scuola è: ITI Marconi". 										0,5pt
+    Il programma dovrà visualizzare "Ciao Alessio Rossi! La tua scuola è: ITI Marconi".                                         0,5pt
  * 
  * @author Thomas Burla 
  * @version 1.0

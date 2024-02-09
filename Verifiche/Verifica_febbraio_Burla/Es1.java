@@ -1,8 +1,8 @@
 /**
- *     1. Programma che legge  un valore n >4, rileggerlo se non corretto, leggere n valori interi e visualizzare: 							     0,5 pt
-        ◦ i valori maggiori di 100		     			0,5 pt
-        ◦ i valori minori o uguali a 10	     			0,5 pt
-        ◦ i valori divisibili per 8					0,5 pt
+ *     1. Programma che legge  un valore n >4, rileggerlo se non corretto, leggere n valori interi e visualizzare:                                  0,5 pt
+        ◦ i valori maggiori di 100                         0,5 pt
+        ◦ i valori minori o uguali a 10                     0,5 pt
+        ◦ i valori divisibili per 8                    0,5 pt
 
  * 
  * @author Thomas Burla 
