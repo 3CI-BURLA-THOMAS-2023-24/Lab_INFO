@@ -1,0 +1,35 @@
+Verifica di laboratorio di informatica fila A
+
+    1. Programma per leggere un valore n > 3, rileggerlo se non corretto, leggere n valori interi e visualizzare: 							     0,5 pt
+        ? i valori maggiori di 10		     			0,5 pt
+        ? i valori minori o uguali a 0		     			0,5 pt
+        ? i valori divisibili per 7					0,5 pt
+
+    2. Leggere due stringhe titolo_libro (es. “Saltatempo”), autore (es. “Benni”)
+    • creare una stringa ottenuta dalla concatenazione delle stringhe con gli opportuni spazi e visualizzare la stringa “Titolo e autore del libro:  Saltatempo Benni”												0,5pt
+    • creare una stringa contenente solo le vocali della stringa titolo_libro	1  pt
+
+    3. Leggere un valore n compreso tra 1 e 8						     0,5 pt
+        ? leggere un vettore di n valori double 			      			0,5 pt
+        ? visualizzare il vettore					      			0,5 pt
+        ? sommare i valori in posizione pari e calcolare e visualizzare la media	1    pt
+
+
+Esercizio squadra di calcio
+Realizzare un programma che memorizzi in due stringhe i nomi di due squadre di calcio
+      Creare due array, uno per squadra, con i goal delle prime 5 partite di ogni squadra
+Il programma in output mostrerà:
+    • La squadra vincente o il pareggio;
+    • Il numero di goal totali segnati da entrambe le squadre
+Es:
+s1? ”Verona” 
+s2 ? ”Chievo”
+vs1 ? 2, 0, 1, 1, 0
+vs2 ? 1, 1, 0, 0, 1
+Output ? “Vince il Verona con 4 goal” Punti Chievo: 3
+
+Esercizio squadra di calcio 2 pt
+1 pt per commenti
+1pt corretta indentazione
+Nome progetto: Verifica_febbraio_cognome
+Nome classi: Es1, Es2...
