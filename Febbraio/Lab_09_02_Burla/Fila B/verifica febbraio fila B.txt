@@ -1,0 +1,29 @@
+Verifica di laboratorio di informatica fila B
+
+    1. Programma che legge  un valore n >4, rileggerlo se non corretto, leggere n valori interi e visualizzare: 							     0,5 pt
+        ? i valori maggiori di 100		     			0,5 pt
+        ? i valori minori o uguali a 10	     			0,5 pt
+        ? i valori divisibili per 8					0,5 pt
+
+    2. Realizzare un programma che acquisisca da tastiera tre stringhe, 
+        ? nome (es. Alessio)
+        ? cognome (es. Rossi) 
+        ? scuola (es. ITI Marconi)
+	Il programma dovrà visualizzare "Ciao Alessio Rossi! La tua scuola è: ITI 	Marconi". 										0,5pt
+    3. Leggere una stringa, creare la seconda stringa senza gli spazi														1 pt											
+
+    4. Leggere un valore n compreso tra 1 e 5						     0,5 pt
+        ? leggere un vettore di n valori double 			      			0,5 pt
+        ? visualizzare il vettore					      			0,5 pt
+        ? sommare i valori pari e calcolare e visualizzare la media 			1    pt
+
+
+Esercizio miglior tempo
+Bob decide di gareggiare per la «10km for fun», gara che si tiene a Roma nel mese di novembre. In vista della gara decide di cronometrarsi durante gli allenamenti del mese di ottobre e registrare quanto tempo impiega a percorrere 10km. Si realizzi un programma che permetta a Bob di inserire i tempi registrati in un mese (indicato in minuti) e che indichi quale sia il tempo migliore ed il peggiore che si sono ottenuti durante questi allenamenti, quante volte ha fatto il peggior tempo.
+Nb. i tempi registrati non dovranno essere minori di 30 e non dovranno essere maggiori di 60.
+
+Esercizio squadra di miglior tempo2 pt
+1 pt per commenti
+1pt corretta indentazione
+Nome progetto: Verifica_febbraio_cognome
+Nome classi: Es1, Es2...
