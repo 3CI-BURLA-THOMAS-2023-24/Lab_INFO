@@ -1,7 +1,7 @@
 /**
- * Leggere due stringhe titolo_libro (es. “Saltatempo”), autore (es. “Benni”)
-    • creare una stringa ottenuta dalla concatenazione delle stringhe con gli opportuni spazi e visualizzare la stringa “Titolo e autore del libro:  Saltatempo Benni”	          0,5pt
-    • creare una stringa contenente solo le vocali della stringa titolo_libro	                                                                                                  1  pt
+ * Leggere due stringhe titolo_libro (es. Saltatempo), autore (es. Benni)
+    - creare una stringa ottenuta dalla concatenazione delle stringhe con gli opportuni spazi e visualizzare la stringa Titolo e autore del libro:  Saltatempo Benni	          0,5pt
+    - creare una stringa contenente solo le vocali della stringa titolo_libro	                                                                                                  1  pt
  * 
  * @author Thomas Burla 
  * @version 1.0
@@ -11,7 +11,7 @@ public class Es2{
     public static void main(String args[]){
         //dichiarazione variabili
         String titolo_libro, autore, concat, soloVocali, min;
-        //inizializzazioen variabilix
+        //inizializzazione variabili
         soloVocali = "";
         //leggo e controllo la stringa titolo_libro
         do{
@@ -33,7 +33,6 @@ public class Es2{
         min = titolo_libro.toLowerCase();
         //creo la stringa che contiene solo le vocali del titolo del libro
         for(int i = 0; i < titolo_libro.length(); i++){
-            //preparo una stringa che contiene solo minuscole
             switch (min.charAt(i)){
                 case 'a':
                 case 'e':
