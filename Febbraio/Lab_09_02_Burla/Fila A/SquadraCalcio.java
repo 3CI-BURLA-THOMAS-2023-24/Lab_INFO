@@ -5,11 +5,11 @@
         • La squadra vincente o il pareggio;
         • Il numero di goal totali segnati da entrambe le squadre
     Es:
-    s1 : ”Verona” 
-    s2 : ”Chievo”
+    s1 : Verona
+    s2 : Chievo
     vs1 : 2, 0, 1, 1, 0
     vs2 : 1, 1, 0, 0, 1
-    Output : “Vince il Verona con 4 goal” Punti Chievo: 3
+    Output : Vince il Verona con 4 goal Punti Chievo: 3
 
     Esercizio squadra di calcio 2 pt
  *
