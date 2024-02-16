@@ -1,7 +1,7 @@
 /**
  * Leggere due stringhe titolo_libro (es. Saltatempo), autore (es. Benni)
-    - creare una stringa ottenuta dalla concatenazione delle stringhe con gli opportuni spazi e visualizzare la stringa Titolo e autore del libro:  Saltatempo Benni	          0,5pt
-    - creare una stringa contenente solo le vocali della stringa titolo_libro	                                                                                                  1  pt
+    - creare una stringa ottenuta dalla concatenazione delle stringhe con gli opportuni spazi e visualizzare la stringa Titolo e autore del libro:  Saltatempo Benni              0,5pt
+    - creare una stringa contenente solo le vocali della stringa titolo_libro                                                                                                      1  pt
  * 
  * @author Thomas Burla 
  * @version 1.0

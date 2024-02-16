@@ -1,8 +1,8 @@
 /**
- * Leggere un valore n compreso tra 1 e 8						                                                     0,5 pt
-        - leggere un vettore di n valori double 			      			                                         0,5 pt
-        - visualizzare il vettore					      			                                                 0,5 pt
-        - sommare i valori in posizione pari e calcolare e visualizzare la media	                                                         1 pt
+ * Leggere un valore n compreso tra 1 e 8                                                                             0,5 pt
+        - leggere un vettore di n valori double                                                                        0,5 pt
+        - visualizzare il vettore                                                                                       0,5 pt
+        - sommare i valori in posizione pari e calcolare e visualizzare la media                                                             1 pt
  * 
  * @author Thomas Burla 
  * @version 1.0

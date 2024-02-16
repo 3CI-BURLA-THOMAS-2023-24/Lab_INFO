@@ -1,8 +1,8 @@
 /**
  * Programma per leggere un valore n > 3, rileggerlo se non corretto, leggere n valori interi e visualizzare:       0,5 pt
-        - i valori maggiori di 10		     			                                                            0,5 pt
-        - i valori minori o uguali a 0		     			                                                        0,5 pt
-        - i valori divisibili per 7					                                                                0,5 pt
+        - i valori maggiori di 10                                                                                     0,5 pt
+        - i valori minori o uguali a 0                                                                                 0,5 pt
+        - i valori divisibili per 7                                                                                    0,5 pt
  *
  * @author Thomas Burla
  * @version 1.0
