@@ -9,13 +9,14 @@ import javax.swing.JOptionPane;
 public class CodiceFiscale{
     public static void main(String args[]){
         //dichiarazione variabili
-        String nome, cognome, luogo_n, provincia_n, data_n, sesso, nome_max, cognome_max, nome_fisc, cognome_fisc, anno_fisc;
+        String nome, cognome, luogo_n, provincia_n, sesso, nome_max, cognome_max, nome_fisc, cognome_fisc, anno_fisc, anno_str, mese, giorno_str, data_n;
         //variabili per il controllo della data
-        int gg, mm, aaaa;
+        int gg, mm, aaaa, counter_nome = 0, counter_cognome = 0;;
         boolean data = false;
         //inizializzazione variabili
         nome_fisc = "";
         cognome_fisc = "";
+        mese = "";
         //leggo e controllo il nome
         do{
             nome = JOptionPane.showInputDialog("Inserire il nome");
@@ -53,18 +54,19 @@ public class CodiceFiscale{
                 JOptionPane.showMessageDialog(null, "ERRORE di input!");
             }
         }while(((nome.equals("")) || ((nome.charAt(0)) == ' ')) || ((!(sesso.equals("maschio"))) && (!(sesso.equals("femmina")))));
-        //leggo e controllo data
+        //leggo e controllo data + converto il mese in lettera secondo lo standard
         do{
             do{
-              gg = Integer.parseInt(JOptionPane.showInputDialog("Inserire un giorno. Accettati solo numeri interi e positivi"));
-              mm = Integer.parseInt(JOptionPane.showInputDialog("Inserire il numero di un mese per verificare se la data è valida. Accettati solo numeri interi e positivi"));
-              aaaa = Integer.parseInt(JOptionPane.showInputDialog("Inserire l'anno. Accettati solo numeri interi e positivi."));
+              gg = Integer.parseInt(JOptionPane.showInputDialog("Inserire il giorno di nascita"));
+              mm = Integer.parseInt(JOptionPane.showInputDialog("Inserire il mese di nascita"));
+              aaaa = Integer.parseInt(JOptionPane.showInputDialog("Inserire l'anno di nascita"));
               if((gg <= 0) || (mm <= 0) || (mm > 12) || (aaaa <=0 )){
                 JOptionPane.showMessageDialog(null, "Errore! Una data non può avere termini negativi o nulli");
               }
             }while((gg <= 0) || (mm <= 0) || (mm > 12) || (aaaa <=0 ));
             switch(mm){
                   case 1:
+                  mese = "A";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -73,6 +75,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 2:
+                  mese = "B";
                     if((aaaa % 4) == 0){
                       if(gg <= 29){
                         JOptionPane.showMessageDialog(null, "Data valida");
@@ -86,6 +89,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 3:
+                  mese = "C";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -94,6 +98,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 4:
+                  mese = "D";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -102,6 +107,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 5:
+                  mese = "E";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -110,6 +116,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 6:
+                  mese = "H";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -118,6 +125,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 7:
+                  mese = "L";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -126,6 +134,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 8:
+                  mese = "M";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -134,6 +143,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 9:
+                  mese = "P";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -142,6 +152,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 10:
+                  mese = "R";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -150,6 +161,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 11:
+                  mese = "S";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -158,6 +170,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 12:
+                  mese = "T";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -166,9 +179,10 @@ public class CodiceFiscale{
                     }
             }
         }while(data == false);
-        //ricavo le prime 3 lettere del codice fiscale, che derivano solitamente dalle prime 3 consonanti del cognome
+        //ricavo le prime 3 lettere del codice fiscale, che derivano solitamente dalle prime 3 consonanti del cognome e gestisco i casi particolari
         //converto il cognome in una stringa di sole maiuscole
         cognome_max = cognome.toUpperCase();
+        //caso generale
         for(int i = 0; (i < cognome_max.length()) && (cognome_fisc.length() <= 3); i++){
             switch(cognome_max.charAt(i)){
                 case 'A':
@@ -177,10 +191,26 @@ public class CodiceFiscale{
                 case 'O':
                 case 'U': break;
                 default : cognome_fisc = cognome_fisc.concat((cognome_max.charAt(i) + ""));
+                counter_cognome++;
             }
         }
-        while(cognome_fisc.length() < 3){
+        //caso in cui il cognome abbia più di 3 caratteri ma meno di 3 consonanti
+        if(cognome_max.length() >= 3){
+          for(int i = counter_cognome; i < 3; i++){
+            switch(cognome_max.charAt(i)){
+              case 'A':
+              case 'E':
+              case 'I':
+              case 'O':
+              case 'U': cognome_fisc = cognome_fisc.concat((cognome_max.charAt(i) + ""));
+                        break;
+            }
+          }
+        //caso in cui il cognome ha meno di 3 caratteri
+        }else{
+          while(cognome_fisc.length() < 3){
             cognome_fisc.concat("X");
+          }
         }
         //ricavo le successive 3 lettere del codice fiscale, che derivano solitamente dalle prime 3 consonanti del nome
         //converto il nome in una stringa di sole maiuscole
@@ -193,12 +223,41 @@ public class CodiceFiscale{
                 case 'O':
                 case 'U': break;
                 default : nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
+                counter_nome++;
             }
         }
-        while(nome_fisc.length() < 3){
+        //caso in cui il nome abbia più di 3 caratteri ma meno di 3 consonanti
+        if(nome_max.length() >= 3){
+          for(int i = counter_nome; i < 3; i++){
+            switch(nome_max.charAt(i)){
+              case 'A':
+              case 'E':
+              case 'I':
+              case 'O':
+              case 'U': nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
+                        break;
+            }
+          }
+        //caso in cui il nome ha meno di 3 caratteri
+        }else{
+          while(nome_fisc.length() < 3){
             nome_fisc.concat("X");
+          }
         }
-        //ricavo le ultime 2 cifre dell'anno che compongono il codice fiscale
-        anno_fisc = 
+        //ricavo in una stringa le ultime 2 cifre dell'anno che compongono il codice fiscale
+          //converto l'anno in stringa
+          anno_str = Integer.toString(aaaa);
+        anno_fisc = Integer.toString(anno_str.charAt(2) + anno_str.charAt(3));
+        //compongo giorno di nascita e lo trasformo in stringa
+        if(sesso.equals("maschio")){
+          giorno_str = Integer.toString(gg);
+        }else{
+          giorno_str = Integer.toString(gg + 40);
+        }
+        //compongo data di nascita
+        data_n = anno_fisc + mese + giorno_str;
+
+
+      JOptionPane.showMessageDialog(null, cognome_fisc + nome_fisc + data_n);
     }
 }
