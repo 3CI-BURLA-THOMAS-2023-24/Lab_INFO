@@ -9,14 +9,16 @@ import javax.swing.JOptionPane;
 public class CodiceFiscale{
     public static void main(String args[]){
         //dichiarazione variabili
-        String nome, cognome, luogo_n, provincia_n, sesso, nome_max, cognome_max, nome_fisc, cognome_fisc, anno_fisc, anno_str, mese, giorno_str, data_n;
+        String nome, cognome, luogo_n, provincia_n, sesso, nome_max, cognome_max, nome_fisc, cognome_fisc, anno_fisc, anno_str, mese, giorno_str, data_n, comune_n, controllo[], controllo_pari[], controllo_dispari[], codice_fisc;
         //variabili per il controllo della data
-        int gg, mm, aaaa, counter_nome = 0, counter_cognome = 0;;
+        int gg, mm, aaaa, counter_nome = 0, counter_cognome = 0, p, d;
         boolean data = false;
         //inizializzazione variabili
         nome_fisc = "";
         cognome_fisc = "";
         mese = "";
+        p = 0;
+        d = 0;
         //leggo e controllo il nome
         do{
             nome = JOptionPane.showInputDialog("Inserire il nome");
@@ -277,10 +279,38 @@ public class CodiceFiscale{
         }else{
           giorno_str = Integer.toString(gg + 40);
         }
-        
         //compongo data di nascita
         data_n = anno_fisc + mese + giorno_str;
-
+        //trasformo il contenuto della stringa dedicata al luogo di nascita in un'altra equivalente di sole minuscole
+        comune_n = luogo_n.toLowerCase();
+        //associo al comune di nascita il suo codice catastale
+        switch(luogo_n){
+          case "verona": comune_n = "L781";
+                         break;
+          case "desenzano del garda": comune_n = "D284";
+                                      break;
+          case "mozzecane": comune_n = "F789";
+                            break;
+          case "villafranca di verona": comune_n = "L949";
+                                        break;
+          default: JOptionPane.showMessageDialog(null, "ERRORE! Comune non ancora presente nella lista dei codici catastali");
+        }
+        //calcolo il codice fiscale parziale, che servirà per determinare l'ultima lettera del codice fiscale definitivo
+        codice_fisc = cognome_fisc + nome_fisc + data_n + comune_n;
+        //calcolo la lettera che costituisce il carattere di controllo
+        controllo = new String[codice_fisc.length() + 1];
+        controllo_pari = new String[7];
+        controllo_dispari = new String[8];
+        for(int i = 1; i <= codice_fisc.length(); i++){
+          controllo[i] = codice_fisc.charAt(i) + "";
+          if((i % 2) == 0){
+            controllo_pari[p] = controllo[i];
+            p++;
+          }else{
+            controllo_dispari[d] = controllo[i];
+            d++;
+          }
+        }
 
       JOptionPane.showMessageDialog(null, cognome_fisc + nome_fisc + data_n);
     }
