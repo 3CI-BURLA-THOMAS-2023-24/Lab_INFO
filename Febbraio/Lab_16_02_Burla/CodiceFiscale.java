@@ -212,7 +212,7 @@ public class CodiceFiscale{
             cognome_fisc.concat("X");
           }
         }
-        //ricavo le successive 3 lettere del codice fiscale, che derivano solitamente dalle prime 3 consonanti del nome
+        //ricavo le successive 3 lettere del codice fiscale, che derivano solitamente dalle prime 4 consonanti del nome, 3 se sono insufficienti
         //converto il nome in una stringa di sole maiuscole
         nome_max = nome.toUpperCase();
         for(int i = 0; (i < nome_max.length()) && (nome_fisc.length() <= 3); i++){
@@ -222,20 +222,39 @@ public class CodiceFiscale{
                 case 'I':
                 case 'O':
                 case 'U': break;
-                default : nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
-                counter_nome++;
+                default : if(counter_nome != 1){
+                            nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
+                          }
+                          counter_nome++;
             }
         }
-        //caso in cui il nome abbia più di 3 caratteri ma meno di 3 consonanti
+        //caso in cui il nome abbia più di 3 caratteri ma meno di 4 consonanti
         if(nome_max.length() >= 3){
-          for(int i = counter_nome; i < 3; i++){
-            switch(nome_max.charAt(i)){
-              case 'A':
-              case 'E':
-              case 'I':
-              case 'O':
-              case 'U': nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
-                        break;
+          if(counter_nome == 3){
+            nome_fisc = "";
+            counter_nome = 0;
+            for(int i = 0; (i < nome_max.length()) && (nome_fisc.length() <= 3); i++){
+              switch(nome_max.charAt(i)){
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U': break;
+                default : nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
+                counter_nome++;
+              }
+            }
+          //caso in cui il nome abbia più di 3 caratteri ma meno di 3 consonanti
+          }else{
+            for(int i = counter_nome - 1; i < 3; i++){
+              switch(nome_max.charAt(i)){
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U': nome_fisc = nome_fisc.concat((nome_max.charAt(i) + ""));
+                          break;
+              }
             }
           }
         //caso in cui il nome ha meno di 3 caratteri
@@ -245,15 +264,20 @@ public class CodiceFiscale{
           }
         }
         //ricavo in una stringa le ultime 2 cifre dell'anno che compongono il codice fiscale
-          //converto l'anno in stringa
+          //converto l'anno in stringa, aggiungendo uno 0 per i numeri compresi tra 0 e 9 che mi porterebbero ad avere solo una cifra
           anno_str = Integer.toString(aaaa);
-        anno_fisc = Integer.toString(anno_str.charAt(2) + anno_str.charAt(3));
+        anno_fisc = ((anno_str.charAt(2)) + "").concat(anno_str.charAt(3) + "");
         //compongo giorno di nascita e lo trasformo in stringa
         if(sesso.equals("maschio")){
+          if((gg >= 1) && (gg <= 9)){
+            giorno_str = "0".concat(Integer.toString(gg));
+          }else{
           giorno_str = Integer.toString(gg);
+          }
         }else{
           giorno_str = Integer.toString(gg + 40);
         }
+        
         //compongo data di nascita
         data_n = anno_fisc + mese + giorno_str;
 
