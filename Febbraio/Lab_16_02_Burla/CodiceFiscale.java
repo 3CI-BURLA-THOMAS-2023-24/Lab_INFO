@@ -66,7 +66,7 @@ public class CodiceFiscale{
             }while((gg <= 0) || (mm <= 0) || (mm > 12) || (aaaa <=0 ));
             switch(mm){
                   case 1:
-                  mese = "A";
+                    mese = "A";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -75,7 +75,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 2:
-                  mese = "B";
+                    mese = "B";
                     if((aaaa % 4) == 0){
                       if(gg <= 29){
                         JOptionPane.showMessageDialog(null, "Data valida");
@@ -89,7 +89,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 3:
-                  mese = "C";
+                    mese = "C";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -98,7 +98,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 4:
-                  mese = "D";
+                    mese = "D";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -107,7 +107,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 5:
-                  mese = "E";
+                    mese = "E";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -116,7 +116,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 6:
-                  mese = "H";
+                    mese = "H";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -125,7 +125,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 7:
-                  mese = "L";
+                    mese = "L";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -134,7 +134,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 8:
-                  mese = "M";
+                    mese = "M";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -143,7 +143,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 9:
-                  mese = "P";
+                    mese = "P";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -152,7 +152,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 10:
-                  mese = "R";
+                    mese = "R";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -161,7 +161,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 11:
-                  mese = "S";
+                    mese = "S";
                     if(gg <= 30){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -170,7 +170,7 @@ public class CodiceFiscale{
                     }
                     break;
                   case 12:
-                  mese = "T";
+                    mese = "T";
                     if(gg <= 31){
                       JOptionPane.showMessageDialog(null, "Data valida");
                       data = true;
@@ -206,7 +206,7 @@ public class CodiceFiscale{
                         break;
             }
           }
-        //caso in cui il cognome ha meno di 3 caratteri
+          //caso in cui il cognome ha meno di 3 caratteri
         }else{
           while(cognome_fisc.length() < 3){
             cognome_fisc.concat("X");
@@ -244,7 +244,7 @@ public class CodiceFiscale{
                 counter_nome++;
               }
             }
-          //caso in cui il nome abbia più di 3 caratteri ma meno di 3 consonanti
+            //caso in cui il nome abbia più di 3 caratteri ma meno di 3 consonanti
           }else{
             for(int i = counter_nome - 1; i < 3; i++){
               switch(nome_max.charAt(i)){
@@ -257,7 +257,7 @@ public class CodiceFiscale{
               }
             }
           }
-        //caso in cui il nome ha meno di 3 caratteri
+          //caso in cui il nome ha meno di 3 caratteri
         }else{
           while(nome_fisc.length() < 3){
             nome_fisc.concat("X");
@@ -282,6 +282,6 @@ public class CodiceFiscale{
         data_n = anno_fisc + mese + giorno_str;
 
 
-      JOptionPane.showMessageDialog(null, cognome_fisc + nome_fisc + data_n);
+        JOptionPane.showMessageDialog(null, cognome_fisc + nome_fisc + data_n);
     }
 }
