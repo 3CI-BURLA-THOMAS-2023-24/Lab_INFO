@@ -1,0 +1,7 @@
+1) Implementare e consegnare gli algoritmi svolti a lezione:
+
+ricerca di un valore k in un array (presente/non presente)
+contare quante volte k è presente nell'array
+2) Leggere un array e un valore k, ordinare l'array, dire se k è presente nell'array
+
+3) Continuare l'esercizio del cf
