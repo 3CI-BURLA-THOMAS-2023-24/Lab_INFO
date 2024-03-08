@@ -297,6 +297,7 @@ public class CodiceFiscale{
                             break;
           case "villafranca di verona": comune_n = "L949";
                                         break;
+        
           default: JOptionPane.showMessageDialog(null, "ERRORE! Comune non ancora presente nella lista dei codici catastali");
         }
         //calcolo il codice fiscale parziale, che servirà per determinare l'ultima lettera del codice fiscale definitivo
