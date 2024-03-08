@@ -41,17 +41,17 @@ public class Es3{
         //cerco valore
         for(int i = 0; (i < l) && trovato == false; i++){
             //controllo se i/2 è uguale al valore da cercare
-            if((i / 2) == k){
+            if(v[l / 2] == k){
                 trovato = true;
-            }else if((i / 2) < k){
-                //se il valore da cercare è minore di i/2, cerco nell'intervallo inferiore
+            }else if(v[l / 2] < k){
+                //se il valore da cercare è minore del valore in posizione i/2, cerco nell'intervallo inferiore
                 for(int a = 0; (a < (i / 2)) && trovato == false; a++){
                     if(v[a] == k){
                         trovato = true;
                     }
                 }
             }else{
-                //se il valore da cercare è maggiore di i/2, cerco nell'intervallo superiore
+                //se il valore da cercare è maggiore del valore in posizione i/2, cerco nell'intervallo superiore
                 for(int a = (i / 2) + 1; (a < l) && trovato == false; a++){
                     if(v[a] == k){
                         trovato = true;
