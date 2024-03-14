@@ -2,16 +2,18 @@
  * 3) Implementare il gioco del Tris
  * 
  * @author Thomas Burla 
- * @version 1.0
+ * @version 2.0
  */
 import javax.swing.JOptionPane;
+import java.io.*;
 import java.util.*;
 public class Tris{
     public static void main(String args[]){
         //dichiarazione variabili
-        int n_riga, n_colonna, start, counter, k = 1, player = 0;
+        int n_riga, n_colonna, start, counter, k = 1, player = 0, salva;
         char tabellone[][];
         boolean win = false;
+        String nome = "";
         //inizializzazione variabili
         
         //estrazione di chi inizia
@@ -101,10 +103,41 @@ public class Tris{
             }
             System.out.println("");
         }while((win == false) && (k <= 9));
+        //output del vincitore
         if(win == true){
             JOptionPane.showMessageDialog(null, "Vince il giocatore "+player);
         }else{
             JOptionPane.showMessageDialog(null, "Nessun vincitore :(");
+        }
+        //chiedo all'utente se si vuole salvare in un file di testo il vincitore della prtita
+        salva = JOptionPane.showConfirmDialog(null, "Vuoi salvare l'esito della partita in un file di testo?", "Conferma", JOptionPane.YES_NO_CANCEL_OPTION);
+        //salvataggio su file del nome del vincitore
+        if(salva == JOptionPane.YES_OPTION){
+            try{
+                //chiedo il nome del file su cui salvare
+                nome = JOptionPane.showInputDialog("Inserire il nome del file con la relativa estensione su cui salvare il nome del vincitore. Inserire il file nello stesso path della suddetta classe");
+                File f = new File(nome);
+                //se il file NON esiste, lo creo
+                if(f.createNewFile()){
+                    JOptionPane.showMessageDialog(null, "NON esiste alcun file con questo nome. Sto generando un nuovo file...");
+                }
+                FileWriter fr = new FileWriter(f, true);
+                PrintWriter out = new PrintWriter(fr);
+                //scrivo su file
+                out.println("Vince il giocatore "+player);
+                //chiudo stream
+                out.close();
+                JOptionPane.showMessageDialog(null, "Esito salvato!");
+            //gestisco errori
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "ERRORE! Risultato NON salvato");
+            }
+        //nome del vincitore NON salvato
+        }else if(salva == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "L'esito NON è stato salvato");
+        //operazione annullata
+        }else{
+            JOptionPane.showMessageDialog(null, "Operazione annullata");
         }
     }
 }
