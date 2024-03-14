@@ -6,7 +6,7 @@
  */
 import javax.swing.JOptionPane;
 import java.util.*;
-public class Es3{
+public class Tris{
     public static void main(String args[]){
         //dichiarazione variabili
         int n_riga, n_colonna, start, counter, k = 1, player = 0;
@@ -31,14 +31,14 @@ public class Es3{
         do{
             //leggo in input la posizione di dove si vuole posizionare il segno
             do{
-                n_riga = Integer.parseInt(JOptionPane.showInputDialog("In quale riga si vuole posizionare il proprio segno?"));
-                n_colonna = Integer.parseInt(JOptionPane.showInputDialog("In quale colonna della suddetta riga si vuole inserire il segno"));
+                n_riga = Integer.parseInt(JOptionPane.showInputDialog("In quale riga si vuole posizionare il proprio segno? Contare le righe da 1 a 3."));
+                n_colonna = Integer.parseInt(JOptionPane.showInputDialog("In quale colonna della suddetta riga si vuole inserire il segno? Contare le colonne da 1 a 3."));
                 //caso in cui la cella sia già occupata
-                if(tabellone[n_riga - 1][n_colonna - 1] != '-'){
-                    JOptionPane.showMessageDialog(null, "Cella già occupata, sceglierne un'altra");
-                    //caso in cui la cella NON esista
-                }else if((n_riga > 3) || (n_riga < 1) || (n_colonna > 3) || (n_colonna < 1)){
+                if((n_riga > 3) || (n_riga < 1) || (n_colonna > 3) || (n_colonna < 1)){
                     JOptionPane.showMessageDialog(null, "Cella inesistente");
+                    //caso in cui la cella NON esista
+                }else if(tabellone[n_riga - 1][n_colonna - 1] != '-'){
+                    JOptionPane.showMessageDialog(null, "Cella già occupata, sceglierne un'altra");
                 }
             }while((n_riga > 3) || (n_riga < 1) || (n_colonna > 3) || (n_colonna < 1) || (tabellone[n_riga - 1][n_colonna - 1] != '-'));
             //in base a chi spetta posizionare, inserisco il X o O nella cella indicata precedentemente
@@ -48,11 +48,12 @@ public class Es3{
                 tabellone[n_riga - 1][n_colonna - 1] = 'O';
             }
             //controllo se qualcuno vince, però servono almeno 5 segni inseriti
-            while((k >= 5) || (win = false)){
+            if(k >= 5){
                 //controllo l'uguaglianza tra colonne
                 for(int c = 0; c < 3; c++){
                     if((tabellone [0][c] == tabellone [1][c]) && (tabellone [1][c] == tabellone [2][c])){
                     win = true;
+                    //controllo chi ha vinto
                     if(tabellone [0][c] == 'X'){
                         player = 1;
                     }else{
@@ -81,7 +82,7 @@ public class Es3{
                     }
                 }else if(((tabellone[2][0] == tabellone [1][1]) && (tabellone [1][1] == tabellone[0][2]))){
                     win = true;
-                    if(tabellone [0][0] == 'X'){
+                    if(tabellone [2][0] == 'X'){
                         player = 1;
                     }else{
                         player = 2;
@@ -100,6 +101,10 @@ public class Es3{
             }
             System.out.println("");
         }while((win == false) && (k <= 9));
-        JOptionPane.showMessageDialog(null, "Vince il giocatore "+player);
+        if(win == true){
+            JOptionPane.showMessageDialog(null, "Vince il giocatore "+player);
+        }else{
+            JOptionPane.showMessageDialog(null, "Nessun vincitore :(");
+        }
     }
 }
