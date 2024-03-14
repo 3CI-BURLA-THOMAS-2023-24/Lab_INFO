@@ -2,7 +2,7 @@
  * 3) Implementare il gioco del Tris
  * 
  * @author Thomas Burla 
- * @version 2.0
+ * @version 2.1
  */
 import javax.swing.JOptionPane;
 import java.io.*;
@@ -37,10 +37,10 @@ public class Tris{
                 n_colonna = Integer.parseInt(JOptionPane.showInputDialog("In quale colonna della suddetta riga si vuole inserire il segno? Contare le colonne da 1 a 3."));
                 //caso in cui la cella sia già occupata
                 if((n_riga > 3) || (n_riga < 1) || (n_colonna > 3) || (n_colonna < 1)){
-                    JOptionPane.showMessageDialog(null, "Cella inesistente");
+                    JOptionPane.showMessageDialog(null, "Cella inesistente" , "Errore" , JOptionPane.ERROR_MESSAGE);
                     //caso in cui la cella NON esista
                 }else if(tabellone[n_riga - 1][n_colonna - 1] != '-'){
-                    JOptionPane.showMessageDialog(null, "Cella già occupata, sceglierne un'altra");
+                    JOptionPane.showMessageDialog(null, "Cella già occupata, sceglierne un'altra" , "Errore" , JOptionPane.ERROR_MESSAGE);
                 }
             }while((n_riga > 3) || (n_riga < 1) || (n_colonna > 3) || (n_colonna < 1) || (tabellone[n_riga - 1][n_colonna - 1] != '-'));
             //in base a chi spetta posizionare, inserisco il X o O nella cella indicata precedentemente
@@ -119,18 +119,22 @@ public class Tris{
                 File f = new File(nome);
                 //se il file NON esiste, lo creo
                 if(f.createNewFile()){
-                    JOptionPane.showMessageDialog(null, "NON esiste alcun file con questo nome. Sto generando un nuovo file...");
+                    JOptionPane.showMessageDialog(null, "NON esiste alcun file con questo nome. Sto generando un nuovo file...", "Attenzione", JOptionPane.WARNING_MESSAGE);
                 }
                 FileWriter fr = new FileWriter(f, true);
                 PrintWriter out = new PrintWriter(fr);
                 //scrivo su file
-                out.println("Vince il giocatore "+player);
+                if(win == true){
+                    out.println("Vince il giocatore "+player);
+                }else{
+                    out.println("Nessun vincitore :(");
+                }
                 //chiudo stream
                 out.close();
                 JOptionPane.showMessageDialog(null, "Esito salvato!");
             //gestisco errori
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "ERRORE! Risultato NON salvato");
+                JOptionPane.showMessageDialog(null, "ERRORE! Risultato NON salvato", "Errore" , JOptionPane.ERROR_MESSAGE);
             }
         //nome del vincitore NON salvato
         }else if(salva == JOptionPane.NO_OPTION){
