@@ -1,0 +1,5 @@
+1) Rifare l'esercizio di ricerca di un valore in un array, utilizzando la ricerca dicotomica
+
+2) concludere l'esercizio cf
+
+3) Implementare il gioco del Tris
