@@ -132,14 +132,14 @@ public class Tris{
                 //chiudo stream
                 out.close();
                 JOptionPane.showMessageDialog(null, "Esito salvato!");
-            //gestisco errori
+                //gestisco errori
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "ERRORE! Risultato NON salvato", "Errore" , JOptionPane.ERROR_MESSAGE);
             }
-        //nome del vincitore NON salvato
+            //nome del vincitore NON salvato
         }else if(salva == JOptionPane.NO_OPTION){
             JOptionPane.showMessageDialog(null, "L'esito NON è stato salvato");
-        //operazione annullata
+            //operazione annullata
         }else{
             JOptionPane.showMessageDialog(null, "Operazione annullata");
         }
