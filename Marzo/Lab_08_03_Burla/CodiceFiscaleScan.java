@@ -3,7 +3,7 @@
    https://it.wikipedia.org/wiki/Codice_fiscale
 * 
 * @author Thomas Burla 
-* @version 1.0
+* @version 2.0
 */
 import java.io.*;
 import java.util.Scanner;
@@ -304,15 +304,18 @@ public class CodiceFiscaleScan{
             //uso la variabile comuneCompleto per gestire anche i comuni che hanno più di una parola nel nome
             comuneCompleto = "";
             for(int i = 0; i < lunghezzaComune.length; i++){
-              if(lunghezzaComune.length == verificacomune.length){
-                comuneCompleto = comuneCompleto + verificacomune[i + 1];
+              if(lunghezzaComune.length == (verificacomune.length - 3)){
+                if(i == 0){
+                  comuneCompleto = comuneCompleto + verificacomune[i + 1];
+                }else{
+                  comuneCompleto = comuneCompleto + " " + verificacomune[i + 1];
+                }
               }
             }
             //verifico se esiste un comune con il nome indicato dall'utente: in caso affermativo, assegno il corrispondente codice catastale
-            if(comuneCompleto == comune_n){
-              comune_n = verificacomune[0];
+            if(comuneCompleto.equals(comune_n)){
+              comune_n = verificacomune[0].toUpperCase();
               esisteComune = true;
-
             }
           }
           //calcolo il codice fiscale parziale, che servirà per determinare l'ultima lettera del codice fiscale definitivo
@@ -325,7 +328,7 @@ public class CodiceFiscaleScan{
           for(int i = 1; i <= codice_fisc.length(); i++){
             //divido i caratteri in due vettori in base al valore del numero di posizione
             if((i % 2) == 0){
-              controllo_pari[p] = codice_fisc.charAt(i - 1) + ""; //controllo[i];
+              controllo_pari[p] = codice_fisc.charAt(i - 1) + ""; 
               //in base al carattere in posizione pari, assegno un numero
               switch(controllo_pari[p]){
                 case "0": 
