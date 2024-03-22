@@ -23,7 +23,7 @@ public class Nomi{
                 }
             }while((nome.equals("")) && (nome.equals(" ")));
             file = file + ".html";
-            File f = new File(file);
+            File f = new File("D:/scuola/INI/Laboratorio/Lab_INFO/Marzo/Lab_22_03_Burla", file);
             //creo file se non esiste
             if(f.createNewFile()){
                 JOptionPane.showMessageDialog(null, "File non esistente, lo sto creando..." , "Creazione file" , JOptionPane.WARNING_MESSAGE);
