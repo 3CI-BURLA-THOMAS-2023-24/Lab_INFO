@@ -28,7 +28,7 @@ public class CodiceFiscaleScan{
         controllo_str = "";
         comuneCompleto = "";
         try{
-          File f = new File("D:/scuola/INI/Laboratorio/Lab_INFO/Marzo/Lab_08_03_Burla/codice_catastale.txt");
+          File f = new File("codice_catastale.txt");
           FileReader fr = new FileReader(f);
           Scanner leggoFile = new Scanner(fr);
           //leggo e controllo il nome
@@ -197,7 +197,7 @@ public class CodiceFiscaleScan{
           //converto il cognome in una stringa di sole maiuscole
           cognome_max = cognome.toUpperCase();
           //caso generale
-          for(int i = 0; (i < cognome_max.length()) && (cognome_fisc.length() <= 3); i++){
+          for(int i = 0; (i < cognome_max.length()) && (cognome_fisc.length() < 3); i++){
               switch(cognome_max.charAt(i)){
                   case 'A':
                   case 'E':
@@ -247,7 +247,7 @@ public class CodiceFiscaleScan{
             if(counter_nome == 3){
               nome_fisc = "";
               counter_nome = 0;
-              for(int i = 0; (i < nome_max.length()) && (nome_fisc.length() <= 3); i++){
+              for(int i = 0; (i < nome_max.length()) && (nome_fisc.length() < 3); i++){
                 switch(nome_max.charAt(i)){
                   case 'A':
                   case 'E':
