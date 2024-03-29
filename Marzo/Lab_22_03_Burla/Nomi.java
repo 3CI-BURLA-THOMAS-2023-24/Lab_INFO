@@ -28,7 +28,7 @@ public class Nomi{
             if(f.createNewFile()){
                 JOptionPane.showMessageDialog(null, "File non esistente, lo sto creando..." , "Creazione file" , JOptionPane.WARNING_MESSAGE);
             }
-            FileWriter fr = new FileWriter(f, true);
+            FileWriter fr = new FileWriter(f);
             PrintWriter out = new PrintWriter(fr);
             //preparo lo "scheletro" di html
             scrivo = "<!DOCTYPE html> \n <style> \n table,th,td { \n border: 2px solid black; \n background-color: white; \n text-align: center; \n} \n th { \n font-size: 50px; \n } \n table { \n width: 100%; \n } \n th { \n color: rgb(255, 160, 0); \n } \n td { \n width: 50% \n } </style> \n <body> \n <table><tr><th colspan=" + apici + "2" + apici + ">Nomi e cognomi</th></tr> \n <tr style=" + apici + "color:rgb(135, 66, 255); font-size: 30px" + apici + "><td>Nome</td><td font-size: 30px>Cognome</td></tr>";
@@ -56,6 +56,7 @@ public class Nomi{
             scrivo = "</body>";
             out.println(scrivo);
             out.flush();
+            out.close();
         }catch(IOException e){
             JOptionPane.showMessageDialog(null, "ERRORE FATALE di output" , "Errore fatale" , JOptionPane.ERROR_MESSAGE);
         }
