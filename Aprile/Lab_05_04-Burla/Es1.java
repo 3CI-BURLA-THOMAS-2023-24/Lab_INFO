@@ -9,7 +9,6 @@ public class Es1{
     public static void main(String args[]){
         //dichiarazione variabili
         String input;
-        int k = 0;
         boolean trovato = false;
         //leggo input e lo controllo
         do{
