@@ -15,10 +15,10 @@ public class Es1{
         //leggo input e lo controllo
         do{
             input = JOptionPane.showInputDialog("Inserire una stringa");
-            if((input.equals("")) && (input.equals(" "))){
+            if((input.equals("")) || (input.equals(" "))){
                 JOptionPane.showMessageDialog(null, "ERRORE! Stringa vuota" , "Errore", JOptionPane.ERROR_MESSAGE);
             }
-        }while((input.equals("")) && (input.equals(" ")));
+        }while((input.equals("")) || (input.equals(" ")));
         //alloco array
         inputChar = new char[input.length()];
         //divido i caratteri della stringa in un array
