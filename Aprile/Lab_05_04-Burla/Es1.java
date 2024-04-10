@@ -9,7 +9,6 @@ public class Es1{
     public static void main(String args[]){
         //dichiarazione variabili
         String input;
-        char inputChar[];
         int k = 0;
         boolean trovato = false;
         //leggo input e lo controllo
@@ -19,19 +18,10 @@ public class Es1{
                 JOptionPane.showMessageDialog(null, "ERRORE! Stringa vuota" , "Errore", JOptionPane.ERROR_MESSAGE);
             }
         }while((input.equals("")) || (input.equals(" ")));
-        //alloco array
-        inputChar = new char[input.length()];
-        //divido i caratteri della stringa in un array
-        for(int i = 0; i < input.length(); i++){
-            if(input.charAt(i) != ' '){
-                inputChar[k] = input.charAt(i);
-                k++;
-            }
-        }
         //cerco la parola anna
-        for(int i = 0; i < inputChar.length; i++){
-            if((inputChar[i] == 'a') && (i + 3 < inputChar.length)){
-                if(((inputChar[i + 1]) == 'n') && (inputChar[i + 2] == 'n') && (inputChar[i + 3] == 'a')){
+        for(int i = 0; i < input.length(); i++){
+            if((input.charAt(i) == 'a') && (i + 3 < input.length())){
+                if((input.charAt(i + 1) == 'n') && (input.charAt(i + 2) == 'n') && (input.charAt(i + 3) == 'a')){
                     trovato = true;
                 }
             }
