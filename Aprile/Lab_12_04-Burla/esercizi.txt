@@ -1,0 +1,11 @@
+Terminare gli esercizi assegnati precedentemente:
+
+Implementare i tre esercizi svolti in laboratorio: lettura di un file di testo carattere per carattere, lettura riga per riga, lettura file cs
+
+Esercizi di preparazione alla verifica
+Leggere una stringa e dire se contiene la parola "anna"
+Leggere una stringa e togliere tutti gli spazi
+Leggere un vettore di interi e dire quanti valori sono maggiori di 6
+Leggere un vettore di voti (da 3 a 10) e calcolare la media
+Leggere una matrice n x m di voti, leggere un array di n cognomi ad ogni cognome dell'array corrisponde una riga della matrice. Dire quale alunno ha la media dei voi più alta
+Scrivere un file di testo, leggere una parola, dire se la parola è presente nel file di testo
