@@ -43,7 +43,7 @@ public class Es6 {
                 paroleRiga = (leggoFile.nextLine()).split(" ");
                 //cerco la parola nell'array ottenuto precedentemente
                 for(int i = 0; (i < paroleRiga.length) && (trovato == false); i++){
-                    if(paroleRiga[i].equals(parola)){
+                    if((paroleRiga[i].equals(parola)) || (paroleRiga[i].equals(parola + ",")) || (paroleRiga[i].equals(parola + ";")) || (paroleRiga[i].equals(parola + ":")) || (paroleRiga[i].equals(parola + "!")) || (paroleRiga[i].equals(parola + "?"))){
                         trovato = true;
                         counter++;  //tengo conto di quante volte ho trovato la parola data
                         //semplice ciclo per evitare che la prima volta si stampi il ";" davanti al numero di riga

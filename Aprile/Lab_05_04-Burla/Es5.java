@@ -43,7 +43,7 @@ public class Es5 {
                     JOptionPane.showMessageDialog(null, "ERRORE! Uno studente NON può avere meno di 2 voti per il calcolo della media di quest'ultimi", "Errore", JOptionPane.ERROR_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Numero registrato", "Ok", JOptionPane.WARNING_MESSAGE);
-                    //controllo se il numero di voti dell'attuale studente è il maggiore; in caso affermativo lo assegno alla variabile che svolge il relativo compito
+                    //controllo se il numero di voti dell'attuale studente � il maggiore; in caso affermativo lo assegno alla variabile che svolge il relativo compito
                     if(nVoti[i] > max){
                         max = nVoti[i];
                     }
