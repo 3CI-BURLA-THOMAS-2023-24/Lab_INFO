@@ -58,6 +58,8 @@ public class Es6 {
             //output
             if(!(posizione.equals(""))){
                 JOptionPane.showMessageDialog(null, "La parola compare alla/e riga/he: "+posizione);
+            }else{
+                JOptionPane.showMessageDialog(null, "La parola NON è presente nel testo");
             }
             leggoFile.close();
         }catch(IOException e){
