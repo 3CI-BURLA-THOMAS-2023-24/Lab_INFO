@@ -52,6 +52,8 @@ public class LeggoChar{
             }else{
                 JOptionPane.showMessageDialog(null, "Parola NON trovata");
             }
+            //chiudo flusso
+            fr.close();
         }catch(IOException e){
             JOptionPane.showMessageDialog(null, "ERRORE di I/O", "Errore", JOptionPane.ERROR_MESSAGE);
         }
