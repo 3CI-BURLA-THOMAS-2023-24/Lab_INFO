@@ -7,7 +7,7 @@
 import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
-public class LeggoParola {
+public class LeggoRiga {
     public static void main(String args[]){
         //dichiarazione variabili
         String pathname, parola, paroleRiga[], posizione;
