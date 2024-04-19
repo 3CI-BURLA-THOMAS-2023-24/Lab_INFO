@@ -13,7 +13,7 @@ public class Es7{
         String pathname;
         String delimiter;
         String riga[];
-        ArrayList <Integer> somme = new ArrayList <Integer> ();
+        ArrayList <String[]> matrice = new ArrayList <String[]> ();
         String t;
         //leggo e controllo nome file
         do{
@@ -43,9 +43,15 @@ public class Es7{
                     riga[i] = riga[(riga.length - 1) - i];
                     riga[(riga.length - 1) - i] = t;
                 }
+                matrice.add(riga);
             }
             //output
-            
+            for(int r = 0; r < matrice.size(); r++){
+                for(int c = 0; c < (matrice.get(r)).length; c++){
+                    System.out.print("|" + ((matrice.get(r))[c]) + "|");
+                }
+                System.out.println(" ");
+            }
         }catch(IOException e){
             JOptionPane.showMessageDialog(null, "ERRORE di I/O", "Errore", JOptionPane.ERROR_MESSAGE);
         }
