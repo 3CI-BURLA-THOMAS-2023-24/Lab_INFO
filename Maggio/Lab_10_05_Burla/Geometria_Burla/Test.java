@@ -16,7 +16,6 @@ public class Test{
         double b = 0.0;
         double c = 0.0;
         double coefficienti[][] = new double[3][3];
-        double risultati[][] = new double[3][1];
         double terminiNoti[][] = new double[3][1];
         double detA = 0.0;
         double detB = 0.0;
@@ -63,10 +62,18 @@ public class Test{
         //calcolo determinante
         determinante = (coefficienti[0][0] * ((coefficienti[1][1] * coefficienti[2][2]) - (coefficienti[2][1] * coefficienti[1][2]))) - (coefficienti[0][1] * ((coefficienti[1][0] * coefficienti[2][2]) - (coefficienti[2][0] * coefficienti[1][2]))) + (coefficienti[0][2] * ((coefficienti[1][0] * coefficienti[2][1]) - (coefficienti[2][0] * coefficienti[1][1])));
         System.out.println(determinante);
-        //calcolo detA
+        //calcolo coefficiente a della circonferenza
         detA = (terminiNoti[0][0] * ((coefficienti[1][1] * coefficienti[2][2]) - (coefficienti[2][1] * coefficienti[1][2]))) - (coefficienti[0][1] * ((terminiNoti[1][0] * coefficienti[2][2]) - (terminiNoti[2][0] * coefficienti[1][2]))) + (coefficienti[0][2] * ((terminiNoti[1][0] * coefficienti[2][1]) - (terminiNoti[2][0] * coefficienti[1][1])));
         a = detA / determinante;
         System.out.println(a);
+        //calcolo coefficiente b della circonferenza
+        detB = (coefficienti[0][0] * ((terminiNoti[1][0] * coefficienti[2][2]) - (terminiNoti[2][0] * coefficienti[1][2]))) - (terminiNoti[0][0] * ((coefficienti[1][0] * coefficienti[2][2]) - (coefficienti[2][0] * coefficienti[1][2]))) + (coefficienti[0][2] * ((coefficienti[1][0] * terminiNoti[2][0]) - (coefficienti[2][0] * terminiNoti[1][0])));
+        b = detB / determinante;
+        System.out.println(b);
+        //calcolo coefficiente c della circonferenza
+        detC = (coefficienti[0][0] * ((coefficienti[1][1] * terminiNoti[2][0]) - (coefficienti[2][1] * terminiNoti[1][0]))) - (coefficienti[0][1] * ((coefficienti[1][0] * terminiNoti[2][0]) - (coefficienti[2][0] * terminiNoti[1][0]))) + (terminiNoti[0][0] * ((coefficienti[1][0] * coefficienti[2][1]) - (coefficienti[2][0] * coefficienti[1][1])));
+        c = detC / determinante;
+        System.out.println(c);
         //scrivo equazione della circonferenza
         circonferenza = "x^2 + y^2 + " + a + "x + " + b + "y + " + c + " = 0";
         JOptionPane.showMessageDialog(null, "I tre punti appartengono alla circonferenza di equazione: " + circonferenza);
