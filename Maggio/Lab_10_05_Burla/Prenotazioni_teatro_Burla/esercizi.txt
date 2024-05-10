@@ -1,0 +1,21 @@
+Implementare la classe Teatro
+
+attributi
+    -nome
+    -city
+    -n_posti
+
+metodi
+    -2 costruttori
+    -set/get/toString
+
+Biglietto
+    -prezzo
+    -numero_posto
+    -metodi opportuni
+
+Cliente
+    -nome
+    -cognome
+    -email
+    -metodi opportuni

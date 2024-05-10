@@ -1,0 +1,13 @@
+Implementare il progetto Geometria_cognome contenente le seguenti classi
+
+Punto
+    -attributi x, y
+    -un costruttore
+    -set/get
+    -toString
+
+La classe Test (main)
+    -Creare 3 oggetti Punto
+    -visualizzare le coordinate del punto1
+    -dire se ci sono due punti coincidenti
+    -...

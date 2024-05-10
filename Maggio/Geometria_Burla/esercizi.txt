@@ -1,6 +1,0 @@
-Implementare il progetto Geometria_cognome contenente le seguenti classi
-----Punto
-    attributi x, y
-    un costruttore
-    set/get
-    toString
