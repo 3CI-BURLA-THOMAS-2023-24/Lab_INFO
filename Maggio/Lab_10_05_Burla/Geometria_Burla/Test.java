@@ -11,11 +11,11 @@
 import javax.swing.JOptionPane;
 public class Test{
     public static void main(String args[]){
-        //coefficienti per calcolare l'equazione della circonferenza
+        //coefficientiCirconferenza per calcolare l'equazione della circonferenza
         double a = 0.0;
         double b = 0.0;
         double c = 0.0;
-        double coefficienti[][] = new double[3][3];
+        double coefficientiCirconferenza[][] = new double[3][3];
         double terminiNoti[][] = new double[3][1];
         double detA = 0.0;
         double detB = 0.0;
@@ -45,37 +45,38 @@ public class Test{
         }else if((s.getAscissa() == t.getAscissa()) && (s.getOrdinata() == t.getOrdinata())){
             JOptionPane.showMessageDialog(null, "Il punto T e il punto S sono coincidenti");
         }
-        //definisco matrice dei coefficienti (risolvo sistema con metodo della matrice inversa)
-        coefficienti[0][0] = p.getAscissa();
-        coefficienti[0][1] = p.getOrdinata();
-        coefficienti[1][0] = s.getAscissa();
-        coefficienti[1][1] = s.getOrdinata();
-        coefficienti[2][0] = t.getAscissa();
-        coefficienti[2][1] = t.getOrdinata();
+        //definisco matrice dei coefficienti per ricercare l'equazione della circonferenza (risolvo sistema con metodo di Cramer)
+        coefficientiCirconferenza[0][0] = p.getAscissa();
+        coefficientiCirconferenza[0][1] = p.getOrdinata();
+        coefficientiCirconferenza[1][0] = s.getAscissa();
+        coefficientiCirconferenza[1][1] = s.getOrdinata();
+        coefficientiCirconferenza[2][0] = t.getAscissa();
+        coefficientiCirconferenza[2][1] = t.getOrdinata();
         for(int r = 0; r < 3; r++){
-            coefficienti[r][2] = 1.0;
+            coefficientiCirconferenza[r][2] = 1.0;
         }
-        //definisco matrice dei termini noti
+        //definisco matrice dei termini noti per ricercare l'equazione della circonferenza
         terminiNoti[0][0] = -((p.getAscissa() * p.getAscissa()) + (p.getOrdinata() * p.getOrdinata()));
         terminiNoti[1][0] = -((s.getAscissa() * s.getAscissa()) + (s.getOrdinata() * s.getOrdinata()));
         terminiNoti[2][0] = -((t.getAscissa() * t.getAscissa()) + (t.getOrdinata() * t.getOrdinata()));
         //calcolo determinante
-        determinante = (coefficienti[0][0] * ((coefficienti[1][1] * coefficienti[2][2]) - (coefficienti[2][1] * coefficienti[1][2]))) - (coefficienti[0][1] * ((coefficienti[1][0] * coefficienti[2][2]) - (coefficienti[2][0] * coefficienti[1][2]))) + (coefficienti[0][2] * ((coefficienti[1][0] * coefficienti[2][1]) - (coefficienti[2][0] * coefficienti[1][1])));
+        determinante = (coefficientiCirconferenza[0][0] * ((coefficientiCirconferenza[1][1] * coefficientiCirconferenza[2][2]) - (coefficientiCirconferenza[2][1] * coefficientiCirconferenza[1][2]))) - (coefficientiCirconferenza[0][1] * ((coefficientiCirconferenza[1][0] * coefficientiCirconferenza[2][2]) - (coefficientiCirconferenza[2][0] * coefficientiCirconferenza[1][2]))) + (coefficientiCirconferenza[0][2] * ((coefficientiCirconferenza[1][0] * coefficientiCirconferenza[2][1]) - (coefficientiCirconferenza[2][0] * coefficientiCirconferenza[1][1])));
         System.out.println(determinante);
         //calcolo coefficiente a della circonferenza
-        detA = (terminiNoti[0][0] * ((coefficienti[1][1] * coefficienti[2][2]) - (coefficienti[2][1] * coefficienti[1][2]))) - (coefficienti[0][1] * ((terminiNoti[1][0] * coefficienti[2][2]) - (terminiNoti[2][0] * coefficienti[1][2]))) + (coefficienti[0][2] * ((terminiNoti[1][0] * coefficienti[2][1]) - (terminiNoti[2][0] * coefficienti[1][1])));
+        detA = (terminiNoti[0][0] * ((coefficientiCirconferenza[1][1] * coefficientiCirconferenza[2][2]) - (coefficientiCirconferenza[2][1] * coefficientiCirconferenza[1][2]))) - (coefficientiCirconferenza[0][1] * ((terminiNoti[1][0] * coefficientiCirconferenza[2][2]) - (terminiNoti[2][0] * coefficientiCirconferenza[1][2]))) + (coefficientiCirconferenza[0][2] * ((terminiNoti[1][0] * coefficientiCirconferenza[2][1]) - (terminiNoti[2][0] * coefficientiCirconferenza[1][1])));
         a = detA / determinante;
         System.out.println(a);
         //calcolo coefficiente b della circonferenza
-        detB = (coefficienti[0][0] * ((terminiNoti[1][0] * coefficienti[2][2]) - (terminiNoti[2][0] * coefficienti[1][2]))) - (terminiNoti[0][0] * ((coefficienti[1][0] * coefficienti[2][2]) - (coefficienti[2][0] * coefficienti[1][2]))) + (coefficienti[0][2] * ((coefficienti[1][0] * terminiNoti[2][0]) - (coefficienti[2][0] * terminiNoti[1][0])));
+        detB = (coefficientiCirconferenza[0][0] * ((terminiNoti[1][0] * coefficientiCirconferenza[2][2]) - (terminiNoti[2][0] * coefficientiCirconferenza[1][2]))) - (terminiNoti[0][0] * ((coefficientiCirconferenza[1][0] * coefficientiCirconferenza[2][2]) - (coefficientiCirconferenza[2][0] * coefficientiCirconferenza[1][2]))) + (coefficientiCirconferenza[0][2] * ((coefficientiCirconferenza[1][0] * terminiNoti[2][0]) - (coefficientiCirconferenza[2][0] * terminiNoti[1][0])));
         b = detB / determinante;
         System.out.println(b);
         //calcolo coefficiente c della circonferenza
-        detC = (coefficienti[0][0] * ((coefficienti[1][1] * terminiNoti[2][0]) - (coefficienti[2][1] * terminiNoti[1][0]))) - (coefficienti[0][1] * ((coefficienti[1][0] * terminiNoti[2][0]) - (coefficienti[2][0] * terminiNoti[1][0]))) + (terminiNoti[0][0] * ((coefficienti[1][0] * coefficienti[2][1]) - (coefficienti[2][0] * coefficienti[1][1])));
+        detC = (coefficientiCirconferenza[0][0] * ((coefficientiCirconferenza[1][1] * terminiNoti[2][0]) - (coefficientiCirconferenza[2][1] * terminiNoti[1][0]))) - (coefficientiCirconferenza[0][1] * ((coefficientiCirconferenza[1][0] * terminiNoti[2][0]) - (coefficientiCirconferenza[2][0] * terminiNoti[1][0]))) + (terminiNoti[0][0] * ((coefficientiCirconferenza[1][0] * coefficientiCirconferenza[2][1]) - (coefficientiCirconferenza[2][0] * coefficientiCirconferenza[1][1])));
         c = detC / determinante;
         System.out.println(c);
         //scrivo equazione della circonferenza
         circonferenza = "x^2 + y^2 + " + a + "x + " + b + "y + " + c + " = 0";
         JOptionPane.showMessageDialog(null, "I tre punti appartengono alla circonferenza di equazione: " + circonferenza);
+        
     }
 }
