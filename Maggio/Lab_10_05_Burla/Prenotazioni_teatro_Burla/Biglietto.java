@@ -20,7 +20,7 @@ public class Biglietto {
         this.titolare = "Sconosciuto";
     }
     //costruttore con parametri controllati
-    public Biglietto(double prezzo, int numero_posto, String titolare){
+    public Biglietto(double prezzo, int numero_posto, Cliente titolare){
         //prezzo
         if(prezzo > 0.0){
             this.prezzo = prezzo;
@@ -35,9 +35,7 @@ public class Biglietto {
         }
         //titolare
         if(titolare != null){
-            this.titolare = titolare;
-        }else{
-            this.titolare = "Sconosciuto";
+            this.titolare = titolare.getNome() + " " + titolare.getCognome();
         }
     }
     //set prezzo
@@ -73,9 +71,9 @@ public class Biglietto {
     //toString
     public String toString(){
         String out = "";
-        out += "Il prezzo del biglietto è: " + this.prezzo + "euro.";
+        out += "Il prezzo del biglietto è: " + this.prezzo + " euro.";
         out += "\n Il numero del posto è: " + this.numero_posto;
-        out += "\n Il nome del titolare è: " + this.titolare;
+        out += ".\n Il nome del titolare è: " + this.titolare;
         return out;
     }
 }

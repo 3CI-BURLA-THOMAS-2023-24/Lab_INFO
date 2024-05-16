@@ -11,6 +11,7 @@ public class Cliente {
     private String nome;
     private String cognome;
     private String email;
+    private int posto;
     //costruttore senza parametri
     public Cliente(){
         this.nome = "Sconosciuto";
@@ -37,6 +38,7 @@ public class Cliente {
         }else{
             this.email = "Sconosciuto";
         }
+        this.posto = 0;
     }
     //set nome
     public void setNome(String nome){
@@ -68,12 +70,23 @@ public class Cliente {
     public String getEmail(){
         return this.email;
     }
+    //set Posto
+    public void setPosto(Biglietto biglietto){
+        if(biglietto != null){
+            this.posto = biglietto.getNumero_posto();
+        }
+    }
+    //get Posto
+    public int getPosto(){
+        return this.posto;
+    }
     //toString
     public String toString(){
         String out = "";
         out += "Il nome del titolare è: " + this.nome;
-        out += ". \n Il cognome del titolare è: " + this.cognome;
-        out += ". \n L'email del titolare è: " + this.email;
+        out += ".\n Il cognome del titolare è: " + this.cognome;
+        out += ".\n L'email del titolare è: " + this.email;
+        out += ".\n Il numero del posto di questo cliente è: " + this.posto + ".";
         return out;
     }
 }
