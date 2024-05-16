@@ -9,7 +9,7 @@ package Prenotazioni_teatro_Burla;
  * @author Thomas Burla
  * @version 1.0
  */
-public class Biglietto {
+public class Biglietto{
     private double prezzo;
     private int numero_posto;
     private String titolare;

@@ -11,7 +11,7 @@
 import javax.swing.JOptionPane;
 public class Test{
     public static void main(String args[]){
-        //coefficientiCirconferenza per calcolare l'equazione della circonferenza
+        //coefficienti per calcolare l'equazione della circonferenza
         double a = 0.0;
         double b = 0.0;
         double c = 0.0;
