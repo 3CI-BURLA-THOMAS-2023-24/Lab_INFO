@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Teatro
-comment0.text=\r\n\ Implementare\ la\ classe\ Teatro\r\n\ \ \ attributi\:\r\n\ \ \ \ -nome\r\n\ \ \ \ -city\r\n\ \ \ \ -n_posti\r\n\ \ \ metodi\:\r\n\ \ \ \ -2\ costruttori\r\n\ \ \ \ -set/get/toString\r\n\r\n\ @author\ Thomas\ Burla\r\n\ @version\ 1.0\r\n
+comment0.text=\r\n\ Teatro\r\n\ \ \ attributi\:\r\n\ \ \ \ -nome\r\n\ \ \ \ -city\r\n\ \ \ \ -n_posti\r\n\ \ \ metodi\:\r\n\ \ \ \ -2\ costruttori\r\n\ \ \ \ -set/get/toString\r\n\r\n\ @author\ Thomas\ Burla\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=Teatro()
 comment2.params=nome\ city\ n_posti

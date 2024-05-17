@@ -1,5 +1,7 @@
 /**
- * -numero_posto
+ * Biglietto:
+    -prezzo
+    -numero_posto
     -metodi opportuni
  * 
  * @author Thomas Burla

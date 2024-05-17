@@ -1,7 +1,5 @@
- 
-
 /**
- * Implementare la classe Teatro
+ * Teatro
    attributi:
     -nome
     -city
