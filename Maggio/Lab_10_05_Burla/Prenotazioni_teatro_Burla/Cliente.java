@@ -15,6 +15,7 @@ public class Cliente {
         this.nome = "Sconosciuto";
         this.cognome = "Sconosciuto";
         this.email = "Sconosciuta";
+        this.posto = 0;
     }
     //costruttore con parametri controllati
     public Cliente(String nome, String cognome, String email){
