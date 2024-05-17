@@ -1,7 +1,4 @@
 #BlueJ package file
-dependency1.from=Test
-dependency1.to=Punto
-dependency1.type=UsesDependency
 editor.fx.0.height=1056
 editor.fx.0.width=1936
 editor.fx.0.x=-8
@@ -16,7 +13,7 @@ package.editor.x=541
 package.editor.y=352
 package.frame.height=600
 package.frame.width=800
-package.numDependencies=1
+package.numDependencies=0
 package.numTargets=3
 package.showExtends=true
 package.showUses=true
@@ -31,8 +28,8 @@ target1.name=Test
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
-target1.x=210
-target1.y=200
+target1.x=160
+target1.y=90
 target2.height=70
 target2.name=esercizi.txt
 target2.type=TextTarget
