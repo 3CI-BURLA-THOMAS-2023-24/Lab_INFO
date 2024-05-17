@@ -1,4 +1,4 @@
-package Prenotazioni_teatro_Burla;
+ 
 
 /**
  * Cliente:

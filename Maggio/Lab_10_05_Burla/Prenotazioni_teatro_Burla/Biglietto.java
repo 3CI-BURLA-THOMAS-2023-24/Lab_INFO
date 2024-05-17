@@ -1,9 +1,5 @@
-package Prenotazioni_teatro_Burla;
-
 /**
- * Biglietto:
-    -prezzo
-    -numero_posto
+ * -numero_posto
     -metodi opportuni
  * 
  * @author Thomas Burla
