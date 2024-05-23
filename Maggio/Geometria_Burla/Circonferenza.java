@@ -143,4 +143,13 @@ public class Circonferenza {
         }
         return this.equazione;
     }
+    //toString
+    public String toString(){
+        String out = "";
+        out+= "Il raggio della circnferenza è: " + this.raggio;
+        out+= "cm.\nIl perimetro della circonferenza è: " + this.perimetro;
+        out+= "cm.\nL'area del cerchio è: " + this.area;
+        out+= "cm^2.\nLa circonferenza, di cui sono stati forniti i punti, ha equazione: " + this.equazione;
+        return out;
+    }
 }
