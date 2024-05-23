@@ -92,7 +92,7 @@ public class Quadrato {
         return this.diagonale;
     }
     //calcolo il perimetro
-    public double perimetro(){
+    public double calcolaPerimetro(){
         if(this.lato > 0.0){
             this.perimetro = this.lato * 4;
             return this.perimetro;
