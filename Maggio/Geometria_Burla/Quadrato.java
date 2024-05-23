@@ -107,4 +107,13 @@ public class Quadrato {
         }
         return -1;
     }
+    //toString
+    public String toString(){
+        String out = "";
+        out+= "Il lato del quadrato misura: " + this.lato;
+        out+= "cm.\nLa digonale del quadrato misura: " + this.diagonale;
+        out+= "cm.\nIl perimetro del quadrato è: " + this.perimetro;
+        out+= "cm.\nL'area del quadrato è:" + this.area;
+        return out;
+    }
 }
