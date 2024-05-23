@@ -4,6 +4,14 @@
     -visualizzare le coordinate del punto1
     -dire se ci sono due punti coincidenti
     -...
+    
+    Implementare la classe Test contenente un menu
+    -se si digita 1 Si chiedono i dati per istanziare un oggetto Punto, si modifica la coordinata x e si visualizzando le coordinate
+    -se si digita 2 si chiedono i dati per istanziare un oggetto Quadrato e si visualizza perimetro e area
+    -se si digita 3 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
+    -se si digita 4 si chiedono i dati per istanziare un oggetto Triangolo isoscele, e si visualizza P, A
+    -se si digita 5 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
+    -se si digita 0 o qualsiasi altro valore intero si esce dal programma
  * 
  * @author Thomas Burla 
  * @version 1.0
