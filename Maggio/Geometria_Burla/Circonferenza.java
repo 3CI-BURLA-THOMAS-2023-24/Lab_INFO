@@ -80,14 +80,16 @@ public Circonferenza(double area, double perimetro){
     public double perimetro(){
         if(this.raggio > 0.0){
             this.perimetro = 2 * PI_GRECO * this.raggio;
+            return this.perimetro;
         }
-        return this.perimetro;
+        return -1;
     }
     //calcolo area nel caso in cui il raggio sia positivo
     public double area(){
         if(this.raggio > 0.0){
             this.area = PI_GRECO * this.raggio * this.raggio;
+            return this.area;
         }
-        return this.area;
+        return -1;
     }
 }
