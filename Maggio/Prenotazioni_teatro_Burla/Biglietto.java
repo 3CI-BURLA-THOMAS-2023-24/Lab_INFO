@@ -1,5 +1,3 @@
-package Prenotazioni_teatro_Burla;
-
 /**
  * Biglietto:
     -prezzo

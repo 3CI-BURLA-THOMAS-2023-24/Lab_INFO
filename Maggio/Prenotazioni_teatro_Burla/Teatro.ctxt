@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Teatro
+comment0.text=\r\n\ Teatro\r\n\ \ \ attributi\:\r\n\ \ \ \ -nome\r\n\ \ \ \ -city\r\n\ \ \ \ -n_posti\r\n\ \ \ metodi\:\r\n\ \ \ \ -2\ costruttori\r\n\ \ \ \ -set/get/toString\r\n\r\n\ @author\ Thomas\ Burla\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=Teatro()
+comment2.params=nome\ city\ n_posti
+comment2.target=Teatro(java.lang.String,\ java.lang.String,\ int)
+comment3.params=nome
+comment3.target=void\ setNome(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getNome()
+comment5.params=city
+comment5.target=void\ setCity(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getCity()
+comment7.params=n_posti
+comment7.target=void\ setN_posti(int)
+comment8.params=
+comment8.target=int\ getN_posti()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

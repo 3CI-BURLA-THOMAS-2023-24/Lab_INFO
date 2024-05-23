@@ -1,7 +1,5 @@
-package Prenotazioni_teatro_Burla;
-
 /**
- * Implementare la classe Teatro
+ * Teatro
    attributi:
     -nome
     -city

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Biglietto
+comment0.text=\r\n\ Biglietto\:\r\n\ \ \ \ -prezzo\r\n\ \ \ \ -numero_posto\r\n\ \ \ \ -metodi\ opportuni\r\n\ \r\n\ @author\ Thomas\ Burla\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=Biglietto()
+comment2.params=prezzo\ numero_posto\ titolare
+comment2.target=Biglietto(double,\ int,\ Cliente)
+comment3.params=prezzo
+comment3.target=void\ setPrezzo(double)
+comment4.params=
+comment4.target=double\ getPrezzo()
+comment5.params=numero_posto
+comment5.target=void\ setNumero_posto(int)
+comment6.params=
+comment6.target=int\ getNumero_posto()
+comment7.params=titolare
+comment7.target=void\ setTitolare(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ getTitolare()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10
