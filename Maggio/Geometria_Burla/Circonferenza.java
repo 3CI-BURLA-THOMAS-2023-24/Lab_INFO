@@ -77,7 +77,7 @@ public Circonferenza(double area, double perimetro){
         return this.perimetro;
     }
     //calcolo perimetro nel caso in cui il raggio sia positivo 
-    public double perimetro(){
+    public double calcolaPerimetro(){
         if(this.raggio > 0.0){
             this.perimetro = 2 * PI_GRECO * this.raggio;
             return this.perimetro;
@@ -85,7 +85,7 @@ public Circonferenza(double area, double perimetro){
         return -1;
     }
     //calcolo area nel caso in cui il raggio sia positivo
-    public double area(){
+    public double calcolaArea(){
         if(this.raggio > 0.0){
             this.area = PI_GRECO * this.raggio * this.raggio;
             return this.area;
