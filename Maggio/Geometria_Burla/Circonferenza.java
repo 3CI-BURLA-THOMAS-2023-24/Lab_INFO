@@ -29,23 +29,23 @@ public class Circonferenza {
         //perimetro
         this.perimetro = 0.0;
     }
-    //costruttore con perimetro e area controllati
-    public Circonferenza(double area, double perimetro){
-        //area
-        if(area > 0.0){
-            this.area = area;
-        }else{
-            this.area = 0.0;
-        }
-        //perimetro
-        if(perimetro > 0.0){
-            this.perimetro = perimetro;
-        }else{
-            this.perimetro = 0.0;
-        }
-        //raggio
-        this.raggio = 0.0;
+//costruttore con perimetro e area controllati
+public Circonferenza(double area, double perimetro){
+    //area
+    if(area > 0.0){
+        this.area = area;
+    }else{
+        this.area = 0.0;
     }
+    //perimetro
+    if(perimetro > 0.0){
+        this.perimetro = perimetro;
+    }else{
+        this.perimetro = 0.0;
+    }
+    //raggio
+    this.raggio = 0.0;
+}
     //set raggio
     public void setRaggio(double raggio){
         if(raggio > 0.0){
