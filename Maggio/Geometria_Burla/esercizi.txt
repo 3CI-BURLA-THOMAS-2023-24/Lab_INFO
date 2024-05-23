@@ -1,3 +1,4 @@
+10/05/2024
 Implementare il progetto Geometria_cognome contenente le seguenti classi
 
 Punto
@@ -11,3 +12,17 @@ La classe Test (main)
     -visualizzare le coordinate del punto1
     -dire se ci sono due punti coincidenti
     -...
+
+17/05/2024
+Continuare la classe geometria implementando le seguenti classi:
+    -Circonferenza
+    -Quadrato
+    -Triangolo (attenzione, necessario implementare tipo di triangolo per il calcolo dell'area)
+
+Implementare la classe Test contenente un menu
+-se si digita 1 Si chiedono i dati per istanziare un oggetto Punto, si modifica la coordinata x e si visualizzando le coordinate
+-se si digita 2 si chiedono i dati per istanziare un oggetto Quadrato e si visualizza perimetro e area
+-se si digita 3 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
+-se si digita 4 si chiedono i dati per istanziare un oggetto Triangolo isoscele, e si visualizza P, A
+-se si digita 5 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
+-se si digita 0 o qualsiasi altro valore intero si esce dal programma
