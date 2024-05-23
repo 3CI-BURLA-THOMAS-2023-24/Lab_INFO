@@ -226,4 +226,17 @@ public class Triangolo {
         }
         return -1;
     }
+    //toString
+    public String toString(){
+        String out = "";
+        out+= "Il traingolo è: " + this.tipo;
+        out+= ".\nIl triangolo ha altezza, rispetto al lato indicato: " + this.altezza;
+        out+= "cm.\nIl traingolo ha area: " + this.area;
+        out+= "cm^2.\nIl traingolo ha perimetro: " + this.perimetro;
+        out+= "cm.\nIl lato1 misura: " + this.lato1;
+        out+= "cm.\nIl lato2 misura: " + this.lato2;
+        out+= "cm.\nIl lato3 misura: " + this.lato3;
+        out+= "cm.";
+        return out;
+    }
 }
