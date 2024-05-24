@@ -26,3 +26,21 @@ Implementare la classe Test contenente un menu
 -se si digita 4 si chiedono i dati per istanziare un oggetto Triangolo isoscele, e si visualizza P, A
 -se si digita 5 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
 -se si digita 0 o qualsiasi altro valore intero si esce dal programma
+
+24/05/2024
+Continuare la classe geometria implementando le seguenti classi:
+
+    -Segmento (vedi laboratorio)
+    -Cerchio
+    -Quadrato
+    -Triangolo (attenzione, necessario implementare tipo di triangolo per il calcolo dell'area)
+Implementare la classe Test contenente un menu
+    -se si digita 1 Si chiedono i dati per istanziare un oggetto Punto, si modifica la coordinata x e si visualizzando le coordinate
+    -se si digita 2 si chiedono i dati per istanziare un oggetto Quadrato e si visualizza perimetro e area
+    -se si digita 3 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
+    -se si digita 4 si chiedono i dati per istanziare un oggetto Triangolo isoscele, e si visualizza P, A
+    -se si digita 5 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
+    -se si digita 6 si chiedono i dati per istanziare un oggetto Circonferenza e visualizzare l'area e la circonferenza
+    -se si digita 7 si crea un segmento, si calcola e visualizza la sua lunghezza
+    -se si digita 8 si creano due segmenti, due quadrati e due cerchi e si visualizzano quelli con area maggiore
+    -se si digita 0 o qualsiasi altro valore intero si esce dal programma
