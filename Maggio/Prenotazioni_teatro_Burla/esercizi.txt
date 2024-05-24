@@ -32,3 +32,20 @@ Classe Attore:
 ......
 
 Iniziare la classe Test contenente il main e iniziare ad istanziare e visualizzare gli oggetti
+
+24/05/2024
+Continuare la classe Prenotazione_teatro
+classe Spettacolo
+    -nomeSpettacolo
+    -durata
+    -metodi opportuni
+
+Classe Attore:
+......
+
+Modificare le seguenti classi:
+Spettacolo aggiungere un arrayList di attori
+Teatro aggiungere un arrayList di spettacoli
+
+Fare in modo che il cliente possa acquistare uno o più biglietti
+Creare la classe Main che crea un teatro, tre spettacoli con gli attori e gestisce le prenotazioni dei biglietti ad un determinato spettacolo, calcolando il costo tenendo conto delle riduzione per i bambini fino a 12 anni e degli adulti con più di 65 anni
