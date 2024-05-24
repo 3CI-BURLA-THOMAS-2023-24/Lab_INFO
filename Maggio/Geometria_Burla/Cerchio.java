@@ -4,7 +4,7 @@
  * @author Thomas Burla
  * @version 1.0
  */
-public class Circonferenza {
+public class Cerchio {
     //variabili d'istanza
     private double raggio;
     private double area;
@@ -12,14 +12,14 @@ public class Circonferenza {
     private String equazione;
     private final double PI_GRECO = 3.141592653;
     //costruttore senza parametri
-    public Circonferenza(){
+    public Cerchio(){
         this.raggio = 0.0;
         this.area = 0.0;
         this.perimetro = 0.0;
         this.equazione = "non definita";
     }
     //costruttore con raggio controllato
-    public Circonferenza(double raggio){
+    public Cerchio(double raggio){
         //raggio
         if(raggio > 0.0){
             this.raggio = raggio;
@@ -34,7 +34,7 @@ public class Circonferenza {
         this.equazione = "non definita";
     }
     //costruttore con perimetro e area controllati
-    public Circonferenza(double area, double perimetro){
+    public Cerchio(double area, double perimetro){
         //area
         if(area > 0.0){
             this.area = area;
@@ -146,7 +146,7 @@ public class Circonferenza {
     //toString
     public String toString(){
         String out = "";
-        out+= "Il raggio della circnferenza è: " + this.raggio;
+        out+= "Il raggio della circonferenza è: " + this.raggio;
         out+= "cm.\nIl perimetro della circonferenza è: " + this.perimetro;
         out+= "cm.\nL'area del cerchio è: " + this.area;
         out+= "cm^2.\nLa circonferenza, di cui sono stati forniti i punti, ha equazione: " + this.equazione;

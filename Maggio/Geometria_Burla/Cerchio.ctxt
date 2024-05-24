@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=Circonferenza
+comment0.target=Cerchio
 comment0.text=\r\n\ Circonferenza\r\n\r\n\ @author\ Thomas\ Burla\r\n\ @version\ 1.0\r\n
 comment1.params=
-comment1.target=Circonferenza()
+comment1.target=Cerchio()
 comment10.params=
 comment10.target=double\ calcolaPerimetro()
 comment11.params=
@@ -12,9 +12,9 @@ comment12.target=java.lang.String\ calcolaEquazione(Punto,\ Punto,\ Punto)
 comment13.params=
 comment13.target=java.lang.String\ toString()
 comment2.params=raggio
-comment2.target=Circonferenza(double)
+comment2.target=Cerchio(double)
 comment3.params=area\ perimetro
-comment3.target=Circonferenza(double,\ double)
+comment3.target=Cerchio(double,\ double)
 comment4.params=raggio
 comment4.target=void\ setRaggio(double)
 comment5.params=
