@@ -170,12 +170,16 @@ public class Test{
                     }
             //opzione7: Segmento
             case 7: {   
-                        //creo oggetto Segmento
+                        //creo oggetto Segmento date le coordinate dei suoi estreami
                         Segmento segmento = new Segmento(Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P1")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P1")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P2")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P2")));
+                        //calcolo lunghezza del segmento come distanza tra punti
                         System.out.println("Il segmento ha lunghezza " + segmento.lunghezzaSegmento() + "cm.");
                         break;
                     }
-                    
+            //opzione8: Segmenti, Quadrati e Aree
+            case 8: {
+                        
+                    }
         }
     }
 }    
