@@ -126,8 +126,8 @@ public class Test{
                         //controllo che il triangolo sia isoscele e che i lati abbiano un valore accettabile; successivamente calcolo perimetro e area
                         if(((lato1 > 0.0) && (lato2 > 0.0) && (lato3 > 0.0)) && (((lato1 == lato2) || (lato1 == lato3) || (lato2 == lato3)))){
                             Triangolo isoscele = new Triangolo(lato1, lato2, lato3, Double.parseDouble(JOptionPane.showInputDialog("Inserire l'altezza del triangolo isoscele")));
-                            System.out.println("Il triangolo ha area " + isoscele.calcolaArea(JOptionPane.showInputDialog("Quale lato si vuole utilizzare come base, rispetto all'altezza indicata? Inserire solo lato1, lato2 o lato3"))  + "cm^2.");
-                            System.out.println("Il triangolo ha perimetro " + isoscele.calcolaPerimetro() + "cm.");
+                            System.out.println("Il triangolo ha area " + isoscele.calcolaArea(JOptionPane.showInputDialog("Quale lato si vuole utilizzare come base, rispetto all'altezza indicata? Inserire solo lato1, lato2 o lato3"))  + " cm^2.");
+                            System.out.println("Il triangolo ha perimetro " + isoscele.calcolaPerimetro() + " cm.");
                         }else{
                             //messaggio di errore di input dei lati
                             JOptionPane.showMessageDialog(null, "ERRORE! Lati non validi", "Errore", JOptionPane.ERROR_MESSAGE);
@@ -143,8 +143,8 @@ public class Test{
                        //controllo che il triangolo sia equilatero e che i lati abbiano un valore accettabile; successivamente calcolo perimetro e area
                         if(((lato1 > 0.0) && (lato2 > 0.0) && (lato3 > 0.0)) && (((lato1 == lato2) && (lato1 == lato3)))){
                            Triangolo equilatero = new Triangolo(lato1, lato2, lato3, Double.parseDouble(JOptionPane.showInputDialog("Inserire l'altezza del triangolo isoscele")));
-                           System.out.println("Il triangolo ha area " + equilatero.calcolaArea("lato1") + "cm^2.");
-                           System.out.println("Il triangolo ha perimetro " + equilatero.calcolaPerimetro() + "cm.");
+                           System.out.println("Il triangolo ha area " + equilatero.calcolaArea("lato1") + " cm^2.");
+                           System.out.println("Il triangolo ha perimetro " + equilatero.calcolaPerimetro() + " cm.");
                         }else{
                         //messaggio di errore di input dei lati
                         JOptionPane.showMessageDialog(null, "ERRORE! Lati non validi", "Errore", JOptionPane.ERROR_MESSAGE);
@@ -162,7 +162,7 @@ public class Test{
                         //controllo ed effettuo l'output
                         if((area6 > 0.0) && (perimetro6 > 0.0)){
                             System.out.println("L'area del cerchio è " + area6 + "cm^2.");
-                            System.out.println("La circonferenza misura " + perimetro6 + "cm.");
+                            System.out.println("La circonferenza misura " + perimetro6 + " cm.");
                         }else{
                             JOptionPane.showMessageDialog(null, "ERRORE di input, raggio non valido", "Errore", JOptionPane.ERROR_MESSAGE);
                         }
@@ -173,7 +173,7 @@ public class Test{
                         //creo oggetto Segmento date le coordinate dei suoi estreami
                         Segmento segmento = new Segmento(Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P1")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P1")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P2")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P2")));
                         //calcolo lunghezza del segmento come distanza tra punti
-                        System.out.println("Il segmento ha lunghezza " + segmento.lunghezzaSegmento() + "cm.");
+                        System.out.println("Il segmento ha lunghezza " + segmento.lunghezzaSegmento() + " cm.");
                         break;
                     }
             //opzione8: Segmenti, Quadrati e Aree
