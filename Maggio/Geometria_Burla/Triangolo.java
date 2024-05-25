@@ -226,16 +226,24 @@ public class Triangolo {
         }
         return -1;
     }
+    //verifica esistenza triangolo in base al valore dei lati
+    public boolean verificaEsistenza(){
+        if((lato1 < lato2 + lato3) && (lato2 < lato1 + lato3) && (lato3 < lato1 + lato2)){
+            return true;
+        }
+        return false;
+    }
+
     //toString
     public String toString(){
         String out = "";
         out+= "Il traingolo è: " + this.tipo;
         out+= ".\nIl triangolo ha altezza, rispetto al lato indicato: " + this.altezza;
-        out+= "cm.\nIl traingolo ha area: " + this.area;
-        out+= "cm^2.\nIl traingolo ha perimetro: " + this.perimetro;
         out+= "cm.\nIl lato1 misura: " + this.lato1;
         out+= "cm.\nIl lato2 misura: " + this.lato2;
         out+= "cm.\nIl lato3 misura: " + this.lato3;
+        out+= "cm.\nIl triangolo ha area: " + this.area;
+        out+= "cm^2.\nIl traingolo ha perimetro: " + this.perimetro;
         out+= "cm.";
         return out;
     }
