@@ -13,7 +13,7 @@
     -se si digita 5 si chiedono i dati per istanziare un oggetto Triangolo equilatero, e si visualizza P, A
     -se si digita 6 si chiedono i dati per istanziare un oggetto Circonferenza e visualizzare l'area e la circonferenza
     -se si digita 7 si crea un segmento, si calcola e visualizza la sua lunghezza
-    -se si digita 8 si creano due segmenti, due quadrati e due cerchi e si visualizzano quelli con area maggiore
+    -se si digita 8 si creano due segmenti, due quadrati e due cerchi e si visualizzano quelli con perimetro/lunghezza maggiore
     -se si digita 0 o qualsiasi altro valore intero si esce dal programma
  * 
  * @author Thomas Burla 
@@ -35,6 +35,12 @@ public class Test{
         //area e perimetro circonferenza(opzione 6)
         double area6 = 0.0;
         double perimetro6 = 0.0;
+        //perimetro dei quadrati(opzione 8)
+        double perimetroQuadrato8_2 = 0.0;
+        double perimetroQuadrato8_3 = 0.0;
+        //circonferenze(opzione 8)
+        double perimetroCerchio8_2 = 0.0;
+        double perimetroCerchio8_3 = 0.0;
         //creo oggetti di classe Punto
         Punto p = new Punto(Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa del punto P")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata del punto P")));
         Punto s = new Punto();
@@ -67,8 +73,8 @@ public class Test{
         System.out.println("5 per istanziare un oggetto di classe Triangolo, tipo equilatero, visualizzando perimetro e area;");
         System.out.println("6 per istanziare un oggetto di classe Circonferenza visualizzandone l'area e il perimetro;");
         System.out.println("7 per istanziare un oggetto di classe Segmento visualizzandone la lunghezza dati due punti;");
-        System.out.println("8 per istanziare due segmenti, due quadrati e due cerchi visualizzando quelli con l'area maggiore;");
-        System.out.println("0 o altri valori per uscire dal programma");
+        System.out.println("8 per istanziare due segmenti, due quadrati e due cerchi visualizzando quelli con il perimetro/lunghezza maggiore;");
+        System.out.println("0 o altri valori per uscire dal programma.");
         scelta = tastiera.nextInt();
         tastiera.close();
         switch(scelta){
@@ -85,11 +91,11 @@ public class Test{
             //opzione2: Quadrato
             case 2: {
                         //creo oggetto quadrato dato il lato
-                        Quadrato abc = new Quadrato(Double.parseDouble(JOptionPane.showInputDialog("Inserire la lunghezza in centimetri del lato del quadrato.")));
+                        Quadrato quadrato1 = new Quadrato(Double.parseDouble(JOptionPane.showInputDialog("Inserire la lunghezza in centimetri del lato del quadrato.")));
                         //caolo area
-                        area2 = abc.calcolaArea();
+                        area2 = quadrato1.calcolaArea();
                         //calcolo perimetro
-                        perimetro2 = abc.calcolaPerimetro();
+                        perimetro2 = quadrato1.calcolaPerimetro();
                         //controllo ed effettuo l'output
                         if((area2 > 0.0) && (perimetro2 > 0.0)){
                             System.out.println("Il quadrato ha area" + area2 + "cm^2.");
@@ -100,7 +106,7 @@ public class Test{
                         }
                         break;
                     }
-            //opzione3: Traingolo scaleno
+            //opzione3: Triangolo scaleno
             case 3: {
                         //input lati
                         lato1 = Double.parseDouble(JOptionPane.showInputDialog("Inserire il primo lato del triangolo"));
@@ -154,16 +160,17 @@ public class Test{
             //opzione6: Cerchio
             case 6: {
                         //creo oggetto Circonferenza
-                        Cerchio cerchio = new Cerchio(Double.parseDouble(JOptionPane.showInputDialog("Inserire il raggio della circonferenza")));
+                        Cerchio cerchio1 = new Cerchio(Double.parseDouble(JOptionPane.showInputDialog("Inserire il raggio della circonferenza")));
                         //metodo che calcola area
-                        area6 = cerchio.calcolaArea();
+                        area6 = cerchio1.calcolaArea();
                         //metodo che calcola perimetro
-                        perimetro6 = cerchio.calcolaPerimetro();
+                        perimetro6 = cerchio1.calcolaPerimetro();
                         //controllo ed effettuo l'output
                         if((area6 > 0.0) && (perimetro6 > 0.0)){
                             System.out.println("L'area del cerchio è " + area6 + "cm^2.");
                             System.out.println("La circonferenza misura " + perimetro6 + " cm.");
                         }else{
+                            //messaggio di errore di input del raggio
                             JOptionPane.showMessageDialog(null, "ERRORE di input, raggio non valido", "Errore", JOptionPane.ERROR_MESSAGE);
                         }
                         break;
@@ -176,10 +183,51 @@ public class Test{
                         System.out.println("Il segmento ha lunghezza " + segmento1.lunghezzaSegmento() + " cm.");
                         break;
                     }
-            //opzione8: Segmenti, Quadrati e Aree
+            //opzione8: Segmenti, Quadrati e Circonferenze
             case 8: {
+                        //creo i due segmenti
                         Segmento segmento2 = new Segmento(Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P1")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P1")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P2")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P2")));
                         Segmento segmento3 = new Segmento(Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P3")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P3")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ascissa di P4")), Double.parseDouble(JOptionPane.showInputDialog("Inserire ordinata di P4")));
+                        //verifico quale dei due segmenti ha lunghezza maggiore
+                        if(segmento2.lunghezzaSegmento() > segmento3.lunghezzaSegmento()){
+                            System.out.println("Il primo segmento ha lunghezza maggiore del secondo.");
+                        }else{
+                            System.out.println("Il secondo segmento ha lunghezza maggiore del primo");
+                        }
+                        //creo i due quadrati e calcolo il loro perimetro
+                        Quadrato quadrato2 = new Quadrato(Double.parseDouble(JOptionPane.showInputDialog("Inserire la misura del lato del primo quadrato")));
+                        perimetroQuadrato8_2 = quadrato2.calcolaPerimetro();
+                        Quadrato quadrato3 = new Quadrato(Double.parseDouble(JOptionPane.showInputDialog("Inserire la misura del lato del secondo quadrato")));
+                        perimetroQuadrato8_3 = quadrato3.calcolaPerimetro();
+                        //controllo la validità dei perimetri
+                        if((perimetroQuadrato8_2 > 0.0) && (perimetroQuadrato8_3 > 0.0)){
+                            //verifico quale quadrato ha perimetro maggiore
+                            if(perimetroQuadrato8_2 > perimetroQuadrato8_3){
+                                System.out.println("Il primo quadrato ha perimetro maggiore del secondo");
+                            }else{
+                                System.out.println("Il secondo quadrato ha perimetro maggiore del primo");
+                            }
+                        //messaggio di errore di input dei lati
+                        }else{
+                            JOptionPane.showMessageDialog(null, "ERRORE di input! Lati non validi.", "Errore", JOptionPane.ERROR_MESSAGE);
+                        }
+                        //creo oggetti Cerchio
+                        Cerchio cerchio2 = new Cerchio(Double.parseDouble(JOptionPane.showInputDialog("Inserire il raggio del primo cerchio.")));
+                        Cerchio cerchio3 = new Cerchio(Double.parseDouble(JOptionPane.showInputDialog("Inserire il raggio del secondo cerchio.")));
+                        //calcolo le circonferenze
+                        perimetroCerchio8_2 = cerchio2.calcolaPerimetro();
+                        perimetroCerchio8_3 = cerchio3.calcolaPerimetro();
+                        //controllo la validità delle circonferenze
+                        if((perimetroCerchio8_2 > 0.0) && (perimetroCerchio8_3 > 0.0)){
+                            if(perimetroCerchio8_2 > perimetroCerchio8_3){
+                                System.out.println("La prima circonferenza è maggiore della seconda");
+                            }else{
+                                System.out.println("La seconda circonferenza è maggiore della prima");
+                            }
+                        //messaggio di errore di input del raggio
+                        }else{
+                            JOptionPane.showMessageDialog(null, "ERRORE di input! Raggio non valido.", "Errore", JOptionPane.ERROR_MESSAGE);
+                        }
                     }
         }
     }
