@@ -25,7 +25,7 @@ public class Spettacolo {
         this.attori = null;
     }
     //costruttore con parametri controllati
-    public Spettacolo(String nomeSpettacolo, double durata, String categoria, Attore attore){
+    public Spettacolo(String nomeSpettacolo, double durata, String categoria){
         //nomeSpettacolo
         if(nomeSpettacolo != null){
             this.nomeSpettacolo = nomeSpettacolo;
@@ -44,12 +44,7 @@ public class Spettacolo {
         }else{
             this.categoria = "-";
         }
-        //attori
-        if(attore != null){
-            (this.attori).add(attore);
-        }else{
-            this.attori = null;
-        }
+        this.attori = null;
     }
     //set nomeSpettacolo
     public void setNomeSpettacolo(String nome){
