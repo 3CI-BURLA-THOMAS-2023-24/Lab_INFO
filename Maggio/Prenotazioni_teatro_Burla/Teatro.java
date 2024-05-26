@@ -28,7 +28,7 @@ public class Teatro {
         this.spettacoli = null;
     }
     //costruttore con parametri controllati
-    public Teatro(String nome, String city, int n_posti, Spettacolo spettacolo){
+    public Teatro(String nome, String city, int n_posti){
         //nome
         if(nome != null){
             this.nome = nome;
@@ -47,12 +47,7 @@ public class Teatro {
         }else{
             this.n_posti = 0;
         }
-        //spettacolo
-        if(spettacolo != null){
-            this.spettacoli.add(spettacolo);
-        }else{
-            this.spettacoli = null;
-        }
+        this.spettacoli = null;
     }
     //set nome
     public void setNome(String nome){
