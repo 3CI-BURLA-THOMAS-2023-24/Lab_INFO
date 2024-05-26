@@ -1,5 +1,8 @@
 /**
- * classe test
+ *  Fare in modo che il cliente possa acquistare uno o più biglietti
+    Creare la classe Main che crea un teatro, tre spettacoli con gli attori e gestisce le prenotazioni 
+    dei biglietti ad un determinato spettacolo, calcolando il costo tenendo conto delle riduzione per i bambini 
+    fino a 12 anni e degli adulti con più di 65 anni
  * 
  * @author Thomas Burla
  * @version 1.0
