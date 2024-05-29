@@ -22,7 +22,7 @@ public class Spettacolo {
         this.nomeSpettacolo = "-";
         this.durata = 0.0;
         this.categoria = "-";
-        this.attori = null;
+        this.attori = new ArrayList <Attore>();
     }
     //costruttore con parametri controllati
     public Spettacolo(String nomeSpettacolo, double durata, String categoria){
@@ -44,7 +44,7 @@ public class Spettacolo {
         }else{
             this.categoria = "-";
         }
-        this.attori = null;
+        this.attori = new ArrayList <Attore> ();
     }
     //set nomeSpettacolo
     public void setNomeSpettacolo(String nome){

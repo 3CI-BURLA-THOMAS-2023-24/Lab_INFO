@@ -25,7 +25,7 @@ public class Teatro {
         this.nome = "Sconosciuto";
         this.city = "Sconosciuta";
         this.n_posti = 0;
-        this.spettacoli = null;
+        this.spettacoli = new ArrayList <Spettacolo> ();
     }
     //costruttore con parametri controllati
     public Teatro(String nome, String city, int n_posti){
@@ -47,7 +47,7 @@ public class Teatro {
         }else{
             this.n_posti = 0;
         }
-        this.spettacoli = null;
+        this.spettacoli = new ArrayList <Spettacolo> ();
     }
     //set nome
     public void setNome(String nome){
