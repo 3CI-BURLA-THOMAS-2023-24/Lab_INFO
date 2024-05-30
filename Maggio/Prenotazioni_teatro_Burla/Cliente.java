@@ -5,17 +5,20 @@
     -email
     -metodi opportuni
  */
+import java.util.*;
 public class Cliente {
     private String nome;
     private String cognome;
     private String email;
     private int posto;
+    private ArrayList <Biglietto> biglietti;
     //costruttore senza parametri
     public Cliente(){
         this.nome = "Sconosciuto";
         this.cognome = "Sconosciuto";
         this.email = "Sconosciuta";
         this.posto = 0;
+        this.biglietti = new ArrayList <Biglietto> ();
     }
     //costruttore con parametri controllati
     public Cliente(String nome, String cognome, String email){
@@ -37,7 +40,11 @@ public class Cliente {
         }else{
             this.email = "Sconosciuto";
         }
+        //posto
         this.posto = 0;
+        //biglietti
+        this.biglietti = new ArrayList <Biglietto> ();
+
     }
     //set nome
     public void setNome(String nome){
