@@ -105,12 +105,12 @@ public class Teatro {
     //toString
     public String toString(){
         String out = "";
-        out+= "Il nome del teatro è: " + this.nome;
-        out+= ". \n Il teatro si trova nella città: " + this.city;
-        out+= ". \n La capienza massima del tetro è: " + this.n_posti + "posti";
-        out+= ". Nel tatro hanno luogo i seguenti spettacoli: ";
+        out += "Il nome del teatro è: " + this.nome;
+        out += ". \n Il teatro si trova nella città: " + this.city;
+        out += ". \n La capienza massima del tetro è: " + this.n_posti + "posti";
+        out += ". Nel tatro hanno luogo i seguenti spettacoli: ";
         for(int i = 0; i < spettacoli.size(); i++){
-            out+= "\n" + (spettacoli.get(i)).toString();
+            out += "\n" + (this.spettacoli.get(i)).toString();
         }
         return out;
     }
