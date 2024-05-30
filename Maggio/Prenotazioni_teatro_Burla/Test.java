@@ -12,13 +12,23 @@ import javax.swing.JOptionPane;
 public class Test {
     public static void main(String args[]){
         //dichiarazione e inizializzazione variabili
+        //variabile usata per la JOptionPane(riquadro di scelta si/no)
         int ripeti = 0;
+        //nome cliente
         String nome = "";
+        //cognome cliente
         String cognome = "";
+        //email cliente
         String email = "";
+        //anni cliente
         int anni = 0;
+        //prezzo del biglietto che desidera comprare il cliente
+        double prezzo = 0;
+        //tipo di spettacolo al quale il cliente vuole partecipare
+        String tipoSpettacolo = "";
+        //numero di posto(al momento il cliente sceglie quello che vuole; in aggiornamento futuro si prevede un controllo e un'assegnazione a carico del teatro in funzione del prezzo)
+        int numero_posto = 0;
         ArrayList <Prenotazione> prenotazioni = new ArrayList <Prenotazione> ();
-        ArrayList <Cliente> clienti = new ArrayList <Cliente> ();
         //creo teatro
         Teatro marconiVR = new Teatro("Teatro Ristori", "Verona", 1800);
         //creo i tre spettacoli e li aggiungo al teatro
@@ -45,7 +55,7 @@ public class Test {
         reggaeton.setAttore(lamborghini);
         //ciclo per salvare le prenotazioni su una arraylist
         do{
-
+            Prenotazione prenotazione = new Prenotazione();
             //ciclo per clienti e biglietti
             do{
                 //controllo nome
@@ -76,7 +86,37 @@ public class Test {
                         JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
                     }
                 }while(anni <= 0);
+                //creo oggetto di classe Cliente (uno per ogni persona)
                 Cliente cliente = new Cliente(nome, cognome, email, anni);
+                //salvo il cliente nella ArrayList dei clienti
+                prenotazione.setCliente(cliente);
+                //faccio acquistare i biglietti dei diversi spettacoli al cliente
+                do{
+                    //controllo prezzo del biglietto
+                    do{
+                        prezzo = Double.parseDouble(JOptionPane.showInputDialog("Quanto si vuole spendere per il biglietto?"));
+                        if(prezzo <= 5.0){
+                            JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }while(prezzo <= 5.0);
+                    //controllo numero_posto del biglietto
+                    do{
+                        numero_posto = Integer.parseInt(JOptionPane.showInputDialog("In quale posto si vuole sedere?"));
+                        if(numero_posto <= 0){
+                            JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }while(numero_posto <= 0);
+                    //controllo tipo di spettacolo
+                    do{
+                        tipoSpettacolo = JOptionPane.showInputDialog("Inserire il tipo di spettacolo al quale si vuole partecipare.");
+                        if((tipoSpettacolo.equals("")) || (tipoSpettacolo.equals(" "))){
+                            JOptionPane.showMessageDialog(null, "ERRORE! Stringa vuota", "Errore", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }while((tipoSpettacolo.equals("")) || (tipoSpettacolo.equals(" ")));
+                    Biglietto biglietto = new Biglietto(prezzo, numero_posto, cliente, tipoSpettacolo);
+
+                    ripeti = JOptionPane.showConfirmDialog(null, "Vuoi acquistare altri biglietti?", "Acquista", JOptionPane.YES_NO_OPTION);
+                }while(ripeti == JOptionPane.YES_OPTION);
 
             }while(ripeti == JOptionPane.YES_OPTION);
         }while(ripeti == JOptionPane.YES_OPTION);
