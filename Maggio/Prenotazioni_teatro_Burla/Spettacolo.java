@@ -105,7 +105,7 @@ public class Spettacolo {
         out += "Il nome dello spettacolo è: " + this.nomeSpettacolo;
         out += ".\nLa durata dello spettacolo è: " + this.durata;
         out += ".\nLa categoria a cui appartiene lo spettacolo è: " + this.categoria;
-        out += ". A questo spettacolo appartengono gli attori: ";
+        out += ".\nA questo spettacolo appartengono gli attori: ";
         for(int i = 0; i < attori.size(); i++){
             out += "\n" + (attori.get(i)).toString();
         }

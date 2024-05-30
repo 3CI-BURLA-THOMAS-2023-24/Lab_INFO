@@ -24,13 +24,16 @@ public class Test {
         int anni = 0;
         //prezzo del biglietto che desidera comprare il cliente
         double prezzo = 0;
+        double prezzo_old = 0.0;
         //tipo di spettacolo al quale il cliente vuole partecipare
         String tipoSpettacolo = "";
         //numero di posto(al momento il cliente sceglie quello che vuole; in aggiornamento futuro si prevede un controllo e un'assegnazione a carico del teatro in funzione del prezzo)
         int numero_posto = 0;
+        //importo totale prenotazione
+        double totale = 0.0;
         ArrayList <Prenotazione> prenotazioni = new ArrayList <Prenotazione> ();
         //creo teatro
-        Teatro marconiVR = new Teatro("Teatro Ristori", "Verona", 1800);
+        Teatro marconiVR = new Teatro("ITIS Marconi", "Verona", 1800);
         //creo i tre spettacoli e li aggiungo al teatro
         Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
         marconiVR.setSpettacolo(jazz);
@@ -81,24 +84,30 @@ public class Test {
                 }while((email.equals("")) || (email.equals(" ")));
                 //controllo anni
                 do{
-                    anni = Integer.parseInt(JOptionPane.showInputDialog("Inserire l'eetà del cliente"));
+                    anni = Integer.parseInt(JOptionPane.showInputDialog("Inserire l'età del cliente"));
                     if(anni <= 0){
                         JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
                     }
                 }while(anni <= 0);
                 //creo oggetto di classe Cliente (uno per ogni persona)
                 Cliente cliente = new Cliente(nome, cognome, email, anni);
-                //salvo il cliente nella ArrayList dei clienti
+                //salvo il cliente nella prenotazione
                 prenotazione.setCliente(cliente);
                 //faccio acquistare i biglietti dei diversi spettacoli al cliente
                 do{
                     //controllo prezzo del biglietto
                     do{
-                        prezzo = Double.parseDouble(JOptionPane.showInputDialog("Quanto si vuole spendere per il biglietto?"));
-                        if(prezzo <= 5.0){
+                        prezzo = Double.parseDouble(JOptionPane.showInputDialog("Quanto si vuole spendere per il biglietto? \nTenere a mente che per i minori di 12 anni e per gli over 65 verrà applicato in automatico uno sconto del 50% rispetto all'importo indicato"));
+                        //salvo in una variabile il prezzo non scontato, da utilizzare per i vari controlli
+                        prezzo_old = prezzo;
+                        if(prezzo_old <= 5.0){
                             JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
                         }
-                    }while(prezzo <= 5.0);
+                        //applico uno sconto del 50% sul prezzo indicato dall'utente se il titolare ha meno di 12 anni o più di 65
+                        if((cliente.getAnni() < 12) || (cliente.getAnni() > 65)){
+                            prezzo/= 2;
+                        }
+                    }while(prezzo_old <= 5.0);
                     //controllo numero_posto del biglietto
                     do{
                         numero_posto = Integer.parseInt(JOptionPane.showInputDialog("In quale posto si vuole sedere?"));
@@ -113,12 +122,25 @@ public class Test {
                             JOptionPane.showMessageDialog(null, "ERRORE! Stringa vuota", "Errore", JOptionPane.ERROR_MESSAGE);
                         }
                     }while((tipoSpettacolo.equals("")) || (tipoSpettacolo.equals(" ")));
+                    //creo l'oggetto di classe Biglietto
                     Biglietto biglietto = new Biglietto(prezzo, numero_posto, cliente, tipoSpettacolo);
-
+                    //associo il biglietto sia alla prenotazione che all'utente
+                    prenotazione.setBiglietto(biglietto);
+                    cliente.setBiglietto(biglietto);
+                    //chiedo se vi sono altri biglietti da acquistare con lo stesso titolare
                     ripeti = JOptionPane.showConfirmDialog(null, "Vuoi acquistare altri biglietti?", "Acquista", JOptionPane.YES_NO_OPTION);
                 }while(ripeti == JOptionPane.YES_OPTION);
-
+                //chiedo se per la prenotazione vi sono altri clienti
+                ripeti = JOptionPane.showConfirmDialog(null, "Per questa prenotazione, vi sono altri clienti?",  "Clienti", JOptionPane.YES_NO_OPTION);
             }while(ripeti == JOptionPane.YES_OPTION);
+            //calcolo l'importo totale della prenotazione
+            for(int i = 0; i < prenotazione.numeroBiglietti(); i++){
+                totale += (prenotazione.getBiglietto(i)).getPrezzo();
+            }
+            //visualizzo importo
+            JOptionPane.showMessageDialog(null, "L'importo totale della prenotazione è di " + totale + "€", "Importo totale", JOptionPane.WARNING_MESSAGE);
+            //chiedo se vi sono altre prenotazioni
+            ripeti = JOptionPane.showConfirmDialog(null, "Vi sono altre prenotazioni da effettuare?" , "Prenota", JOptionPane.YES_NO_OPTION);
         }while(ripeti == JOptionPane.YES_OPTION);
     }
 }

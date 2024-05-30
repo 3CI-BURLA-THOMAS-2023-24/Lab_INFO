@@ -88,7 +88,7 @@ public class Attore {
     public String toString(){
         String out = "";
         out += "L'attore si chiama: " + this.nome +  " " + this.cognome;
-        out += ", ha " + this.anni + "anni";
+        out += ", ha " + this.anni + " anni";
         out += " e ricopre la parte di " + this.parte + ".";
         return out;
     }

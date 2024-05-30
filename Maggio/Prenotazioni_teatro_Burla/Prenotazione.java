@@ -31,7 +31,7 @@ public class Prenotazione {
             (this.biglietti).add(biglietto);
         }
     }
-    //get biglietto, dato il titolare
+    //get biglietto(come stringa), dato il titolare
     public String getBiglietto(String titolare){
         Biglietto biglietto = null;
         boolean trovato = false;
@@ -47,6 +47,13 @@ public class Prenotazione {
             return biglietto.toString();
         }
         return "Nessun biglietto corrispondente al nominativo";
+    }
+    //get biglietto, dato l'indice nella lista
+    public Biglietto getBiglietto(int index){
+        if(index < this.biglietti.size()){
+            return this.biglietti.get(index);
+        }
+        return null;
     }
     //set clienti
     public void setCliente(Cliente cliente){
@@ -70,6 +77,10 @@ public class Prenotazione {
             return cliente.toString();
         }
         return "Nessun cliente trovato dati tali informazioni";
+    }
+    //metodo che restituisce il numero di biglietti della prenotazione
+    public int numeroBiglietti(){
+        return this.biglietti.size();
     }
     //toString
     public String toString(){
@@ -102,6 +113,6 @@ public class Prenotazione {
         if(errore == true){
             return "OPS! QUalcosa è andato storto :(...verificare che ogni cliente abbia il biglietto corrispondente!";
         }
-        return out;
+        return out + ".\n Nella prenotazione vi sono " + this.biglietti.size() + "biglietti.";
     }
 }
