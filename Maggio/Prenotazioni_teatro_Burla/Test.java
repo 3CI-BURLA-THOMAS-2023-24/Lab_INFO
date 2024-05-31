@@ -40,6 +40,7 @@ public class Test {
             FileReader fr = new FileReader(f);
             Scanner leggoCategorie = new Scanner(fr);
             String categorie[] = (leggoCategorie.nextLine()).split(";");
+            leggoCategorie.close();
             boolean esiste;
             int c;
             String messaggio = "Inserire il tipo di spettacolo al quale si vuole partecipare. Scegliere tra i seguenti: ";
