@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Prenotazione
+comment1.params=
+comment1.target=Prenotazione()
+comment2.params=biglietto\ cliente
+comment2.target=Prenotazione(Biglietto,\ Cliente)
+comment3.params=biglietto
+comment3.target=void\ setBiglietto(Biglietto)
+comment4.params=titolare
+comment4.target=java.lang.String\ getBiglietto(java.lang.String)
+comment5.params=index
+comment5.target=Biglietto\ getBiglietto(int)
+comment6.params=cliente
+comment6.target=void\ setCliente(Cliente)
+comment7.params=nome\ cognome
+comment7.target=java.lang.String\ getClienti(java.lang.String,\ java.lang.String)
+comment8.params=
+comment8.target=int\ numeroBiglietti()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

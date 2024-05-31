@@ -37,7 +37,7 @@ public class Test {
         //creo i tre spettacoli e li aggiungo al teatro
         Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
         marconiVR.setSpettacolo(jazz);
-        Spettacolo commedia = new Spettacolo("Divinaa Commedia", 60, "Letteratura");
+        Spettacolo commedia = new Spettacolo("Divina Commedia", 60, "Letteratura");
         marconiVR.setSpettacolo(commedia);
         Spettacolo reggaeton = new Spettacolo("Reggaeton", 180, "Musica");
         marconiVR.setSpettacolo(reggaeton);

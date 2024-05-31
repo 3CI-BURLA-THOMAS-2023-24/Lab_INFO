@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.target=Spettacolo
-comment0.text=\r\n\ classe\ Spettacolo\r\n\ \ \ \ -nomeSpettacolo\r\n\ \ \ \ -durata\r\n\ \ \ \ -metodi\ opportuni\r\n\ \r\n\ @author\ Thomas\ Burla\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=Spettacolo()
+comment10.params=nome\ cognome
+comment10.target=java.lang.String\ getAttore(java.lang.String,\ java.lang.String)
+comment11.params=
+comment11.target=java.lang.String\ toString()
 comment2.params=nomeSpettacolo\ durata\ categoria
 comment2.target=Spettacolo(java.lang.String,\ double,\ java.lang.String)
 comment3.params=nome
@@ -17,6 +20,6 @@ comment7.params=categoria
 comment7.target=void\ setCategoria(java.lang.String)
 comment8.params=
 comment8.target=java.lang.String\ getCategoria()
-comment9.params=
-comment9.target=java.lang.String\ toString()
-numComments=10
+comment9.params=attore
+comment9.target=void\ setAttore(Attore)
+numComments=12
