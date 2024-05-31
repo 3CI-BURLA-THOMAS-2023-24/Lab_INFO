@@ -1,8 +1,8 @@
 #BlueJ package file
-dependency1.from=Cerchio
+dependency1.from=Segmento
 dependency1.to=Punto
 dependency1.type=UsesDependency
-dependency2.from=Segmento
+dependency2.from=Cerchio
 dependency2.to=Punto
 dependency2.type=UsesDependency
 dependency3.from=Test
@@ -24,10 +24,10 @@ editor.fx.0.height=1056
 editor.fx.0.width=1936
 editor.fx.0.x=-8
 editor.fx.0.y=-8
-editor.fx.1.height=1056
-editor.fx.1.width=1936
-editor.fx.1.x=-8
-editor.fx.1.y=-8
+editor.fx.1.height=739
+editor.fx.1.width=816
+editor.fx.1.x=584
+editor.fx.1.y=132
 objectbench.height=93
 objectbench.width=760
 package.divider.horizontal=0.6
