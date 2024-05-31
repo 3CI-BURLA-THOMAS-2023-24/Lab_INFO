@@ -39,7 +39,7 @@ public class Test {
             File f = new File("categoria.csv");
             FileReader fr = new FileReader(f);
             Scanner leggoCategorie = new Scanner(fr);
-            String categorie[] = (leggoCategorie.nextLine()).split(";");;
+            String categorie[] = (leggoCategorie.nextLine()).split(";");
             boolean esiste;
             int c;
             String messaggio = "Inserire il tipo di spettacolo al quale si vuole partecipare. Scegliere tra i seguenti: ";
