@@ -26,7 +26,6 @@ public class Test {
             int anni = 0;
             //prezzo del biglietto che desidera comprare il cliente
             double prezzo = 0;
-            double prezzo_old = 0.0;
             //tipo di spettacolo al quale il cliente vuole partecipare
             String categoria = "";
             //numero di posto(al momento il cliente sceglie quello che vuole; in aggiornamento futuro si prevede un controllo e un'assegnazione a carico del teatro in funzione del prezzo)
@@ -41,7 +40,7 @@ public class Test {
             Scanner leggoCategorie = new Scanner(fr);
             String categorie[] = (leggoCategorie.nextLine()).split(";");
             leggoCategorie.close();
-            boolean esiste;
+            boolean esisteCategoria;
             int c;
             //creo elenco categorie da visualizzare
             String messaggioCategorie = "Inserire il tipo di spettacolo al quale si vuole partecipare. Scegliere tra i seguenti: ";
@@ -52,6 +51,8 @@ public class Test {
             File f2 =  new File("costoBiglietti.csv");
             FileReader fr2 = new FileReader(f2);
             Scanner leggoPrezzi = new Scanner (fr2);
+            boolean esistePrezzo;
+            int p;
             //creo array da utilizzare per salvare il prezzo dei posti (come String)il cui numero è compreso in un certo intervallo
             String postiStr[];
             //array in cui salvo i valori di postiStr[] convertiti in double
@@ -147,18 +148,26 @@ public class Test {
                     //faccio acquistare i biglietti dei diversi spettacoli al cliente
                     do{
                         //controllo prezzo del biglietto
+                        esistePrezzo = false;
                         do{
                             prezzo = Double.parseDouble(JOptionPane.showInputDialog(messaggioPrezzo));
-                            //salvo in una variabile il prezzo non scontato, da utilizzare per i vari controlli
-                            prezzo_old = prezzo;
-                            if(prezzo_old <= 5.0){
-                                JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
+                            //verifico che l'utente abbia inserito un prezzo esistente tra quelli proposti
+                            p = 0;
+                            while((p < prezziPosti.size()) && (esistePrezzo == false)){
+                                if((prezziPosti.get(p))[2] == prezzo){
+                                    esistePrezzo = true;
+                                }
+                                p++;
                             }
-                            //applico uno sconto del 50% sul prezzo indicato dall'utente se il titolare ha meno di 12 anni o più di 65
-                            if((cliente.getAnni() < 12) || (cliente.getAnni() > 65)){
-                                prezzo/= 2;
+                            if(esistePrezzo == false){
+                                JOptionPane.showMessageDialog(null, "Nessun biglietto corrisponde al prezzo indicato!", "Errore", JOptionPane.ERROR_MESSAGE);
+                            }else{
+                                //applico uno sconto del 50% sul prezzo indicato dall'utente se il titolare ha meno di 12 anni o più di 65
+                                if((cliente.getAnni() < 12) || (cliente.getAnni() > 65)){
+                                    prezzo/= 2;
+                                }
                             }
-                        }while(prezzo_old <= 5.0);
+                        }while(esistePrezzo == false);
                         //controllo numero_posto del biglietto
                         do{
                             numero_posto = Integer.parseInt(JOptionPane.showInputDialog("In quale posto si vuole sedere?"));
@@ -167,7 +176,7 @@ public class Test {
                             }
                         }while(numero_posto <= 0);
                         //controllo tipo di spettacolo
-                        esiste = false;
+                        esisteCategoria = false;
                         do{
                             categoria = JOptionPane.showInputDialog(messaggioCategorie);
                             //verifico che la stringa non sia vuota
@@ -176,16 +185,16 @@ public class Test {
                             }
                             //verifico che nell'array di categorie vi sia quella specificata dall'utente
                             c = 0;
-                            while((c < categorie.length) && (esiste == false)){
+                            while((c < categorie.length) && (esisteCategoria == false)){
                                 if(categorie[c].equalsIgnoreCase(categoria)){
-                                    esiste = true;
+                                    esisteCategoria = true;
                                 }
                                 c++;
                             }
-                            if(esiste == false){
+                            if(esisteCategoria == false){
                                 JOptionPane.showMessageDialog(null, "La categoria specificata non esiste!", "Errore", JOptionPane.ERROR_MESSAGE);
                             }
-                        }while((categoria.equals("")) || (categoria.equals(" ")) || (esiste == false));
+                        }while((categoria.equals("")) || (categoria.equals(" ")) || (esisteCategoria == false));
                         //creo l'oggetto di classe Biglietto
                         Biglietto biglietto = new Biglietto(prezzo, numero_posto, cliente, categoria);
                         //associo il biglietto sia alla prenotazione che all'utente
