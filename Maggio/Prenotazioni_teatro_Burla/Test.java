@@ -84,6 +84,17 @@ public class Test {
 
             }
             messaggioPrezzo += "\nTenere a mente che per i minori di 12 anni e per gli over 65 verrà applicato in automatico uno sconto del 50% rispetto all'importo indicato";
+            //creo file su cui salvare i posti occupati, se non esiste
+            File f3 = new File("postiOccupati.csv");
+            f3.createNewFile();
+            FileWriter fw = new FileWriter(f3, true);
+            PrintWriter salvoPosti = new PrintWriter(fw);
+            //apro file dei posti in lettura per verificare se il numero di posto generato è già occupato
+            FileReader fr3 = new FileReader(f3);
+            Scanner leggoPosti = new Scanner(fr3);
+            leggoPosti.useDelimiter(";");
+            boolean libero;
+            int verificoPosto;
             //creo tre spettacoli e li aggiungo al teatro
             Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
             marconiVR.setSpettacolo(jazz);
@@ -145,33 +156,53 @@ public class Test {
                     prenotazione.setCliente(cliente);
                     //faccio acquistare i biglietti dei diversi spettacoli al cliente
                     do{
-                        //controllo prezzo del biglietto
-                        esistePrezzo = false;
                         do{
-                            prezzo = Double.parseDouble(JOptionPane.showInputDialog(messaggioPrezzo));
-                            //verifico che l'utente abbia inserito un prezzo esistente tra quelli proposti
-                            p = 0;
-                            while((p < prezziPosti.size()) && (esistePrezzo == false)){
-                                if((prezziPosti.get(p))[2] == prezzo){
-                                    esistePrezzo = true;
+                            libero = false;
+                            //controllo prezzo del biglietto
+                            esistePrezzo = false;
+                            do{
+                                prezzo = Double.parseDouble(JOptionPane.showInputDialog(messaggioPrezzo));
+                                //verifico che l'utente abbia inserito un prezzo esistente tra quelli proposti
+                                p = 0;
+                                while((p < prezziPosti.size()) && (esistePrezzo == false)){
+                                    if((prezziPosti.get(p))[2] == prezzo){
+                                        esistePrezzo = true;
+                                    }
+                                    p++;
                                 }
-                                p++;
-                            }
-                            if(esistePrezzo == false){
-                                JOptionPane.showMessageDialog(null, "Nessun biglietto corrisponde al prezzo indicato!", "Errore", JOptionPane.ERROR_MESSAGE);
-                            }else{
-                                //applico uno sconto del 50% sul prezzo indicato dall'utente se il titolare ha meno di 12 anni o più di 65
-                                if((cliente.getAnni() < 12) || (cliente.getAnni() > 65)){
-                                    prezzo/= 2;
+                                if(esistePrezzo == false){
+                                    JOptionPane.showMessageDialog(null, "Nessun biglietto corrisponde al prezzo indicato!", "Errore", JOptionPane.ERROR_MESSAGE);
+                                }else{
+                                    //applico uno sconto del 50% sul prezzo indicato dall'utente se il titolare ha meno di 12 anni o più di 65
+                                    if((cliente.getAnni() < 12) || (cliente.getAnni() > 65)){
+                                        prezzo/= 2;
+                                    }
+                                }
+                            }while(esistePrezzo == false);
+                            //assegno al cliente un posto casuale a seconda del prezzo che vuole pagare (al momento, NON si tiene conto dei posti già occupati)
+                            Random generoPosto = new Random();
+                            //genero un numero di posto tenendo conto dell'ultimo valore del contatore p diminuito di 1 poichè rappresenta l'indice da utilizzare per accedere all'array della ArrayList che contiene il prezzo desiderato dall'utente
+                            p--;
+                            //come estremo maggiore dell'intervallo del numero da generare considero la differenza tra il posto maggiore e quello minore. Successivamente, sommo l'estremo minore
+                            numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
+                            //controllo che il posto non sia già occupato
+                            while((libero == false) && (leggoPosti.hasNextInt())){
+                                //leggo il prossimo posto occupato
+                                verificoPosto = leggoPosti.nextInt();
+                                if(numero_posto != verificoPosto){
+                                    libero = true;
+                                }else{
+                                    //rigenero il numero se il posto è già occupato
+                                    numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
                                 }
                             }
-                        }while(esistePrezzo == false);
-                        //assegno al cliente un posto casuale a seconda del prezzo che vuole pagare (al momento, NON si tiene conto dei posti già occupati)
-                        Random generoPosto = new Random();
-                        //genero un numero di posto tenendo conto dell'ultimo valore del contatore p diminuito di 1 poichè rappresenta l'indice da utilizzare per accedere all'array della ArrayList che contiene il prezzo desiderato dall'utente
-                        p--;
-                        //come estremo maggiore dell'intervallo del numero da generare considero la differenza tra il posto maggiore e quello minore. Successivamente, sommo l'estremo minore
-                        numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
+                            if(libero == false){
+                                JOptionPane.showMessageDialog(null, "Tutti i posti di tale tariffa sono esauriti! Scegliere un'altro prezzo", "Posti esauriti", JOptionPane.WARNING_MESSAGE);
+                            }
+                        }while(libero == false);
+                        //salvo posto nel file dei posti occupati
+                        salvoPosti.print(";" + numero_posto);
+                        salvoPosti.flush();
                         //controllo tipo di spettacolo
                         esisteCategoria = false;
                         do{
@@ -212,6 +243,9 @@ public class Test {
                 //chiedo se vi sono altre prenotazioni
                 ripeti = JOptionPane.showConfirmDialog(null, "Vi sono altre prenotazioni da effettuare?" , "Prenota", JOptionPane.YES_NO_OPTION);
             }while(ripeti == JOptionPane.YES_OPTION);
+            //chiudo flussi con il file dei posti
+            leggoPosti.close();
+            salvoPosti.close();
         }catch(IOException e){
             JOptionPane.showMessageDialog(null, "ERRORE di I/O", "Errore", JOptionPane.ERROR_MESSAGE);
         }
