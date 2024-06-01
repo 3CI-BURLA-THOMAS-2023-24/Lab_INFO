@@ -28,7 +28,7 @@ public class Test {
             double prezzo = 0;
             //tipo di spettacolo al quale il cliente vuole partecipare
             String categoria = "";
-            //numero di posto(al momento il cliente sceglie quello che vuole; in aggiornamento futuro si prevede un controllo e un'assegnazione a carico del teatro in funzione del prezzo)
+            //numero di posto
             int numero_posto = 0;
             //importo totale prenotazione
             double totale = 0.0;
@@ -73,19 +73,17 @@ public class Test {
                 prezziPosti.add(posti);
             }
             leggoPrezzi.close();
-            //preparo messaggio da visualizzare
-            String messaggioPrezzo = "Inserire il prezzo del biglietto che si vuole comprare, in relazione al posto, scegliendo tra i seguenti: ";
-            for(int a = 0; a < prezziPosti.size(); a++){
-                //per l'ultima fascia di prezzo, non considero l'estremo superiore dell'intervallo (che arbitrariamente è 0)
-                if(a == prezziPosti.size() - 1){
-                    messaggioPrezzo += "\nPosti--> " + (int)((prezziPosti.get(a))[0]) + "+" + "; Costo--> " + (prezziPosti.get(a))[2] + "€";
-                }else{
-                    messaggioPrezzo += "\nPosti--> " + (int)((prezziPosti.get(a))[0]) + "-" + (int)(prezziPosti.get(a))[1] + "; Costo--> " + (prezziPosti.get(a))[2] + "€";
-                }
-            }
-            messaggioPrezzo += "\nTenere a mente che per i minori di 12 anni e per gli over 65 verrà applicato in automatico uno sconto del 50% rispetto all'importo indicato";
             //creo teatro
             Teatro marconiVR = new Teatro("ITIS Marconi", "Verona", 1800);
+            //assegno all'estremo superiore dell'ultimo intervallo di posti il numero di posti del teatro
+            (prezziPosti.get(prezziPosti.size() - 1))[1] = marconiVR.getN_posti();
+            //preparo messaggio da visualizzare riguardo ai prezzi e ai posti
+            String messaggioPrezzo = "Inserire il prezzo del biglietto che si vuole comprare, in relazione al posto, scegliendo tra i seguenti: ";
+            for(int a = 0; a < prezziPosti.size(); a++){
+                messaggioPrezzo += "\nPosti--> " + (int)((prezziPosti.get(a))[0]) + "-" + (int)(prezziPosti.get(a))[1] + "; Costo--> " + (prezziPosti.get(a))[2] + "€";
+
+            }
+            messaggioPrezzo += "\nTenere a mente che per i minori di 12 anni e per gli over 65 verrà applicato in automatico uno sconto del 50% rispetto all'importo indicato";
             //creo tre spettacoli e li aggiungo al teatro
             Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
             marconiVR.setSpettacolo(jazz);
@@ -168,13 +166,12 @@ public class Test {
                                 }
                             }
                         }while(esistePrezzo == false);
-                        //controllo numero_posto del biglietto
-                        do{
-                            numero_posto = Integer.parseInt(JOptionPane.showInputDialog("In quale posto si vuole sedere?"));
-                            if(numero_posto <= 0){
-                                JOptionPane.showMessageDialog(null, "ERRORE! Valore non valido", "Errore", JOptionPane.ERROR_MESSAGE);
-                            }
-                        }while(numero_posto <= 0);
+                        //assegno al cliente un posto casuale a seconda del prezzo che vuole pagare (al momento, NON si tiene conto dei posti già occupati)
+                        Random generoPosto = new Random();
+                        //genero un numero di posto tenendo conto dell'ultimo valore del contatore p diminuito di 1 poichè rappresenta l'indice da utilizzare per accedere all'array della ArrayList che contiene il prezzo desiderato dall'utente
+                        p--;
+                        //come estremo maggiore dell'intervallo del numero da generare considero la differenza tra il posto maggiore e quello minore. Successivamente, sommo l'estremo minore
+                        numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
                         //controllo tipo di spettacolo
                         esisteCategoria = false;
                         do{
