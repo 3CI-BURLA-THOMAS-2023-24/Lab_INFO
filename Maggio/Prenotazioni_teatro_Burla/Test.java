@@ -257,6 +257,7 @@ public class Test {
                 //visualizzo importo
                 JOptionPane.showMessageDialog(null, "L'importo totale della prenotazione è di " + totale + "€", "Importo totale", JOptionPane.WARNING_MESSAGE);
                 System.out.println(prenotazione.toString());
+                prenotazioni.add(prenotazione);
                 //chiedo se vi sono altre prenotazioni
                 ripeti = JOptionPane.showConfirmDialog(null, "Vi sono altre prenotazioni da effettuare?" , "Prenota", JOptionPane.YES_NO_OPTION);
             }while(ripeti == JOptionPane.YES_OPTION);

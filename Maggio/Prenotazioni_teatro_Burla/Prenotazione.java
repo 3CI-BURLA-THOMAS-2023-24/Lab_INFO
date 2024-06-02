@@ -98,15 +98,14 @@ public class Prenotazione {
             trovato = false;
             while((trovato == false) && (b < biglietti.size())){
                 biglietto = this.biglietti.get(b);
-                if((biglietto).getNumero_posto() == cliente.getPosto()){
+                if((biglietto).getTitolare().equals(cliente.getNome() + " " + cliente.getCognome())){
                     trovato = true;
                 }
+                b++;
             }
             if(trovato == true){
                 //output cliente
-                out += "\n" + i + ". " + cliente.toString();
-                //output prezzo biglietto
-                out += ".\n Il prezzo del biglietto è: " + biglietto.getPrezzo() + "€ \n";
+                out += "\n" + (i + 1) + ". " + cliente.toString() + "\n";
                 
             }else{
                 errore = true;
@@ -115,6 +114,6 @@ public class Prenotazione {
         if(errore == true){
             return "OPS! QUalcosa è andato storto :(...verificare che ogni cliente abbia il biglietto corrispondente!";
         }
-        return out + ".\n Nella prenotazione vi sono " + this.biglietti.size() + "biglietti.";
+        return out + ".\nNella prenotazione vi sono " + this.biglietti.size() + " biglietti.";
     }
 }

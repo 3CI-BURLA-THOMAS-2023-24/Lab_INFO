@@ -10,7 +10,6 @@ public class Cliente {
     private String nome;
     private String cognome;
     private String email;
-    private int posto;
     private ArrayList <Biglietto> biglietti;
     private int anni;
     //costruttore senza parametri
@@ -18,7 +17,6 @@ public class Cliente {
         this.nome = "Sconosciuto";
         this.cognome = "Sconosciuto";
         this.email = "Sconosciuta";
-        this.posto = 0;
         this.biglietti = new ArrayList <Biglietto> ();
         this.anni = 0;
     }
@@ -48,8 +46,6 @@ public class Cliente {
         }else{
             this.anni = 0;
         }
-        //posto
-        this.posto = 0;
         //biglietti
         this.biglietti = new ArrayList <Biglietto> ();
 
@@ -94,16 +90,6 @@ public class Cliente {
     public int getAnni(){
         return this.anni;
     }
-    //set Posto
-    public void setPosto(Biglietto biglietto){
-        if(biglietto != null){
-            this.posto = biglietto.getNumero_posto();
-        }
-    }
-    //get Posto
-    public int getPosto(){
-        return this.posto;
-    }
     //set biglietto
     public void setBiglietto(Biglietto biglietto){
         if(biglietto != null){
@@ -130,11 +116,16 @@ public class Cliente {
     //toString
     public String toString(){
         String out = "";
+        Biglietto biglietto = null;
         out += "Il nome del titolare è: " + this.nome;
-        out += ".\n Il cognome del titolare è: " + this.cognome;
-        out += ".\n L'email del titolare è: " + this.email;
-        out += ".\n Il cliente ha " + this.anni + "anni";
-        out += ".\n Il numero del posto di questo cliente è: " + this.posto + ".";
+        out += ".\nIl cognome del titolare è: " + this.cognome;
+        out += ".\nL'email del titolare è: " + this.email;
+        out += ".\nIl cliente ha " + this.anni + " anni.";
+        out += "\nIl cliente possiede i seguenti biglietti: ";
+        for(int i = 0; i < this.biglietti.size(); i++){
+            biglietto = biglietti.get(i);
+            out += "\nBIGLIETTO " + (i + 1) + "--> Prezzo: " + biglietto.getPrezzo() + "; Posto: " + biglietto.getNumero_posto() + "; Tipo di spettacolo: " + biglietto.getTipoSpettacolo();
+        }
         return out;
     }
 }
