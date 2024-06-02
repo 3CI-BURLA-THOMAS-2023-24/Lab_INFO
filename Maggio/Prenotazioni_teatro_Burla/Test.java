@@ -11,6 +11,9 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import java.io.*;
 public class Test {
+    /* indico al compilatore di ignorare il fatto che si utilizza una arryalist "pura", all'interno della quale può essere inserito un qualsiasi oggetto (nel mio caso, si inserisce un array di stringhe e una arraylist di array di double). 
+    Qui il sito da cui ho prelevato tale info: https://www.baeldung.com/java-suppresswarnings */
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public static void main(String args[]){
         try{
             //dichiarazione e inizializzazione variabili
@@ -57,21 +60,34 @@ public class Test {
             String postiStr[];
             //array in cui salvo i valori di postiStr[] convertiti in double
             double posti[];
+            //salvo in un array le intestazioni del file da cui leggere i prezzi in funzione dei posti, così da poter identificare le varie corrispondenze delle celle negli array di double della arraylist
+            String intestazioniLetturaPrezzi[];
             //creo arraylist su cui salvare i prezzi e i relativi posti, memorizzando un array per ogni riga
             ArrayList <double[]> prezziPosti = new ArrayList <double[]>();
+            //salvo in una arraylist la "tabella" formata dalle intestazioni delle colonne del file e dall'arraylist che contiene i loro valori
+            ArrayList tabellaPrezziPosti = new ArrayList();
             //ciclo per leggere le righe del file
             while(leggoPrezzi.hasNextLine()){
                 //salvo in un array di String i valori letti (i primi due indicano gli estremi dell'intervallo di posti, il terzo il loro costo)
                 postiStr = (leggoPrezzi.nextLine()).split(";");
                 //alloco un vettore di double di dimensioni uguali al vettore di String da cui convertire
                 posti = new double[postiStr.length];
-                //converto in double i valori dell'array
-                for(int i = 0; i < postiStr.length; i++){
-                    posti[i] = Double.parseDouble(postiStr[i]);
+                //converto in double i valori dell'array, escludendo la prima riga essendo che non rappresenta alcuna informazione
+                try{
+                    for(int i = 0; i < postiStr.length; i++){
+                        posti[i] = Double.parseDouble(postiStr[i]);   
+                    }
+                    //salvo l'array di double nell'arraylist
+                    prezziPosti.add(posti);
+                }catch(NumberFormatException e){
+                    //siccome la prima riga del file contiene le informazioni che indicano le corrispondenze dei valori, le salvo in un array apposito
+                    intestazioniLetturaPrezzi = postiStr;
+                    //salvo in un arraylist le inetstazioni della "tabella" lette da file
+                    tabellaPrezziPosti.add(intestazioniLetturaPrezzi);
                 }
-                //salvo l'array di double nell'arraylist
-                prezziPosti.add(posti);
             }
+            //salvo nell'arraylist che rappresenta la tabella letta da file l'arraylist dei prezzi e dei pos
+            tabellaPrezziPosti.add(prezziPosti);
             leggoPrezzi.close();
             //creo teatro
             Teatro marconiVR = new Teatro("ITIS Marconi", "Verona", 1800);
