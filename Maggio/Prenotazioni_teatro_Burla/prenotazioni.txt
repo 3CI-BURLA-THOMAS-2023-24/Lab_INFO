@@ -1,0 +1,18 @@
+Elenco dei biglietti e dei relativi clienti della seguente prenotazione: 
+1. Il nome del titolare è: Thomas.
+Il cognome del titolare è: Burla.
+L'email del titolare è: thomas@gmail.com.
+Il cliente ha 17 anni.
+Il cliente possiede i seguenti biglietti: 
+BIGLIETTO 1--> Prezzo: 400.0; Posto: 18; Tipo di spettacolo: Reggaeton
+BIGLIETTO 2--> Prezzo: 300.0; Posto: 40; Tipo di spettacolo: Jazz
+
+2. Il nome del titolare è: Leonardo.
+Il cognome del titolare è: Basile.
+L'email del titolare è: leonardo@outlook.it.
+Il cliente ha 11 anni.
+Il cliente possiede i seguenti biglietti: 
+BIGLIETTO 1--> Prezzo: 150.0; Posto: 90; Tipo di spettacolo: Reggaeton
+
+Nella prenotazione vi sono 3 biglietti.
+

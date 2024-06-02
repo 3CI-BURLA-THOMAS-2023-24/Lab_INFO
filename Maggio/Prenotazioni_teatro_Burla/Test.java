@@ -111,6 +111,11 @@ public class Test {
             leggoPosti.useDelimiter(";");
             boolean libero;
             int verificoPosto;
+            //preparo file su cui salvare le prenotazioni
+            File f4 = new File("prenotazioni.txt");
+            f4.createNewFile();
+            FileWriter fw2 = new FileWriter(f4);
+            PrintWriter salvoPrenotazioni = new PrintWriter(fw2);
             //creo tre spettacoli e li aggiungo al teatro
             Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
             marconiVR.setSpettacolo(jazz);
@@ -256,7 +261,10 @@ public class Test {
                 }
                 //visualizzo importo
                 JOptionPane.showMessageDialog(null, "L'importo totale della prenotazione è di " + totale + "€", "Importo totale", JOptionPane.WARNING_MESSAGE);
-                System.out.println(prenotazione.toString());
+                //scrivo prenotazione su file
+                salvoPrenotazioni.println(prenotazione.toString() + "\n");
+                salvoPrenotazioni.flush();
+                //aggiungo prenotazione sulla arraylist
                 prenotazioni.add(prenotazione);
                 //chiedo se vi sono altre prenotazioni
                 ripeti = JOptionPane.showConfirmDialog(null, "Vi sono altre prenotazioni da effettuare?" , "Prenota", JOptionPane.YES_NO_OPTION);
@@ -264,6 +272,8 @@ public class Test {
             //chiudo flussi con il file dei posti
             leggoPosti.close();
             salvoPosti.close();
+            ///chiudo flusso prenotazioni
+            salvoPrenotazioni.close();
         }catch(IOException e){
             JOptionPane.showMessageDialog(null, "ERRORE di I/O", "Errore", JOptionPane.ERROR_MESSAGE);
         }

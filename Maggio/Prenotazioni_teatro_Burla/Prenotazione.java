@@ -114,6 +114,6 @@ public class Prenotazione {
         if(errore == true){
             return "OPS! QUalcosa è andato storto :(...verificare che ogni cliente abbia il biglietto corrispondente!";
         }
-        return out + ".\nNella prenotazione vi sono " + this.biglietti.size() + " biglietti.";
+        return out + "\nNella prenotazione vi sono " + this.biglietti.size() + " biglietti.";
     }
 }
