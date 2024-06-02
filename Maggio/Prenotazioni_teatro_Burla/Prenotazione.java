@@ -88,12 +88,14 @@ public class Prenotazione {
         Cliente cliente = null;
         Biglietto biglietto =  null;
         boolean errore = false;
-        for(int i = 0; (i < (this.biglietti).size()) && (errore == false); i++){
-            //output prezzo del biglietto (le altre info sono a carico dell'oggetto cliente)
+        int b;
+        boolean trovato;
+        for(int i = 0; (i < (this.clienti).size()) && (errore == false); i++){
+            //leggo cliente
             cliente = this.clienti.get(i);
             //ricerca del biglietto, dato il numero di posto del cliente
-            int b = 0;
-            boolean trovato = false;
+            b = 0;
+            trovato = false;
             while((trovato == false) && (b < biglietti.size())){
                 biglietto = this.biglietti.get(b);
                 if((biglietto).getNumero_posto() == cliente.getPosto()){
@@ -102,7 +104,7 @@ public class Prenotazione {
             }
             if(trovato == true){
                 //output cliente
-                out += "\n" + i + ". " + (cliente).toString();
+                out += "\n" + i + ". " + cliente.toString();
                 //output prezzo biglietto
                 out += ".\n Il prezzo del biglietto è: " + biglietto.getPrezzo() + "€ \n";
                 

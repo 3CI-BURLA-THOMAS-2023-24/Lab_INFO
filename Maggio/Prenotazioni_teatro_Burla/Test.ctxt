@@ -2,4 +2,5 @@
 comment0.target=Test
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
+comment1.text=\ indico\ al\ compilatore\ di\ ignorare\ il\ fatto\ che\ si\ utilizza\ una\ arryalist\ "pura",\ all'interno\ della\ quale\ pu\u00F2\ essere\ inserito\ un\ qualsiasi\ oggetto\ (nel\ mio\ caso,\ si\ inserisce\ un\ array\ di\ stringhe\ e\ una\ arraylist\ di\ array\ di\ double).\ \r\nQui\ il\ sito\ da\ cui\ ho\ prelevato\ tale\ info\:\ https\://www.baeldung.com/java-suppresswarnings
 numComments=2
