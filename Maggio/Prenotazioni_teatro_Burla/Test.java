@@ -114,7 +114,7 @@ public class Test {
             //preparo file su cui salvare le prenotazioni
             File f4 = new File("prenotazioni.txt");
             f4.createNewFile();
-            FileWriter fw2 = new FileWriter(f4);
+            FileWriter fw2 = new FileWriter(f4, true);
             PrintWriter salvoPrenotazioni = new PrintWriter(fw2);
             //creo tre spettacoli e li aggiungo al teatro
             Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
