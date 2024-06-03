@@ -100,21 +100,14 @@ public class Test {
 
             }
             messaggioPrezzo += "\nTenere a mente che per i minori di 12 anni e per gli over 65 verrà applicato in automatico uno sconto del 50% rispetto all'importo indicato";
-            //creo file su cui salvare i posti occupati, se non esiste
-            File f3 = new File("postiOccupati.csv");
-            f3.createNewFile();
-            FileWriter fw = new FileWriter(f3, true);
-            PrintWriter salvoPosti = new PrintWriter(fw);
-            //apro file dei posti in lettura per verificare se il numero di posto generato è già occupato
-            FileReader fr3 = new FileReader(f3);
-            Scanner leggoPosti = new Scanner(fr3);
-            leggoPosti.useDelimiter(";");
+            //pathname del file da cui leggere/su cui scrivere i posti
+            String filePostiCategorie;
             boolean libero;
             int verificoPosto;
             //preparo file su cui salvare le prenotazioni
-            File f4 = new File("prenotazioni.txt");
-            f4.createNewFile();
-            FileWriter fw2 = new FileWriter(f4, true);
+            File f3 = new File("prenotazioni.txt");
+            f3.createNewFile();
+            FileWriter fw2 = new FileWriter(f3, true);
             PrintWriter salvoPrenotazioni = new PrintWriter(fw2);
             //creo tre spettacoli e li aggiungo al teatro
             Spettacolo jazz = new Spettacolo("Jazz", 90, "Musica");
@@ -177,6 +170,43 @@ public class Test {
                     prenotazione.setCliente(cliente);
                     //faccio acquistare i biglietti dei diversi spettacoli al cliente
                     do{
+                        //controllo tipo di spettacolo
+                        esisteCategoria = false;
+                        do{
+                            categoria = JOptionPane.showInputDialog(messaggioCategorie);
+                            //verifico che la stringa non sia vuota
+                            if((categoria.equals("")) || (categoria.equals(" "))){
+                                JOptionPane.showMessageDialog(null, "ERRORE! Stringa vuota", "Errore", JOptionPane.ERROR_MESSAGE);
+                            }
+                            //verifico che nell'array di categorie vi sia quella specificata dall'utente
+                            c = 0;
+                            while((c < categorie.length) && (esisteCategoria == false)){
+                                if(categorie[c].equalsIgnoreCase(categoria)){
+                                    esisteCategoria = true;
+                                }
+                                c++;
+                            }
+                            if(esisteCategoria == false){
+                                JOptionPane.showMessageDialog(null, "La categoria specificata non esiste!", "Errore", JOptionPane.ERROR_MESSAGE);
+                            }
+                        }while((categoria.equals("")) || (categoria.equals(" ")) || (esisteCategoria == false)); 
+                        //assegno il file da cui leggere i posti occupati in funzione del tipo di spettacolo
+                        filePostiCategorie = "postiOccupati";
+                        //rimuovo spazi dal nome della categoria e assegno il file con cui operare
+                        for(int i = 0; i < categoria.length(); i++){
+                            if(categoria.charAt(i) != ' '){
+                                filePostiCategorie += categoria.charAt(i);
+                            }
+                        }
+                        filePostiCategorie += ".csv";
+                        //apro file in lettura per verificare i posti già occupati, in relazione allo spettacolo
+                        File f4 = new File(filePostiCategorie);
+                        FileReader fr3 = new FileReader(f4);
+                        Scanner leggoPosti = new Scanner(fr3);
+                        leggoPosti.useDelimiter(";");
+                        //apro file in scrittura su cui scrivere il posto prenotato, in relazione allo spettacolo
+                        FileWriter fw = new FileWriter(f4, true);
+                        PrintWriter salvoPosti = new PrintWriter(fw);
                         do{
                             libero = false;
                             //controllo prezzo del biglietto
@@ -222,28 +252,11 @@ public class Test {
                             }
                         }while(libero == false);
                         //salvo posto nel file dei posti occupati
-                        salvoPosti.print(";" + numero_posto);
+                        salvoPosti.print(numero_posto + ";" + cliente.getNome() + " " + cliente.getCognome() + ";" + cliente.getEmail() + ";" + cliente.getAnni() + "\n");
                         salvoPosti.flush();
-                        //controllo tipo di spettacolo
-                        esisteCategoria = false;
-                        do{
-                            categoria = JOptionPane.showInputDialog(messaggioCategorie);
-                            //verifico che la stringa non sia vuota
-                            if((categoria.equals("")) || (categoria.equals(" "))){
-                                JOptionPane.showMessageDialog(null, "ERRORE! Stringa vuota", "Errore", JOptionPane.ERROR_MESSAGE);
-                            }
-                            //verifico che nell'array di categorie vi sia quella specificata dall'utente
-                            c = 0;
-                            while((c < categorie.length) && (esisteCategoria == false)){
-                                if(categorie[c].equalsIgnoreCase(categoria)){
-                                    esisteCategoria = true;
-                                }
-                                c++;
-                            }
-                            if(esisteCategoria == false){
-                                JOptionPane.showMessageDialog(null, "La categoria specificata non esiste!", "Errore", JOptionPane.ERROR_MESSAGE);
-                            }
-                        }while((categoria.equals("")) || (categoria.equals(" ")) || (esisteCategoria == false));
+                        //chiudo flussi con il file dei posti
+                        leggoPosti.close();
+                        salvoPosti.close();
                         //creo l'oggetto di classe Biglietto
                         Biglietto biglietto = new Biglietto(prezzo, numero_posto, cliente, categoria);
                         //associo il biglietto sia alla prenotazione che all'utente
@@ -269,9 +282,6 @@ public class Test {
                 //chiedo se vi sono altre prenotazioni
                 ripeti = JOptionPane.showConfirmDialog(null, "Vi sono altre prenotazioni da effettuare?" , "Prenota", JOptionPane.YES_NO_OPTION);
             }while(ripeti == JOptionPane.YES_OPTION);
-            //chiudo flussi con il file dei posti
-            leggoPosti.close();
-            salvoPosti.close();
             ///chiudo flusso prenotazioni
             salvoPrenotazioni.close();
         }catch(IOException e){
