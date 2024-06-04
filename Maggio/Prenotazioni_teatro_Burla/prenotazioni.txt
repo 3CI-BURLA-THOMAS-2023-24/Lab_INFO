@@ -49,3 +49,32 @@ BIGLIETTO 2--> Prezzo: 400.0; Posto: 11; Tipo di spettacolo: Reggaeton
 
 Nella prenotazione vi sono 2 biglietti.
 
+Elenco dei biglietti e dei relativi clienti della seguente prenotazione: 
+1. Il nome del titolare è: Thomas.
+Il cognome del titolare è: Burla.
+L'email del titolare è: thomas@gmail.com.
+Il cliente ha 17 anni.
+Il cliente possiede i seguenti biglietti: 
+BIGLIETTO 1--> Prezzo: 400.0; Posto: 14; Tipo di spettacolo: Reggaeton
+BIGLIETTO 2--> Prezzo: 300.0; Posto: 46; Tipo di spettacolo: Jazz
+
+Nella prenotazione vi sono 2 biglietti.
+
+Elenco dei biglietti e dei relativi clienti della seguente prenotazione: 
+1. Il nome del titolare è: Thomas.
+Il cognome del titolare è: Burla.
+L'email del titolare è: thomas@gmail.com.
+Il cliente ha 17 anni.
+Il cliente possiede i seguenti biglietti: 
+BIGLIETTO 1--> Prezzo: 400.0; Posto: 14; Tipo di spettacolo: Reggaeton
+BIGLIETTO 2--> Prezzo: 300.0; Posto: 87; Tipo di spettacolo: Divina Commedia
+
+2. Il nome del titolare è: Leonardo.
+Il cognome del titolare è: Basile.
+L'email del titolare è: leonardo@hotmail.com.
+Il cliente ha 17 anni.
+Il cliente possiede i seguenti biglietti: 
+BIGLIETTO 1--> Prezzo: 250.0; Posto: 188; Tipo di spettacolo: Jazz
+
+Nella prenotazione vi sono 3 biglietti.
+

@@ -237,18 +237,24 @@ public class Test {
                             //come estremo maggiore dell'intervallo del numero da generare considero la differenza tra il posto maggiore e quello minore. Successivamente, sommo l'estremo minore
                             numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
                             //controllo che il posto non sia già occupato
-                            while((libero == false) && (leggoPosti.hasNextInt())){
-                                //leggo il prossimo posto occupato
-                                verificoPosto = leggoPosti.nextInt();
-                                if(numero_posto != verificoPosto){
-                                    libero = true;
-                                }else{
-                                    //rigenero il numero se il posto è già occupato
-                                    numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
+                            if(leggoPosti.hasNextInt()){
+                                //controllo se il posto è già occupato, nel caso in cui vi siano posti già prenotati
+                                while((libero == false) && (leggoPosti.hasNextInt())){
+                                    //leggo il prossimo posto occupato
+                                    verificoPosto = leggoPosti.nextInt();
+                                    if(numero_posto != verificoPosto){
+                                        libero = true;
+                                    }else{
+                                        //rigenero il numero se il posto è già occupato
+                                        numero_posto = generoPosto.nextInt((int)(prezziPosti.get(p))[1] - (int)(prezziPosti.get(p))[0]) + (int)(prezziPosti.get(p))[0];
+                                    }
                                 }
-                            }
-                            if(libero == false){
-                                JOptionPane.showMessageDialog(null, "Tutti i posti di tale tariffa sono esauriti! Scegliere un'altro prezzo", "Posti esauriti", JOptionPane.WARNING_MESSAGE);
+                                if(libero == false){
+                                    JOptionPane.showMessageDialog(null, "Tutti i posti di tale tariffa sono esauriti! Scegliere un'altro prezzo", "Posti esauriti", JOptionPane.WARNING_MESSAGE);
+                                }
+                            }else{
+                                //se non vi sono posti prenotati, il posto generato è sicuramente libero
+                                libero = true;
                             }
                         }while(libero == false);
                         //salvo posto nel file dei posti occupati
